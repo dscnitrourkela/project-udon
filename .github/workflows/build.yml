@@ -1,0 +1,62 @@
+name: Build Check
+
+on:
+  workflow_call:
+    inputs:
+      fail-on-error:
+        description: 'Fail on error'
+        required: false
+        default: false
+        type: boolean
+  
+  workflow_dispatch:
+    inputs:
+      fail-on-error:
+        description: 'Fail on error'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  build:
+    name: Build Check
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Use Dev Cache
+        id: dev-cache
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-dev
+        with:
+          # Path for node_modules
+          path: "**/node_modules"
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      
+      - if: ${{steps.dev-cache.outputs.cache-hit != 'true'}}
+        name: Install Dependencies
+        run: pnpm install
+
+      - name: Build Check
+        run: pnpm run build
+        continue-on-error: ${{ !inputs.fail-on-error }}
+        
