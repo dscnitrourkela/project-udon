@@ -1,0 +1,12 @@
+{
+  "projectName": "project-unagi",
+  "projectOwner": "dscnitrourkela",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true,
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false
+}
