@@ -17,6 +17,7 @@
 		"@reduxjs/toolkit": "^2.0.1",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.0",
+		"husky": "^9.0.10",
 		"lottie-web": "^5.12.2",
 		"lucide-react": "^0.314.0",
 		"prettier": "^3.2.4",
