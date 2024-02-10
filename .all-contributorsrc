@@ -8,5 +8,23 @@
     "README.md"
   ],
   "imageSize": 100,
-  "commit": false
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "Shurtu-gal",
+      "name": "Ashish Padhy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/100484401?v=4",
+      "profile": "http://ashishpadhy.live",
+      "contributions": [
+        "code",
+        "projectManagement",
+        "test",
+        "maintenance",
+        "infra"
+      ]
+    }
+  ]
 }
