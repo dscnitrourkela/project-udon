@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import lottie from 'lottie-web';
-import pageLogoAnimation from '@/assets/animations/page-loader.json';
+import pageLogoAnimation from '../assets/animations/page-loader.json';
 
 const PageLoader = () => {
 	const ref = useRef(null);
