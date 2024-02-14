@@ -11,6 +11,7 @@ export default {
 				'2xl': '1400px',
 			},
 		},
+
 		extend: {
 			colors: {
 				border: 'hsl(var(--border))',
@@ -66,6 +67,24 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 			},
+		},
+		fontSize: {
+			xm: ['10px', '12px'],
+			xs: '12px',
+			sm: '14px',
+			base: '16px',
+			lg: '18px',
+			xl: '20px',
+			'2xl': '24px',
+			'3xl': '30px',
+			'3.5xl': '32px',
+			'4xl': '36px',
+			'4.5xl': '40px',
+			'10xl': '80px',
+			'11xl': '86px',
+			'12xl': '120px',
+			'13xl': '48px',
+			'14xl': '64px',
 		},
 	},
 	plugins: [],
