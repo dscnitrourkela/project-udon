@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+import defaultTheme from 'tailwindcss/defaultTheme';
+
 export default {
 	darkMode: ['class'],
 	content: ['./src/pages/**/*.{js,jsx}', './src/components/**/*.{js,jsx}', './src/app/**/*.{js,jsx}'],
@@ -12,6 +15,49 @@ export default {
 			},
 		},
 
+		fontSize: {
+			xm: ['10px', '12px'],
+			xs: '12px',
+			sm: '14px',
+			base: '16px',
+			lg: '18px',
+			xl: '20px',
+			'2xl': '24px',
+			'3xl': '30px',
+			'3.5xl': '32px',
+			'4xl': '36px',
+			'4.5xl': '40px',
+			'10xl': '80px',
+			'11xl': '86px',
+			'12xl': '120px',
+			'13xl': '48px',
+			'14xl': '64px',
+		},
+
+		lineHeight: {
+			3: '12px',
+			3.5: '14px',
+			4: '16px',
+			4.5: '18px',
+			5: '20px',
+			5.5: '22px',
+			6: '24px',
+			7: '28px',
+			7.5: '28.8',
+			9: '36px',
+			9.5: '38.4',
+			10: '40px',
+			11: '48px',
+			12: '108px',
+			13: '148px',
+			14: '64px',
+			15: '96px',
+		},
+
+		fontFamily: {
+			Syne: ['Syne', ...defaultTheme.fontFamily.sans],
+			Prompt: ['Prompt', ...defaultTheme.fontFamily.sans],
+		},
 		extend: {
 			colors: {
 				border: 'hsl(var(--border))',
@@ -67,24 +113,6 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 			},
-		},
-		fontSize: {
-			xm: ['10px', '12px'],
-			xs: '12px',
-			sm: '14px',
-			base: '16px',
-			lg: '18px',
-			xl: '20px',
-			'2xl': '24px',
-			'3xl': '30px',
-			'3.5xl': '32px',
-			'4xl': '36px',
-			'4.5xl': '40px',
-			'10xl': '80px',
-			'11xl': '86px',
-			'12xl': '120px',
-			'13xl': '48px',
-			'14xl': '64px',
 		},
 	},
 	plugins: [],
