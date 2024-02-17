@@ -1,12 +1,21 @@
-import styled from 'styled-components';
-import tw from 'twin.macro';
+import cva from 'class-variance-authority';
 
-export default styled.p`
-	${tw`
-  text-lg
-  leading-9
-  text-black
-  font-weight:'600'
-  font-Syne
-`}
-`;
+const NavElement = cva({
+	size: {
+		lg: 'text-lg',
+	},
+	leading: {
+		9: 'leading-9',
+	},
+	color: {
+		black: 'text-black',
+	},
+	weight: {
+		600: 'font-weight: 600',
+	},
+	font: {
+		Syne: 'font-family: Syne',
+	},
+});
+
+export default NavElement;

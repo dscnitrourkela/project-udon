@@ -1,12 +1,21 @@
-import styled from 'styled-components';
-import tw from 'twin.macro';
+import cva from 'class-variance-authority';
 
-export default styled.p`
-	${tw`
-  text-xl
-  leading-6
-  text-black
-  font-weight:'700'
-  font-Syne
-`}
-`;
+const NavButton = cva({
+	size: {
+		xl: 'text-xl',
+	},
+	leading: {
+		6: 'leading-6',
+	},
+	color: {
+		black: 'text-black',
+	},
+	weight: {
+		700: 'font-weight: 700',
+	},
+	font: {
+		Syne: 'font-family: Syne',
+	},
+});
+
+export default NavButton;

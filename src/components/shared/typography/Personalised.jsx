@@ -1,11 +1,18 @@
-import styled from 'styled-components';
-import tw from 'twin.macro';
+import cva from 'class-variance-authority';
 
-export default styled.p`
-	${tw`
-  text-base
-  leading-4
-  text-black
-  font-weight:'400'
-`}
-`;
+const Personalised = cva({
+	size: {
+		base: 'text-base',
+	},
+	leading: {
+		4: 'leading-4',
+	},
+	color: {
+		black: 'text-black',
+	},
+	weight: {
+		400: 'font-weight: 400',
+	},
+});
+
+export default Personalised;

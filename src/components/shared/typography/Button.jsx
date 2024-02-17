@@ -1,12 +1,21 @@
-import styled from 'styled-components';
-import tw from 'twin.macro';
+import cva from 'class-variance-authority';
 
-export default styled.p`
-	${tw`
-  text-xl
-  leading-6
-  text-white
-  font-weight:'700'
-  font-Syne
-`}
-`;
+const Button = cva({
+	size: {
+		xl: 'text-xl',
+	},
+	leading: {
+		6: 'leading-6',
+	},
+	color: {
+		white: 'text-white',
+	},
+	weight: {
+		700: 'font-weight: 700',
+	},
+	font: {
+		Syne: 'font-family: Syne',
+	},
+});
+
+export default Button;

@@ -1,12 +1,21 @@
-import styled from 'styled-components';
-import tw from 'twin.macro';
+import cva from 'class-variance-authority';
 
-export default styled.h1`
-	${tw`
-   text-10xl
-   leading-15
-   text-white
-   font-Syne
-   font-weight:'700'
-`}
-`;
+const Heading1 = cva({
+	size: {
+		'10xl': 'text-10xl',
+	},
+	leading: {
+		15: 'leading-15',
+	},
+	color: {
+		white: 'text-white',
+	},
+	weight: {
+		700: 'font-weight: 700',
+	},
+	font: {
+		Syne: 'font-family: Syne',
+	},
+});
+
+export default Heading1;
