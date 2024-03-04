@@ -246,4 +246,11 @@ a {
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	--baground-primary: #F9F5F2,
+	--text-color-primary: #000000,
+	--text-color-tertiary: #FE4409,
+	--text-color-tertiary: #252525,
+	--button-color-primary: #FF7647,
+	--accent-color-primary: #F2DA05,
 }
