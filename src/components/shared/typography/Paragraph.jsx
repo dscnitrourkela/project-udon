@@ -1,4 +1,5 @@
 import { cva } from 'class-variance-authority';
+import { cn } from '../../../lib/utils';
 
 const paragraphVariants = cva(['font-syne', 'text-left', 'leading-7.5', 'font-medium'], {
 	variants: {
@@ -13,7 +14,7 @@ const paragraphVariants = cva(['font-syne', 'text-left', 'leading-7.5', 'font-me
 
 export default function Paragraph({ variant = 'body2', className, children, ...props }) {
 	return (
-		<p className={paragraphVariants({ variant, className })} {...props}>
+		<p className={cn(paragraphVariants({ variant, className }))} {...props}>
 			{children}
 		</p>
 	);

@@ -1,8 +1,10 @@
-import { Heading, Paragraph, Text } from '../components/shared';
+import { Heading, HeroText, Paragraph, PersonalizedText, Text } from '../components/shared';
 
 export default function Playground() {
 	return (
 		<div className='container py-6'>
+			<HeroText>Hero Text</HeroText>
+			<PersonalizedText>Personalized Text</PersonalizedText>
 			<Heading variant='h1'>Heading 1</Heading>
 			<Heading variant='h2'>Heading 2</Heading>
 			<Heading variant='h3'>Heading 3</Heading>

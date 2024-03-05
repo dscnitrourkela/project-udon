@@ -4,6 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: 'Agoka';
+	src: url('/fonts/agoka.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Cassandra';
+	src: url('/fonts/cassandra.ttf') format('truetype');
+}
+
 @layer base {
 	:root {
 		/* Design system */

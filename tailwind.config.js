@@ -30,6 +30,7 @@ export default {
 			'10xl': '48px',
 			'11xl': '64px',
 			'12xl': '72px',
+			'12.5xl': '75px',
 			'13xl': '80px',
 			'14xl': '96px',
 		},
@@ -52,11 +53,14 @@ export default {
 			13: '64px',
 			14: '72px',
 			15: '96px',
+			16: '105px',
 		},
 		fontFamily: {
 			// use in tailwind as font-syne
 			syne: ['Syne', ...defaultTheme.fontFamily.sans],
 			prompt: ['Prompt', ...defaultTheme.fontFamily.sans],
+			agoka: ['Agoka', ...defaultTheme.fontFamily.sans],
+			cassandra: ['Cassandra', ...defaultTheme.fontFamily.sans],
 		},
 		extend: {
 			colors: {

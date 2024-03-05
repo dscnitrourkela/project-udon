@@ -1,4 +1,5 @@
 import { cva } from 'class-variance-authority';
+import { cn } from '../../../lib/utils';
 
 const textVariants = cva(['font-syne', 'text-left', 'font-medium'], {
 	variants: {
@@ -13,7 +14,7 @@ const textVariants = cva(['font-syne', 'text-left', 'font-medium'], {
 
 export default function Text({ variant, className, children, ...props }) {
 	return (
-		<p className={textVariants({ variant, className })} {...props}>
+		<p className={cn(textVariants({ variant, className }))} {...props}>
 			{children}
 		</p>
 	);
