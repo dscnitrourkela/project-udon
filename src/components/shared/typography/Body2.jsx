@@ -8,7 +8,7 @@ const Body2 = cva({
 		7.5: 'leading-7.5',
 	},
 	color: {
-		white: 'text-white',
+		black: 'text-black',
 	},
 	weight: {
 		500: 'font-weight: 500',
