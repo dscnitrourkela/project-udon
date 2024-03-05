@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+import defaultTheme from 'tailwindcss/defaultTheme';
+
 export default {
 	darkMode: ['class'],
 	content: ['./src/pages/**/*.{js,jsx}', './src/components/**/*.{js,jsx}', './src/app/**/*.{js,jsx}'],
@@ -10,6 +13,50 @@ export default {
 			screens: {
 				'2xl': '1400px',
 			},
+		},
+
+		fontSize: {
+			xm: ['10px', '12px'],
+			xs: '12px',
+			sm: '14px',
+			base: '16px',
+			lg: '18px',
+			xl: '20px',
+			'2xl': '24px',
+			'3xl': '30px',
+			'3.5xl': '32px',
+			'4xl': '36px',
+			'4.5xl': '40px',
+			'10xl': '48px',
+			'11xl': '64px',
+			'12xl': '72px',
+			'13xl': '80px',
+			'14xl': '96px',
+		},
+
+		lineHeight: {
+			3: '12px',
+			3.5: '14px',
+			4: '16px',
+			4.5: '18px',
+			5: '20px',
+			5.5: '22px',
+			6: '24px',
+			7: '28px',
+			7.5: '30px',
+			9: '36px',
+			9.5: '38.4',
+			10: '40px',
+			11: '48px',
+			12: '56px',
+			13: '64px',
+			14: '72px',
+			15: '96px',
+		},
+		fontFamily: {
+			// use in tailwind as font-syne
+			syne: ['Syne', ...defaultTheme.fontFamily.sans],
+			prompt: ['Prompt', ...defaultTheme.fontFamily.sans],
 		},
 		extend: {
 			colors: {
