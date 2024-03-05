@@ -60,15 +60,23 @@ export default {
 		},
 		extend: {
 			colors: {
+				/** Design System Starts */
+				primary: {
+					DEFAULT: 'var(--primary)',
+					foreground: 'var(--primary-foreground)',
+					yellow: 'var(--primary-yellow)',
+				},
+				background: 'var(--background)',
+				black: {
+					DEFAULT: 'var(--black)',
+					foreground: 'var(--black-foreground)',
+				},
+
+				/** Design System Ends */
+
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
-				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))',
-				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))',

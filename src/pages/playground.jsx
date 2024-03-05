@@ -13,6 +13,17 @@ export default function Playground() {
 			<Text variant='nav'>Text nav</Text>
 			<Text variant='navButton'>Text navButton</Text>
 			<Text variant='footer'>Text footer</Text>
+
+			<Heading variant='h1' className='mt-6'>
+				Colors
+			</Heading>
+			<ul>
+				<li className='text-primary'>Primary</li>
+				<li className='text-primary-foreground'>Primary Foreground</li>
+				<li className='text-primary-yellow'>Primary Yellow</li>
+				<li className='text-black'>Black</li>
+				<li className='text-black-foreground'>Black Foreground</li>
+			</ul>
 		</div>
 	);
 }
