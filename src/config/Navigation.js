@@ -6,24 +6,29 @@ export default {
 	},
 	navItems: [
 		{
-			id: 'about',
+			id: 'About us',
 			name: 'About',
 			link: '/about',
 		},
 		{
-			id: 'moments',
-			name: 'Moments',
-			link: '/moments',
+			id: 'Events',
+			name: 'Events',
+			link: '/events',
 		},
 		{
-			id: 'sponsors',
+			id: 'Sponsors',
 			name: 'Sponsors',
 			link: '/sponsors',
 		},
 		{
-			id: 'contact',
+			id: 'Contact us',
 			name: 'Contact',
 			link: '/contact',
+		},
+		{
+			id: 'FAQS',
+			name: 'FAQs',
+			link: '/faqs',
 		},
 	],
 };
