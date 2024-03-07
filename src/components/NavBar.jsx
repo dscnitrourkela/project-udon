@@ -3,12 +3,14 @@ import './NavBar.css';
 import NavElement from './shared/typography/NavElement';
 import NavButton from './shared/typography/NavButton';
 import Navigation from '../config/Navigation';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import menuIcon from '../assets/images/menu.png';
+import unionIcon from '../assets/images/Union.png';
 
 function NavBar() {
 	const { navItems } = Navigation;
 	const [isMobile, setIsMobile] = useState(false);
 	const [isNavOpen, setIsNavOpen] = useState(false);
+	const [menuIconSrc, setMenuIconSrc] = useState(menuIcon);
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -20,7 +22,10 @@ function NavBar() {
 	}, []);
 
 	const toggleNav = () => {
-		setIsNavOpen(!isNavOpen);
+		if (isMobile) {
+			setIsNavOpen(!isNavOpen);
+			setMenuIconSrc(isNavOpen ? menuIcon : unionIcon);
+		}
 	};
 
 	return (
@@ -30,24 +35,28 @@ function NavBar() {
 				<div className='ml-[56.6px]'>Logo</div>
 				<div className={`navitem md:flex`}>
 					{navItems.map((item, index) => (
-						<Link to={item.link} key={index}>
-							<NavElement className='mx-[55px]'>{item.name}</NavElement>
-						</Link>
+						<NavElement key={index} className='mx-[55px]'>
+							{item.name}
+						</NavElement>
 					))}
 				</div>
 				<div className='flex'>
-					<NavButton className={`mr-[56.6px] login-button`} onClick={toggleNav}>
-						Login
-					</NavButton>
+					{isMobile ? (
+						<NavButton className={`mr-[56.6px] hamburger-icon`} onClick={toggleNav}>
+							<img src={menuIconSrc} alt='Menu' />
+						</NavButton>
+					) : (
+						<div className='login-button mr-[56.6px]'>Login</div>
+					)}
 				</div>
 			</div>
 			<div className='w-full' style={{ height: '1px', backgroundColor: 'black' }}></div>
 			{isMobile && isNavOpen && (
 				<div className='navMobile flex flex-col justify-center bg-[#252525] items-center gap-[41px] h-[376px] text-white'>
 					{navItems.map((item, index) => (
-						<Link to={item.link} key={index}>
-							<NavElement className='mx-[55px]'>{item.name}</NavElement>
-						</Link>
+						<NavElement key={index} className='mx-[55px]'>
+							{item.name}
+						</NavElement>
 					))}
 				</div>
 			)}
