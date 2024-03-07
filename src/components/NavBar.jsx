@@ -3,8 +3,7 @@ import './NavBar.css';
 import NavElement from './shared/typography/NavElement';
 import NavButton from './shared/typography/NavButton';
 import Navigation from '../config/Navigation';
-import menuIcon from '../assets/images/menu.png';
-import unionIcon from '../assets/images/Union.png';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 function NavBar() {
 	const { navItems } = Navigation;
@@ -21,9 +20,7 @@ function NavBar() {
 	}, []);
 
 	const toggleNav = () => {
-		if (isMobile) {
-			setIsNavOpen(!isNavOpen);
-		}
+		setIsNavOpen(!isNavOpen);
 	};
 
 	return (
@@ -33,31 +30,24 @@ function NavBar() {
 				<div className='ml-[56.6px]'>Logo</div>
 				<div className={`navitem md:flex`}>
 					{navItems.map((item, index) => (
-						<NavElement key={index} className='mx-[55px]'>
-							{item.name}
-						</NavElement>
+						<Link to={item.link} key={index}>
+							<NavElement className='mx-[55px]'>{item.name}</NavElement>
+						</Link>
 					))}
 				</div>
 				<div className='flex'>
-					{isMobile && (
-						<NavButton className={`mr-[56.6px] hamburger-icon`} onClick={toggleNav}>
-							<img src={isNavOpen ? unionIcon : menuIcon} alt='Menu' />
-						</NavButton>
-					)}
-					{!isMobile && (
-						<NavButton className={`mr-[56.6px] login-button`} onClick={toggleNav}>
-							Login
-						</NavButton>
-					)}
+					<NavButton className={`mr-[56.6px] login-button`} onClick={toggleNav}>
+						Login
+					</NavButton>
 				</div>
 			</div>
 			<div className='w-full' style={{ height: '1px', backgroundColor: 'black' }}></div>
 			{isMobile && isNavOpen && (
 				<div className='navMobile flex flex-col justify-center bg-[#252525] items-center gap-[41px] h-[376px] text-white'>
 					{navItems.map((item, index) => (
-						<NavElement key={index} className='mx-[55px]'>
-							{item.name}
-						</NavElement>
+						<Link to={item.link} key={index}>
+							<NavElement className='mx-[55px]'>{item.name}</NavElement>
+						</Link>
 					))}
 				</div>
 			)}
