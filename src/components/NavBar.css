@@ -16,3 +16,9 @@
 .navbar {
 	background-image: url(../assets/images/image.png);
 }
+
+.navitem {
+	@media screen and (max-width: 1185px) {
+		display: none;
+	}
+}
