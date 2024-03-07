@@ -1,6 +1,5 @@
 export default {
 	title: 'Navigation',
-
 	navItems: [
 		{
 			id: 'About us',
