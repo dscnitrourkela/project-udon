@@ -2,15 +2,11 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Text from './typography/Text';
 import Navigation from '../../config/Navigation';
-import menuIcon from '../../assets/images/menu.png';
-import unionIcon from '../../assets/images/Union.png';
 import image from '../../assets/images/image.png';
-
 function NavBar() {
 	const { navItems } = Navigation;
 	const [isMobile, setIsMobile] = useState(false);
 	const [isNavOpen, setIsNavOpen] = useState(false);
-	const [menuIconSrc, setMenuIconSrc] = useState(menuIcon);
 	useEffect(() => {
 		const handleResize = () => {
 			setIsMobile(window.innerWidth < 900);
@@ -22,7 +18,15 @@ function NavBar() {
 	const toggleNav = () => {
 		if (isMobile) {
 			setIsNavOpen(!isNavOpen);
-			setMenuIconSrc(isNavOpen ? menuIcon : unionIcon);
+			if (!isNavOpen) {
+				document.getElementById('line1').style.transform = 'rotate(45deg) translateY(20px) translateX(2px)';
+				document.getElementById('line2').style.transform = 'scaleY(0)';
+				document.getElementById('line3').style.transform = 'rotate(-49deg) translateY(-20px)';
+			} else {
+				document.getElementById('line1').style.transform = 'rotate(0deg)';
+				document.getElementById('line2').style.transform = 'scaleY(1)';
+				document.getElementById('line3').style.transform = 'rotate(0deg)';
+			}
 		}
 	};
 	return (
@@ -48,7 +52,26 @@ function NavBar() {
 				<div className='flex'>
 					{isMobile ? (
 						<button className={`mr-[56.6px] hamburger-icon`} onClick={toggleNav}>
-							<img src={menuIconSrc} alt='Menu' />
+							<div
+								id='line1'
+								className='w-[52px] h-2 bg-black mb-2 rounded-lg border-black border-solid bg-[#FF4409]'
+								style={{
+									boxShadow: '2px 2px 0px 0px #000, 3px 4px 9.2px 0px rgba(222, 222, 222, 0.48) inset',
+									transition: 'transform 0.3s ease',
+								}}></div>
+							<div
+								id='line2'
+								className='w-[52px] h-2 bg-black mb-2 rounded-lg border-black border-solid  bg-[#FF4409]'
+								style={{
+									boxShadow: '2px 2px 0px 0px #000, 3px 4px 9.2px 0px rgba(222, 222, 222, 0.48) inset',
+								}}></div>
+							<div
+								id='line3'
+								className='w-[52px] h-2 bg-black rounded-lg border-black border-solid  bg-[#FF4409]'
+								style={{
+									boxShadow: '2px 2px 0px 0px #000, 3px 4px 9.2px 0px rgba(222, 222, 222, 0.48) inset',
+									transition: 'transform 0.3s ease',
+								}}></div>
 						</button>
 					) : (
 						<Text
