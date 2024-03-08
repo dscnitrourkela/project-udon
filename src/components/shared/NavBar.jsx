@@ -11,29 +11,26 @@ function NavBar() {
 	const [isMobile, setIsMobile] = useState(false);
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	const [menuIconSrc, setMenuIconSrc] = useState(menuIcon);
-
 	useEffect(() => {
 		const handleResize = () => {
-			setIsMobile(window.innerWidth < 1185);
+			setIsMobile(window.innerWidth < 900);
 		};
 		window.addEventListener('resize', handleResize);
 		handleResize();
 		return () => window.removeEventListener('resize', handleResize);
 	}, []);
-
 	const toggleNav = () => {
 		if (isMobile) {
 			setIsNavOpen(!isNavOpen);
 			setMenuIconSrc(isNavOpen ? menuIcon : unionIcon);
 		}
 	};
-
 	return (
 		<div>
 			<div
 				className='navbar flex justify-between items-center opacity-53 bg-hard-light bg-center bg-cover h-[73.8px] overflow-hidden'
 				style={{ backgroundImage: `url(${image})` }}>
-				<div className='ml-[56.6px]'>Logo</div>
+				<div className='ml-[56.6px] max-[1185px]:ml-[45px]'>Logo</div>
 				<div className={`navitem md:flex`}>
 					<div
 						style={{
@@ -41,7 +38,7 @@ function NavBar() {
 						}}>
 						{navItems.map((item, index) => (
 							<Link to={item.link} key={index}>
-								<Text variant='nav' className='mx-[55px]'>
+								<Text variant='nav' className='mx-[55px]  max-[1185px]:mx-[38px]'>
 									{item.name}
 								</Text>
 							</Link>
@@ -50,9 +47,9 @@ function NavBar() {
 				</div>
 				<div className='flex'>
 					{isMobile ? (
-						<Text as='button' className={`mr-[56.6px] hamburger-icon`} onClick={toggleNav} variant='navButton'>
+						<button className={`mr-[56.6px] hamburger-icon`} onClick={toggleNav}>
 							<img src={menuIconSrc} alt='Menu' />
-						</Text>
+						</button>
 					) : (
 						<Text
 							variant='navButton'
@@ -80,5 +77,4 @@ function NavBar() {
 		</div>
 	);
 }
-
 export default NavBar;
