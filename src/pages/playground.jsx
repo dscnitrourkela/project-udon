@@ -1,5 +1,7 @@
 import { Heading, HeroText, Paragraph, PersonalizedText, Text } from '../components/shared';
 import Footer from '../components/shared/marginals/footer.jsx';
+import Payment from './Payment.jsx';
+import Hero from './Hero.jsx';
 
 export default function Playground() {
 	return (
@@ -29,7 +31,8 @@ export default function Playground() {
 					<li className='text-black-foreground'>Black Foreground</li>
 				</ul>
 			</div>
-
+			<Hero />
+			<Payment />
 			<Footer />
 		</>
 	);
