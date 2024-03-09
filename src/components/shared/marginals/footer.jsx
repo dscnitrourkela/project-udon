@@ -11,7 +11,7 @@ export default function Footer() {
 					</div>
 				</div>
 				<div className='flex lg:flex-row flex-col md:justify-between gap:[48px] lg:gap-[100px]'>
-					<div className='mx-auto h-[174px] w-[174px] my-auto pl-[24px]'>
+					<div className='mx-auto lg:mx-0 h-[174px] w-[174px] my-auto lg:pl-[24px]'>
 						<img
 							src='https://res.cloudinary.com/dme9vltjf/image/upload/v1697438367/Instagram_post_-_7_y5szxa.png'
 							alt='logo'
