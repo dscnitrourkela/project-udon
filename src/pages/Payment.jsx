@@ -1,21 +1,54 @@
 import { Heading } from '../components/shared';
 import Paragraph from '../components/shared/typography/Paragraph';
-
+import { Paymentdata } from '../data/Paymentdata';
 export default function Payment() {
 	return (
 		<>
-			<Heading variant='h2'>Payment</Heading>
-			<Paragraph variant='body3'>Send an email to recrourkela1998@gmail.com with screenshot of your payment.</Paragraph>
-			<Heading variant='h3'>Payment method we have</Heading>
+			<div className='container mx-auto px-4 lg:px-0'>
+				<Heading
+					variant='h2'
+					className='text-primary-yellow'
+					style={{
+						textShadow: '1.7px 1.7px 0px #000000',
+						WebkitTextStrokeWidth: 1,
+						WebkitTextStrokeColor: 'black',
+					}}>
+					Payment
+				</Heading>
+				<Paragraph variant='body3'>Send an email to recrourkela1998@gmail.com with a screenshot of your payment.</Paragraph>
+			</div>
 
-			<Paragraph variant='body3'>Preferred method:Transfer funds from your bank to our CURRENT account</Paragraph>
-			<Paragraph variant='body3'>Bank: State Bank of India</Paragraph>
-			<Paragraph variant='body3'>Account name:NIT Rourkela 1998 Alumni</Paragraph>
-			<Paragraph variant='body3'>Account number:41728775160(Current Account)</Paragraph>
-			<Paragraph variant='body3'>IFSC Code:SBIN0002109</Paragraph>
-			<Paragraph variant='body3'>MICR Code:769002007</Paragraph>
-			<Paragraph variant='body3'>Branch Code: 002109</Paragraph>
-			<Heading variant='h3'>
+			{/* <div className='container mx-auto px-4 lg:px-0 border border-solid border-black'>
+    <Heading variant='h3' className='text-center my-8 lg:my-16'>Payment method we have</Heading>
+    <Paragraph variant='body3' className='text-center mb-8 lg:mb-16'>Preferred method: Transfer funds from your bank to our CURRENT account</Paragraph>
+    <div className='flex flex-col items-center'>
+        {Paymentdata.map((item, index) => (
+            <Paragraph variant='body3' key={index} className='text-center lg:mb-4'>
+                {item}
+            </Paragraph>
+        ))}
+    </div>
+</div> */}
+
+			<div className='container mx-auto px-4 lg:px-0  flex justify-center'>
+				<div className='border border-solid border-black p-4 w-1/2'>
+					<Heading variant='h3' className='text-center my-8 lg:my-16'>
+						Payment method we have
+					</Heading>
+					<Paragraph variant='body3' className='text-center mb-8 lg:mb-16'>
+						Preferred method: Transfer funds from your bank to our CURRENT account
+					</Paragraph>
+					<div className='flex flex-col items-center'>
+						{Paymentdata.map((item, index) => (
+							<Paragraph variant='body3' key={index} className='text-center lg:mb-4'>
+								{item}
+							</Paragraph>
+						))}
+					</div>
+				</div>
+			</div>
+
+			<Heading variant='body3' className='text-primary-foreground flex justify-center '>
 				Please contact the organizers if you want to pay in installments or one of the above methods do not work for you.
 			</Heading>
 		</>
