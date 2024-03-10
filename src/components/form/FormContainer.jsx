@@ -1,12 +1,12 @@
 import React from 'react';
 import { Heading, Inputs, Paragraph } from '../shared';
 import formimg from '../../assets/images/form-tickets.png';
-import { feeCoverage, initialContent, inputContent } from '../../data/formInformation';
+import { feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
 
 const FormContainer = () => {
 	return (
-		<div className='text-white bg-black flex flex-row justify-between' style={{ border: '1px solid aqua' }}>
-			<div id='info' className='w-[45%] m-8 p-2' style={{ border: '1px solid red' }}>
+		<div className='text-white bg-black flex flex-col md:flex-row justify-between' style={{ border: '1px solid aqua' }}>
+			<div id='info' className='w-[90%] md:w-[45%] m-8 p-2' style={{ border: '1px solid red' }}>
 				{initialContent.map((item, index) =>
 					index == 0 ? (
 						<Paragraph variant='body3' key={index}>
@@ -49,7 +49,7 @@ const FormContainer = () => {
 				</Paragraph>
 			</div>
 
-			<div id='form' className='w-[55%] m-8 p-2' style={{ border: '1px solid red' }}>
+			<div id='form' className='w-[90%] md:w-[53%] m-8 p-2' style={{ border: '1px solid red' }}>
 				{inputContent.map((item, index) => (
 					<React.Fragment key={index}>
 						<Paragraph
@@ -65,7 +65,7 @@ const FormContainer = () => {
 								<Inputs className='inline mr-3 w-[30%]' id={id} placeholder={item.placeholder[idx]} key={idx} />
 							))
 						) : (
-							<Inputs className='block w-[90%]' id={item.id} placeholder={item.placeholder} />
+							<Inputs className='block w-[98%]' id={item.id} placeholder={item.placeholder} />
 						)}
 					</React.Fragment>
 				))}
@@ -76,11 +76,16 @@ const FormContainer = () => {
 					placeholder='Registration Type'
 				/>
 
-				<Heading className='text-primary' variant='h1'>
-					Form Container
-				</Heading>
-				<Paragraph variant='body3'>This is the form container</Paragraph>
-				<div>FormContainer</div>
+				<Paragraph variant='body3' className='my-6 text-xl'>
+					{lastPartContent}
+				</Paragraph>
+
+				<button className='bg-[#FF7647] text-black rounded-md p-2 mt-6 w-[100%] '>
+					{' '}
+					<Paragraph variant='body3' className='inline mx-auto text-xl'>
+						Register Now
+					</Paragraph>
+				</button>
 			</div>
 		</div>
 	);
