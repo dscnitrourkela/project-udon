@@ -1,10 +1,11 @@
 import { Heading, HeroText, Paragraph, PersonalizedText, Text } from '../components/shared';
 import Footer from '../components/shared/marginals/footer.jsx';
+import FormContainer from '../components/form/FormContainer.jsx';
 
 export default function Playground() {
 	return (
 		<>
-			<div className='container py-6'>
+			<div>
 				<HeroText>Hero Text</HeroText>
 				<PersonalizedText>Personalized Text</PersonalizedText>
 				<Heading variant='h1'>Heading 1</Heading>
@@ -14,6 +15,8 @@ export default function Playground() {
 				<Paragraph variant='body2'>Paragraph body2</Paragraph>
 				<Paragraph variant='body3'>Paragraph body3</Paragraph>
 				<Text variant='button'>Text button</Text>
+
+				<FormContainer />
 				<Text variant='nav'>Text nav</Text>
 				<Text variant='navButton'>Text navButton</Text>
 				<Text variant='footer'>Text footer</Text>
