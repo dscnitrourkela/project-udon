@@ -5,8 +5,8 @@ import { feeCoverage, initialContent, inputContent, lastPartContent } from '../.
 
 const FormContainer = () => {
 	return (
-		<div className='text-white bg-black flex flex-col md:flex-row justify-between' style={{ border: '1px solid aqua' }}>
-			<div id='info' className='w-[90%] md:w-[45%] m-8 p-2' style={{ border: '1px solid red' }}>
+		<div className='text-white bg-black flex flex-col md:flex-row justify-between'>
+			<div id='info' className='w-[90%] md:w-[45%] m-8 p-2'>
 				{initialContent.map((item, index) =>
 					index == 0 ? (
 						<Paragraph variant='body3' key={index}>
@@ -49,7 +49,7 @@ const FormContainer = () => {
 				</Paragraph>
 			</div>
 
-			<div id='form' className='w-[90%] md:w-[53%] m-8 p-2' style={{ border: '1px solid red' }}>
+			<div id='form' className='w-[90%] md:w-[55%] m-8 p-2'>
 				{inputContent.map((item, index) => (
 					<React.Fragment key={index}>
 						<Paragraph
