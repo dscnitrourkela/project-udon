@@ -1,0 +1,45 @@
+import { cn } from '../../lib/utils';
+import { cva } from 'class-variance-authority';
+
+const hamburgerVariants = cva(['hamburger-icon', 'flex-col'], {
+	variants: {
+		isOpen: {
+			true: 'open',
+			false: 'closed',
+		},
+	},
+	defaultVariants: {
+		isOpen: false,
+	},
+});
+
+export default function Hamburger({ isOpen, onClick }) {
+	return (
+		<button className={cn(hamburgerVariants({ isOpen }), 'md:hidden', 'mr-[56.6px]')} onClick={onClick}>
+			<div
+				id='line1'
+				className='w-[52px] h-2 bg-black mb-2 rounded-lg border-black border-solid bg-orange-600'
+				style={{
+					boxShadow: '2px 2px 0px 0px #000, 3px 4px 9.2px 0px rgba(222, 222, 222, 0.48) inset',
+					transition: 'transform 0.3s ease',
+					transform: isOpen ? 'rotate(-46deg) translateY(20px) translateX(2px)' : 'rotate(0deg)',
+				}}></div>
+
+			<div
+				id='line2'
+				className='w-[52px] h-2 bg-black mb-2 rounded-lg border-black border-solid  bg-orange-600'
+				style={{
+					boxShadow: '2px 2px 0px 0px #000, 3px 4px 9.2px 0px rgba(222, 222, 222, 0.48) inset',
+					transform: isOpen ? 'scaleY(0)' : 'scaleY(1)',
+				}}></div>
+			<div
+				id='line3'
+				className='w-[52px] h-2 bg-black rounded-lg border-black border-solid   bg-orange-600'
+				style={{
+					boxShadow: '2px 2px 0px 0px #000, 3px 4px 9.2px 0px rgba(222, 222, 222, 0.48) inset',
+					transition: 'transform 0.3s ease',
+					transform: isOpen ? 'rotate(45deg) translateY(-29px)' : 'rotate(0deg)',
+				}}></div>
+		</button>
+	);
+}

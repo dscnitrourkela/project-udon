@@ -11,7 +11,7 @@ const buttonVariants = cva(['flex', 'items-center', 'justify-center', 'rounded']
 				'border-solid',
 				'rounded-[8px]',
 				'px-[12px]',
-				'py-[16px]',
+				'py-[10px]',
 				'gap-[10px]',
 				'text-black',
 				'font-semibold',
@@ -29,7 +29,7 @@ const buttonVariants = cva(['flex', 'items-center', 'justify-center', 'rounded']
 	},
 });
 
-export default function DesktopButton({ variant, size, className, children, ...props }) {
+export default function Button({ variant, size, className, children, ...props }) {
 	return (
 		<button className={cn(buttonVariants({ variant, size, className }))} {...props}>
 			{children}
