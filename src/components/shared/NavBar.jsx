@@ -16,9 +16,9 @@ function NavBar() {
 	};
 
 	return (
-		<div>
+		<div style={{ position: 'sticky', top: '0' }}>
 			<div
-				className='navbar flex justify-between items-center opacity-53 bg-hard-light bg-center bg-cover h-[73.8px] overflow-hidden pl-10'
+				className='navbar flex justify-between items-center opacity-53 bg-hard-light bg-center bg-cover h-[73.8px] overflow-hidden pl-10 '
 				style={{ backgroundImage: `url(${image})` }}>
 				<Logo src={logo.src} alt={logo.alt} />
 				<div className={`navitem md:flex ${isNavOpen ? 'hidden' : 'flex'} hidden`}>
@@ -45,7 +45,9 @@ function NavBar() {
 			</div>
 			<div className='w-full' style={{ height: '1px', backgroundColor: 'black' }}></div>
 			{isNavOpen && (
-				<div className='navMobile flex flex-col justify-center bg-[#252525] items-center gap-[41px] h-[376px] text-white md:hidden'>
+				<div
+					className='navMobile flex flex-col justify-center bg-[#252525] items-center gap-[41px] h-[376px] text-white md:hidden'
+					style={{ position: 'absolute', top: '75px', left: '0', right: '0', bottom: '0' }}>
 					{navItems.map((item, index) => (
 						<Link to={item.link} key={index}>
 							<Text variant='nav' className='mx-[55px]'>
