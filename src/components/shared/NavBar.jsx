@@ -4,13 +4,15 @@ import Text from './typography/Text';
 import Navigation from '../../config/Navigation';
 import image from '../../assets/images/image.png';
 import DesktopButton from './DesktopButton';
+import Logo from './Logo';
+
 function NavBar() {
 	const { navItems, logo } = Navigation;
 	const [isMobile, setIsMobile] = useState(false);
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	useEffect(() => {
 		const handleResize = () => {
-			setIsMobile(window.innerWidth < 870);
+			setIsMobile(window.innerWidth < 800);
 		};
 		window.addEventListener('resize', handleResize);
 		handleResize();
@@ -35,7 +37,7 @@ function NavBar() {
 			<div
 				className='navbar flex justify-between items-center opacity-53 bg-hard-light bg-center bg-cover h-[73.8px] overflow-hidden pl-10'
 				style={{ backgroundImage: `url(${image})` }}>
-				<img src={logo.src} alt={logo.alt} height={'70px'} width={'70px'} />
+				<Logo src={logo.src} alt={logo.alt} />
 				<div className={`navitem md:flex`}>
 					<div
 						style={{
@@ -43,7 +45,7 @@ function NavBar() {
 						}}>
 						{navItems.map((item, index) => (
 							<Link to={item.link} key={index}>
-								<Text variant='nav' className='mx-[55px]  max-[1185px]:mx-[33px]'>
+								<Text variant='nav' className='mx-[55px]  max-[1185px]:mx-[28px]'>
 									{item.name}
 								</Text>
 							</Link>
