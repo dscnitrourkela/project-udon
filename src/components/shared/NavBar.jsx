@@ -47,7 +47,7 @@ function NavBar() {
 			{isNavOpen && (
 				<div
 					className='navMobile flex flex-col justify-center bg-[#252525] items-center gap-[41px] h-[376px] text-white md:hidden'
-					style={{ position: 'absolute', top: '75px', left: '0', right: '0', bottom: '0' }}>
+					style={{ position: 'absolute', top: '74px', left: '0', right: '0', bottom: '0' }}>
 					{navItems.map((item, index) => (
 						<Link to={item.link} key={index}>
 							<Text variant='nav' className='mx-[55px]'>
