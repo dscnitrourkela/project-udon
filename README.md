@@ -1,7 +1,9 @@
 [![Starware](https://img.shields.io/badge/Starware-⭐-black?labelColor=f9b00d)](https://github.com/zepfietje/starware)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -66,14 +68,14 @@ The UI components are built using [Shadcn/UI](https://shadcn-ui.vercel.app/).
 
 Following technologies and libraries are used for the development of this website
 
-- [React](https://reactjs.org/)
-- [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Shadcn/UI](https://shadcn-ui.vercel.app/)
-- [Cloudflare](https://www.cloudflare.com/)
-- [Redux](https://redux.js.org/)
-- [Firebase](https://firebase.google.com/)
-- [Netlify](https://www.netlify.com/)
+-  [React](https://reactjs.org/)
+-  [Vite](https://vitejs.dev/)
+-  [Tailwind CSS](https://tailwindcss.com/)
+-  [Shadcn/UI](https://shadcn-ui.vercel.app/)
+-  [Cloudflare](https://www.cloudflare.com/)
+-  [Redux](https://redux.js.org/)
+-  [Firebase](https://firebase.google.com/)
+-  [Netlify](https://www.netlify.com/)
 
 ## Getting Started
 
@@ -81,36 +83,35 @@ To setup the project locally the steps below.
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/en/download/)
+-  [Node.js](https://nodejs.org/en/download/)
 
-  ```sh
-  # homebrew
-  brew install nodejs
+   ```sh
+   # homebrew
+   brew install nodejs
 
-  # sudo apt (Debian based systems)
-  sudo apt install nodejs
+   # sudo apt (Debian based systems)
+   sudo apt install nodejs
 
-  # pacman (Arch Linux)
-  pacman -S nodejs
+   # pacman (Arch Linux)
+   pacman -S nodejs
 
-  # module Install (Fedora)
-  dnf module install nodejs:<stream> # stream is the version
+   # module Install (Fedora)
+   dnf module install nodejs:<stream> # stream is the version
 
-  # yum (CentOS, Red Hat)
-  yum install nodejs
+   # yum (CentOS, Red Hat)
+   yum install nodejs
 
-  # windows (chocolatey)
-  choco install nodejs
+   # windows (chocolatey)
+   choco install nodejs
 
-  ```
+   ```
 
-- [PNPM](https://pnpm.io/installation)
-> [!NOTE]
-> Best way to install it is using `corepack`. It is recommended to use pnpm as the package manager for this project. It is faster and more efficient than npm and yarn.
+-  [PNPM](https://pnpm.io/installation)
 
+   > [!NOTE]
+   > Best way to install it is using `corepack`. It is recommended to use pnpm as the package manager for this project. It is faster and more efficient than npm and yarn.
 
-
-- [Git](https://git-scm.com/downloads)
+-  [Git](https://git-scm.com/downloads)
 
 ```sh
   # homebrew
@@ -139,11 +140,11 @@ Our Slack Community: [Slack Invite](http://bit.ly/NITRDevs) <br>
 
 Please refer to the project's style and contribution guidelines for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
 
-1.  **Fork** the repo on GitHub
-2.  **Clone** the project to your local system
-3.  **Commit** changes to your own separate branch
-4.  **Push** your work back up to your fork
-5.  Submit a **Pull request** so that we can review your changes
+1. **Fork** the repo on GitHub
+2. **Clone** the project to your local system
+3. **Commit** changes to your own separate branch
+4. **Push** your work back up to your fork
+5. Submit a **Pull request** so that we can review your changes
 
 NOTE 1: Please abide by the [Contributing Guidelines](https://github.com/dscnitrourkela/project-unagi/blob/master/CONTRIBUTING.md).
 
@@ -177,7 +178,6 @@ Following are the commands to add new components from ShadCN/UI
 pnpm dlx shadcn-ui@latest add <component-name>
 
 ```
-
 
 #### Adding/Removing Dependencies
 
@@ -232,7 +232,8 @@ Your appreciation makes us grow and glow up. ⭐
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="http://ashishpadhy.live"><img src="https://avatars.githubusercontent.com/u/100484401?v=4?s=100" width="100px;" alt="Ashish Padhy"/><br /><sub><b>Ashish Padhy</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-unagi/commits?author=Shurtu-gal" title="Code">💻</a> <a href="#projectManagement-Shurtu-gal" title="Project Management">📆</a> <a href="https://github.com/dscnitrourkela/project-unagi/commits?author=Shurtu-gal" title="Tests">⚠️</a> <a href="#maintenance-Shurtu-gal" title="Maintenance">🚧</a> <a href="#infra-Shurtu-gal" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://ashishpadhy.live"><img src="https://avatars.githubusercontent.com/u/100484401?v=4?s=100" width="100px;" alt="Ashish Padhy"/><br /><sub><b>Ashish Padhy</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=Shurtu-gal" title="Code">💻</a> <a href="#projectManagement-Shurtu-gal" title="Project Management">📆</a> <a href="https://github.com/dscnitrourkela/project-udon/commits?author=Shurtu-gal" title="Tests">⚠️</a> <a href="#maintenance-Shurtu-gal" title="Maintenance">🚧</a> <a href="#infra-Shurtu-gal" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/starkjay21"><img src="https://avatars.githubusercontent.com/u/100998898?v=4?s=100" width="100px;" alt="Jayesh Nayak"/><br /><sub><b>Jayesh Nayak</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=starkjay21" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
