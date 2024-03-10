@@ -18,7 +18,7 @@ const FormContainer = () => {
 						</Paragraph>
 					)
 				)}
-				<div id='imgContainer' className='mx-auto my-8 w-[408px]'>
+				<div id='imgContainer' className='mx-auto my-8 w-[50vw] md:w-[408px]'>
 					<img src={formimg} height={'100%'} width={'100%'} alt='ticket-price' />
 				</div>
 				<Paragraph variant='body3'>
