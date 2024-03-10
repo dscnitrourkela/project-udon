@@ -1,6 +1,6 @@
 export const initialContent = [
 	"Don't miss the 1999 Silver Jubilee event! Register now to secure your spot and confirm your registration by making a payment.",
-	'We understand that plans can change. That&apos;s why we offer a full refund if you need to cancel your registration until September 30th.',
+	"We understand that plans can change. That's why we offer a full refund if you need to cancel your registration until September 30th.",
 ];
 
 export const feeCoverage = [
