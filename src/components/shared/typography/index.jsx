@@ -3,6 +3,7 @@ import { cn } from '../../../lib/utils';
 export { default as Heading } from './Heading';
 export { default as Paragraph } from './Paragraph';
 export { default as Text } from './Text';
+export { default as Inputs } from './FormInputs';
 
 export const HeroText = ({ children, className, ...props }) => {
 	return (
@@ -14,7 +15,7 @@ export const HeroText = ({ children, className, ...props }) => {
 
 export const PersonalizedText = ({ children, className, ...props }) => {
 	return (
-		<p className={cn('text-base leading-4 font-semibol font-cassandra text-left', className)} {...props}>
+		<p className={cn('text-base leading-4 font-semibold font-cassandra text-left', className)} {...props}>
 			{children}
 		</p>
 	);

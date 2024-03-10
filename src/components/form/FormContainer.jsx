@@ -1,6 +1,7 @@
-import { Heading, Paragraph } from '../shared';
+import React from 'react';
+import { Heading, Inputs, Paragraph } from '../shared';
 import formimg from '../../assets/images/form-tickets.png';
-import { feeCoverage, initialContent } from '../../data/formInformation';
+import { feeCoverage, initialContent, inputContent } from '../../data/formInformation';
 
 const FormContainer = () => {
 	return (
@@ -26,7 +27,10 @@ const FormContainer = () => {
 					fee.
 				</Paragraph>
 
-				<Heading variant='h3' className='text-primary-yellow shadow-subheading mt-10'>
+				<Heading
+					variant='h3'
+					className='text-primary-yellow shadow-subheading mt-10'
+					style={{ textShadow: '1px 1px 0px 0px #F9F9F9' }}>
 					The Registration fee covers the following
 				</Heading>
 
@@ -45,7 +49,33 @@ const FormContainer = () => {
 				</Paragraph>
 			</div>
 
-			<div id='form' className=' w-[55%] m-8 p-2' style={{ border: '1px solid red' }}>
+			<div id='form' className='w-[55%] m-8 p-2' style={{ border: '1px solid red' }}>
+				{inputContent.map((item, index) => (
+					<React.Fragment key={index}>
+						<Paragraph
+							variant='body2'
+							htmlFor={item.id}
+							className='inline shadow-white px-2'
+							style={{ boxShadow: '1px 1px 0px 0px #FF7342' }}>
+							{item.label}
+						</Paragraph>{' '}
+						<br />
+						{Array.isArray(item.id) ? (
+							item.id.map((id, idx) => (
+								<Inputs className='inline mr-3 w-[30%]' id={id} placeholder={item.placeholder[idx]} key={idx} />
+							))
+						) : (
+							<Inputs className='block w-[90%]' id={item.id} placeholder={item.placeholder} />
+						)}
+					</React.Fragment>
+				))}
+
+				<textarea
+					className='outline-none	bg-inherit rounded-md my-3 mb-6 w-[90%] h-[8vw] text-[#B0B0B0] p-2 block'
+					style={{ border: '1px solid #FF7647', boxShadow: '2px 2px 0px 0px #F9F9F9' }}
+					placeholder='Registration Type'
+				/>
+
 				<Heading className='text-primary' variant='h1'>
 					Form Container
 				</Heading>
