@@ -15,5 +15,5 @@ const imgVariants = cva(['w-auto'], {
 });
 
 export default function Logo({ className, src, alt, size, ...props }) {
-	return <img className={cn(imgVariants({ size, className }), 'h-[70px] w-[70px]')} src={src} alt={alt} {...props} />;
+	return <img className={cn(imgVariants({ size, className }), 'h-[50px] w-[50px]')} src={src} alt={alt} {...props} />;
 }
