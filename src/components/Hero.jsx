@@ -71,22 +71,6 @@ const LeftCard = styled.div`
 		position: absolute;
 		left: -170px;
 	}
-	@media (min-height: 1024px) {
-		left: -10%;
-		transform: rotate(-20deg);
-	}
-
-	@media (max-width: 1024px) and (min-width: 768px) {
-		position: absolute;
-		left: -80px;
-		top: 80px;
-		transform: rotate(-20deg);
-	}
-	@media (max-width: 1024px) and (min-width: 768px) {
-		top: 80px;
-		left: 80px;
-		transform: rotate(-10deg);
-	}
 `;
 
 const RightCard = styled.div`
@@ -152,14 +136,8 @@ const SVGWrapper = styled.div`
 		top: 585px;
 		transform: rotate(0deg);
 	}
-	@media (min-height: 1024px) {
-		position: absolute;
-		right: 230px;
-		top: 585px;
-		transform: rotate(0deg);
-	}
-	@media (max-width: 1024px) and (min-width: 768px) {
-		right: 230px;
+	@media (min-width: 1024px) {
+		bottom: 200px;
 	}
 `;
 
@@ -167,7 +145,7 @@ const ButtonContainer = styled.div`
 	position: absolute;
 	top: 444.94px;
 	left: 20px;
-	margin-top: 40px;
+	margin-top: 20px;
 `;
 
 const Button = styled.button`
@@ -236,16 +214,13 @@ const HeroTextContainer = styled.div`
 
 const HeroText1 = styled.div`
 	font-family: Syne;
-	font-size: 75px;
+	margin-top: 50px;
+	font-size: 35px; /* Adjusted font size */
 	font-style: normal;
-	font-weight: 500;
+	font-weight: 700;
 	line-height: normal;
-	letter-spacing: 3.75px;
+	letter-spacing: 1.5px; /* Adjusted letter spacing */
 	color: #111;
-	@media (max-width: 1024px) and (min-width: 768px) {
-		font-size: 50px;
-		padding: 40px 0;
-	}
 `;
 
 const Batch = styled.span`
