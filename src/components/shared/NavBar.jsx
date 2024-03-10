@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import Text from './typography/Text';
 import Navigation from '../../config/Navigation';
 import image from '../../assets/images/image.png';
+import DesktopButton from './DesktopButton';
 function NavBar() {
-	const { navItems } = Navigation;
+	const { navItems, logo } = Navigation;
 	const [isMobile, setIsMobile] = useState(false);
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	useEffect(() => {
 		const handleResize = () => {
-			setIsMobile(window.innerWidth < 900);
+			setIsMobile(window.innerWidth < 870);
 		};
 		window.addEventListener('resize', handleResize);
 		handleResize();
@@ -19,9 +20,9 @@ function NavBar() {
 		if (isMobile) {
 			setIsNavOpen(!isNavOpen);
 			if (!isNavOpen) {
-				document.getElementById('line1').style.transform = 'rotate(45deg) translateY(20px) translateX(2px)';
+				document.getElementById('line1').style.transform = 'rotate(-46deg) translateY(20px) translateX(2px)';
 				document.getElementById('line2').style.transform = 'scaleY(0)';
-				document.getElementById('line3').style.transform = 'rotate(-49deg) translateY(-20px)';
+				document.getElementById('line3').style.transform = 'rotate(45deg) translateY(-29px)';
 			} else {
 				document.getElementById('line1').style.transform = 'rotate(0deg)';
 				document.getElementById('line2').style.transform = 'scaleY(1)';
@@ -32,9 +33,9 @@ function NavBar() {
 	return (
 		<div>
 			<div
-				className='navbar flex justify-between items-center opacity-53 bg-hard-light bg-center bg-cover h-[73.8px] overflow-hidden'
+				className='navbar flex justify-between items-center opacity-53 bg-hard-light bg-center bg-cover h-[73.8px] overflow-hidden pl-10'
 				style={{ backgroundImage: `url(${image})` }}>
-				<div className='ml-[56.6px] max-[1185px]:ml-[45px]'>Logo</div>
+				<img src={logo.src} alt={logo.alt} height={'70px'} width={'70px'} />
 				<div className={`navitem md:flex`}>
 					<div
 						style={{
@@ -42,7 +43,7 @@ function NavBar() {
 						}}>
 						{navItems.map((item, index) => (
 							<Link to={item.link} key={index}>
-								<Text variant='nav' className='mx-[55px]  max-[1185px]:mx-[38px]'>
+								<Text variant='nav' className='mx-[55px]  max-[1185px]:mx-[33px]'>
 									{item.name}
 								</Text>
 							</Link>
@@ -74,14 +75,15 @@ function NavBar() {
 								}}></div>
 						</button>
 					) : (
-						<Text
-							variant='navButton'
-							className='login-button mr-[56.6px] rounded-[8px] border border-black border-solid bg-[#ff7647] flex px-[12px] py-[16px] justify-center items-center gap-[10px] '
+						<DesktopButton
+							variant='primary'
+							size='medium'
+							className='mr-[56.6px]'
 							style={{
 								boxShadow: '2px 2px 0px 0px #000, 3px 4px 9.2px 0px rgba(222, 222, 222, 0.48) inset',
 							}}>
-							Login
-						</Text>
+							<Text variant='navButton'>Login</Text>
+						</DesktopButton>
 					)}
 				</div>
 			</div>
