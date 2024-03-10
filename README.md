@@ -1,7 +1,7 @@
 [![Starware](https://img.shields.io/badge/Starware-⭐-black?labelColor=f9b00d)](https://github.com/zepfietje/starware)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -232,7 +232,8 @@ Your appreciation makes us grow and glow up. ⭐
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="http://ashishpadhy.live"><img src="https://avatars.githubusercontent.com/u/100484401?v=4?s=100" width="100px;" alt="Ashish Padhy"/><br /><sub><b>Ashish Padhy</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-unagi/commits?author=Shurtu-gal" title="Code">💻</a> <a href="#projectManagement-Shurtu-gal" title="Project Management">📆</a> <a href="https://github.com/dscnitrourkela/project-unagi/commits?author=Shurtu-gal" title="Tests">⚠️</a> <a href="#maintenance-Shurtu-gal" title="Maintenance">🚧</a> <a href="#infra-Shurtu-gal" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://ashishpadhy.live"><img src="https://avatars.githubusercontent.com/u/100484401?v=4?s=100" width="100px;" alt="Ashish Padhy"/><br /><sub><b>Ashish Padhy</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=Shurtu-gal" title="Code">💻</a> <a href="#projectManagement-Shurtu-gal" title="Project Management">📆</a> <a href="https://github.com/dscnitrourkela/project-udon/commits?author=Shurtu-gal" title="Tests">⚠️</a> <a href="#maintenance-Shurtu-gal" title="Maintenance">🚧</a> <a href="#infra-Shurtu-gal" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/starkjay21"><img src="https://avatars.githubusercontent.com/u/100998898?v=4?s=100" width="100px;" alt="Jayesh Nayak"/><br /><sub><b>Jayesh Nayak</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=starkjay21" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
