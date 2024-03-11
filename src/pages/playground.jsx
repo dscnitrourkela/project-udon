@@ -1,10 +1,12 @@
 import { Heading, HeroText, Paragraph, PersonalizedText, Text } from '../components/shared';
 import Footer from '../components/shared/marginals/footer.jsx';
 import AboutUs from '../components/AboutUs.jsx';
+import NavBar from '../components/shared/NavBar';
 
 export default function Playground() {
 	return (
 		<>
+			<NavBar />
 			<div className='container py-6'>
 				<HeroText>Hero Text</HeroText>
 				<PersonalizedText>Personalized Text</PersonalizedText>
