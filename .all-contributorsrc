@@ -1,5 +1,5 @@
 {
-  "projectName": "project-unagi",
+  "projectName": "project-udon",
   "projectOwner": "dscnitrourkela",
   "repoType": "github",
   "repoHost": "https://github.com",
@@ -24,6 +24,24 @@
         "test",
         "maintenance",
         "infra"
+      ]
+    },
+    {
+      "login": "starkjay21",
+      "name": "Jayesh Nayak",
+      "avatar_url": "https://avatars.githubusercontent.com/u/100998898?v=4",
+      "profile": "https://github.com/starkjay21",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "anmol5936",
+      "name": "anmol5936",
+      "avatar_url": "https://avatars.githubusercontent.com/u/127973342?v=4",
+      "profile": "https://github.com/anmol5936",
+      "contributions": [
+        "code"
       ]
     }
   ]
