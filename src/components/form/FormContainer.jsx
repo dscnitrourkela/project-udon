@@ -8,7 +8,10 @@ const FormContainer = () => {
 		<div
 			className='text-white bg-black flex flex-col md:flex-row justify-between py-6'
 			style={{
-				backgroundImage: 'url(https://github.com/Srish-ty/project-udon/blob/main/src/assets/images/Ellipse.png)',
+				backgroundImage:
+					'url(https://github.com/Srish-ty/project-udon/blob/feat/form/src/assets/images/Ellipse.png?raw=true)',
+				backgroundRepeat: 'no-repeat',
+				backgroundSize: 'cover',
 			}}>
 			<div id='info' className='w-[90%] md:w-[45%] m-8 p-2'>
 				{initialContent.map((item, index) =>
