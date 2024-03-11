@@ -20,7 +20,6 @@ export default function Playground() {
 				<Paragraph variant='body3'>Paragraph body3</Paragraph>
 				<Text variant='button'>Text button</Text>
 
-				<FormContainer />
 				<Text variant='nav'>Text nav</Text>
 				<Text variant='navButton'>Text navButton</Text>
 				<Text variant='footer'>Text footer</Text>
@@ -36,6 +35,8 @@ export default function Playground() {
 					<li className='text-black-foreground'>Black Foreground</li>
 				</ul>
 			</div>
+
+			<FormContainer />
 			<Footer />
 		</div>
 	);
