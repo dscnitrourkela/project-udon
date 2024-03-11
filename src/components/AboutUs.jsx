@@ -36,7 +36,7 @@ export default function AboutUs() {
 				You all are coming right ??...
 			</PersonalizedText>
 
-			<Paragraph variant='body2' className='text-center mx-auto w-[60%] mt-[-60px] pb-[5%] text-xs sm:text-2xl'>
+			<Paragraph variant='body2' className='text-center mx-auto px-[20%] mt-[-60px] pb-[5%] text-xs sm:text-2xl'>
 				{aboutUsData.content1}{' '}
 				<span className='font-syne text-left text-base sm:text-3.5xl font-bold mr-[15px]'> {aboutUsData.content2}</span>
 				<img
