@@ -1,4 +1,5 @@
-import { Heading } from '../typography/index.jsx';
+import { Heading, Text } from '../typography/index.jsx';
+
 export default function Event() {
 	return (
 		<div className=' p-8'>
@@ -20,13 +21,25 @@ export default function Event() {
 						style={{ borderRadius: '9px', border: '2px solid #000', background: 'var(--Accent-Yellow, #F2DA05)' }}>
 						4PM onward
 					</div>
-					<h3 className='text-xl font-semibold mb-2'>Friday, 22 Dec</h3>
-					<h4 className='text-lg font-semibold mb-4'>Hotel Deepti Courtyard</h4>
+					<h3 className='text-xl font-semibold mb-2'>
+						<Text>Friday, 22 Dec</Text>
+					</h3>
+					<h4 className='text-lg font-semibold mb-4'>
+						<Text>Hotel Deepti Courtyard</Text>
+					</h4>
 					<ul className='text-[#d45500]'>
-						<li>✦ Registration</li>
-						<li>✦ Ice-Breakers</li>
-						<li>✦ Dinner</li>
-						<li>✦ Catch-up Celebration</li>
+						<li>
+							<Text style={{ color: ' #000' }}>✦ Registration</Text>
+						</li>
+						<li>
+							<Text style={{ color: ' #000' }}>✦ Ice-Breakers</Text>
+						</li>
+						<li>
+							<Text style={{ color: ' #000' }}>✦ Dinner</Text>
+						</li>
+						<li>
+							<Text style={{ color: ' #000' }}>✦ Catch-up Celebration</Text>
+						</li>
 					</ul>
 				</div>
 				<div
@@ -43,13 +56,25 @@ export default function Event() {
 						style={{ borderRadius: '9px', border: '2px solid #000', background: 'var(--Accent-Yellow, #F2DA05)' }}>
 						9AM to 10:30PM
 					</div>
-					<h3 className='text-xl font-semibold mb-2'>Friday, 22 Dec</h3>
-					<h4 className='text-lg font-semibold mb-4'>Hotel Deepti Courtyard</h4>
+					<h3 className='text-xl font-semibold mb-2'>
+						<Text>Friday, 22 Dec </Text>
+					</h3>
+					<h4 className='text-lg font-semibold mb-4'>
+						<Text>Hotel Deepti Courtyard</Text>
+					</h4>
 					<ul className='text-[#d45500]'>
-						<li>✦ Registration</li>
-						<li>✦ Ice-Breakers</li>
-						<li>✦ Dinner</li>
-						<li>✦ Catch-up Celebration</li>
+						<li>
+							<Text style={{ color: ' #000' }}>✦ Registration</Text>
+						</li>
+						<li>
+							<Text style={{ color: ' #000' }}>✦ Ice-Breakers</Text>
+						</li>
+						<li>
+							<Text style={{ color: ' #000' }}>✦ Dinner</Text>
+						</li>
+						<li>
+							<Text style={{ color: ' #000' }}>✦ Catch-up Celebration</Text>
+						</li>
 					</ul>
 				</div>
 				<div
@@ -66,13 +91,25 @@ export default function Event() {
 						style={{ borderRadius: '9px', border: '2px solid #000', background: 'var(--Accent-Yellow, #F2DA05)' }}>
 						9AM to 2PM
 					</div>
-					<h3 className='text-xl font-semibold mb-2'>Friday, 22 Dec</h3>
-					<h4 className='text-lg font-semibold mb-4'>Hotel Deepti Courtyard</h4>
+					<h3 className='text-xl font-semibold mb-2'>
+						<Text>Friday, 22 Dec</Text>
+					</h3>
+					<h4 className='text-lg font-semibold mb-4'>
+						<Text>Hotel Deepti Courtyard</Text>
+					</h4>
 					<ul className='text-[#d45500]'>
-						<li>✦ Registration</li>
-						<li>✦ Ice-Breakers</li>
-						<li>✦ Dinner</li>
-						<li>✦ Catch-up Celebration</li>
+						<li>
+							<Text style={{ color: ' #000' }}>✦ Registration</Text>
+						</li>
+						<li>
+							<Text style={{ color: ' #000' }}>✦ Ice-Breakers</Text>
+						</li>
+						<li>
+							<Text style={{ color: ' #000' }}>✦ Dinner</Text>
+						</li>
+						<li>
+							<Text style={{ color: ' #000' }}>✦ Catch-up Celebration</Text>
+						</li>
 					</ul>
 				</div>
 			</div>
