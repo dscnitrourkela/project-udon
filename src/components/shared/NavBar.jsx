@@ -18,7 +18,7 @@ function NavBar() {
 	return (
 		<div style={{ position: 'sticky', top: '0' }}>
 			<div
-				className='navbar flex justify-between items-center opacity-53 bg-hard-light bg-center bg-cover h-[73.8px] overflow-hidden pl-10 '
+				className='navbar flex justify-between items-center opacity-53 bg-hard-light bg-center bg-cover bg-[#F9F5F2] h-[73.8px] overflow-hidden pl-10 '
 				style={{ backgroundImage: `url(${image})` }}>
 				<Logo src={logo.src} alt={logo.alt} />
 				<div className={`navitem md:flex ${isNavOpen ? 'hidden' : 'flex'} hidden`}>
