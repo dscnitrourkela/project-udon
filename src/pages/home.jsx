@@ -27,7 +27,7 @@ export default function Home() {
 				</p>
 			</div>
 			<Link to='/play'>
-				<Button>Go to playground</Button>
+				<Button className='text-white'>Go to playground</Button>
 			</Link>
 		</div>
 	);
