@@ -19,17 +19,15 @@ export default function AboutUs() {
 				</Paragraph>
 			</div>
 
-			<div className='w-full flex justify-center items-center pb-[10%] sm:pb-[14%] md:pb-[12%]'>
-				<div className='flex justify-between w-[95%] sm:w-[75%] md:w-[55%] lg:w-[50%] grid grid-cols-1 sm:grid-cols-3 gap-3'>
-					{aboutUsData.lists.map((list, index) => (
-						<div key={index} className='flex flex-col pb-[3%]'>
-							<img src={list.img_url} alt={list.title} className='mx-auto md:w-[85px] sm:w-[70px] w-[55px] pb-[1%]' />
-							<Paragraph variant='body2' className='text-center font-bold text-xs sm:text-2xl'>
-								{list.title}
-							</Paragraph>
-						</div>
-					))}
-				</div>
+			<div className='flex justify-between px-[0%] sm:px-[12%] md:px-[15%] lg:px-[17%] grid grid-cols-1 sm:grid-cols-3 gap-3 pb-[10%] sm:pb-[14%] md:pb-[12%]'>
+				{aboutUsData.lists.map((list, index) => (
+					<div key={index} className='flex flex-col pb-[3%]'>
+						<img src={list.img_url} alt={list.title} className='mx-auto md:w-[85px] sm:w-[70px] w-[55px] pb-[1%]' />
+						<Paragraph variant='body2' className='text-center font-bold text-xs sm:text-2xl'>
+							{list.title}
+						</Paragraph>
+					</div>
+				))}
 			</div>
 
 			<PersonalizedText
