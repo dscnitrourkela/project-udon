@@ -16,7 +16,7 @@ function NavBar() {
 	};
 
 	return (
-		<div style={{ position: 'sticky', top: '0' }}>
+		<nav style={{ position: 'sticky', top: '0' }}>
 			<div
 				className='navbar flex justify-between items-center opacity-53 bg-hard-light bg-center bg-cover h-[73.8px] overflow-hidden pl-10 '
 				style={{ backgroundImage: `url(${image})` }}>
@@ -57,7 +57,7 @@ function NavBar() {
 					))}
 				</div>
 			)}
-		</div>
+		</nav>
 	);
 }
 
