@@ -28,9 +28,9 @@ const Hero = () => {
 						</button>
 					</div>
 				</div>
-				<div className='w-[100%] md:ml-65 md:w-1/2 flex items-center relative' style={{ height: '600px' }}>
+				<div className='w-[100%] md:w-1/2 flex items-center relative' style={{ height: '600px', border: '1px solid navy' }}>
 					<div
-						className='absolute top-50 right-200'
+						className='absolute top-50 left-10 '
 						style={{
 							borderRadius: '6px',
 							border: '1px solid #000',
