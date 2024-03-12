@@ -77,16 +77,17 @@ const FormContainer = () => {
 						<br />
 						{Array.isArray(item.id) ? (
 							item.id.map((id, idx) => (
-								<Inputs className='inline mr-3 w-[30%]' id={id} placeholder={item.placeholder[idx]} key={idx} />
+								<Inputs className='inline mr-3 w-[31.3%]' id={id} placeholder={item.placeholder[idx]} key={idx} />
 							))
 						) : (
 							<Inputs className='block w-[98%]' id={item.id} placeholder={item.placeholder} />
 						)}
+						<br />
 					</React.Fragment>
 				))}
 
 				<textarea
-					className='outline-none	bg-inherit rounded-md my-3 mb-6 w-[90%] h-[8vw] text-[#B0B0B0] p-2 block'
+					className='outline-none	bg-inherit rounded-md my-3 mb-6 w-[98%] h-[8vw] text-[#B0B0B0] p-2 block'
 					style={{ border: '1px solid #FF7647', boxShadow: '2px 2px 0px 0px #F9F9F9' }}
 					placeholder='Registration Type'
 				/>
