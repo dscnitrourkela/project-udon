@@ -4,8 +4,8 @@ import { Paragraph } from './shared/typography';
 const Hero = () => {
 	return (
 		<>
-			<div className='flex'>
-				<div className='w-1/2  ' style={{ height: '600px' }}>
+			<div className='flex flex-col md:flex-row '>
+				<div className='w-[100%] md:w-1/2 1'>
 					<div className='h-1/3 flex flex-col justify-end ml-2' style={{ color: '#FF4409' }}>
 						<PersonalizedText>Welcome family...</PersonalizedText>
 					</div>
@@ -28,7 +28,7 @@ const Hero = () => {
 						</button>
 					</div>
 				</div>
-				<div className='w-1/2  flex justify-center items-center' style={{ height: '600px' }}>
+				<div className='w-[100%] md:ml-65 md:w-1/2 flex items-center relative' style={{ height: '600px' }}>
 					<div
 						className='absolute top-50 right-200'
 						style={{
@@ -38,9 +38,8 @@ const Hero = () => {
 							boxShadow: '2px 3px 0px 0px #000',
 							width: '303.075px',
 							height: '404.558px',
-							top: '120px',
-							right: '28%',
-
+							top: '100px',
+							right: '68%',
 							transform: 'rotate(-7.121deg)',
 							flexShrink: 0,
 							marginRight: '20px',
@@ -49,10 +48,11 @@ const Hero = () => {
 						<img
 							src='https://res.cloudinary.com/dkpdi1wek/image/upload/v1709662790/left_vv4m1m.jpg'
 							className='w-full'
-							style={{ borderRadius: '4px', height: 'calc(100% - 40px)', padding: '13.598px 10.985px 37.528px 12.393px' }}
+							style={{ borderRadius: '16px', height: 'calc(100% - 40px)', padding: '13.598px 10.985px 37.528px 12.393px' }}
 						/>
 					</div>
 					<div
+						className='absolute top-50 left-10'
 						style={{
 							borderRadius: '6px',
 							border: '1px solid #000',
@@ -67,12 +67,26 @@ const Hero = () => {
 							src='https://res.cloudinary.com/dkpdi1wek/image/upload/v1709662676/1_l7wivq.jpg'
 							className='w-full'
 							style={{
-								borderRadius: '4px',
+								borderRadius: '16px',
 								height: 'calc(100% - 40px)',
 								padding: '12px',
 							}}
 						/>
-
+						<div
+							className='absolute bottom-0 right-0'
+							style={{
+								color: '#0E0E0E',
+								fontFamily: 'Gotham',
+								fontSize: '18px',
+								fontStyle: 'normal',
+								fontWeight: '400',
+								lineHeight: 'normal',
+								letterSpacing: '0.9px',
+								padding: '10px',
+								bottom: '14px',
+							}}>
+							Batch: 1999
+						</div>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							width='111'
@@ -100,7 +114,7 @@ const Hero = () => {
 						</svg>
 					</div>
 					<div
-						className='absolute top-50 right-20'
+						className='absolute top-55 right-40'
 						style={{
 							borderRadius: '6px',
 							border: '1px solid #000',
@@ -116,7 +130,11 @@ const Hero = () => {
 						<img
 							src='https://res.cloudinary.com/dkpdi1wek/image/upload/v1709662873/right_guw2gk.jpg'
 							className='w-full'
-							style={{ borderRadius: '4px', height: 'calc(100% - 40px)', padding: '13.598px 10.985px 37.528px 12.393px' }}
+							style={{
+								borderRadius: '16px',
+								height: 'calc(100% - 40px)',
+								padding: '13.598px 10.985px 37.528px 12.393px',
+							}}
 						/>
 					</div>
 				</div>
