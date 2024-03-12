@@ -4,14 +4,14 @@ import aboutUsData from '../data/aboutUsData.js';
 export default function AboutUs() {
 	return (
 		<section>
-			<div className='container py-6 flex flex-col items-center md:pb-[4%] sm:pb-[8%]'>
+			<div className='container py-6 flex flex-col items-center md:pb-[30px] sm:pb-[51px]'>
 				<Paragraph variant='body2' className='text-center text-xs sm:text-2xl font-semibold'>
 					{aboutUsData.tag1}
 					<br />
 					{aboutUsData.tag2}
 					<span className='font-syne text-left text-base sm:text-3.5xl font-extrabold'>
 						{aboutUsData.tag3_char1}
-						<span className='relative underline decoration-wavy decoration-1 sm:decoration-2 underline-offset-4 sm:underline-offset-8 decoration-primary-foreground'>
+						<span className='relative underline decoration-wavy decoration-1 sm:decoration-2 underline-offset-4 sm:underline-offset-8 decoration-primary-foreground -z-50'>
 							{aboutUsData.tag3_wavy}
 						</span>
 						{aboutUsData.tag3}
@@ -19,10 +19,10 @@ export default function AboutUs() {
 				</Paragraph>
 			</div>
 
-			<div className='flex justify-between px-[0%] sm:px-[12%] md:px-[15%] lg:px-[17%] grid grid-cols-1 sm:grid-cols-3 gap-3 pb-[10%] sm:pb-[14%] md:pb-[12%]'>
+			<div className='flex justify-between px-[0px] sm:px-[77px] md:px-[115px] lg:px-[175px] grid grid-cols-1 sm:grid-cols-3 gap-3 pb-[70px] sm:pb-[130px] md:pb-[135px]'>
 				{aboutUsData.lists.map((list, index) => (
-					<div key={index} className='flex flex-col pb-[3%]'>
-						<img src={list.img_url} alt={list.title} className='mx-auto md:w-[85px] sm:w-[70px] w-[55px] pb-[1%]' />
+					<div key={index} className='flex flex-col pb-[10px]'>
+						<img src={list.img_url} alt={list.title} className='mx-auto md:w-[85px] sm:w-[70px] w-[55px] pb-[15px]' />
 						<Paragraph variant='body2' className='text-center font-bold text-xs sm:text-2xl'>
 							{list.title}
 						</Paragraph>
@@ -31,12 +31,14 @@ export default function AboutUs() {
 			</div>
 
 			<PersonalizedText
-				className='pl-[7%] md:pl-[12%] lg:pl-[15%] pb-[12%] sm:pb-[5%] md:pb-[3%] lg:pb-[1%] text-xs sm:text-base'
+				className='relative pl-[20px] sm:pl-[90px] md:pl-[80px] lg:pl-[90px] xl:pl-[100px] 2xl:pl-[300px] pb-[50px] sm:pb-[32px] md:pb-[23px] lg:pb-[33px] text-[8px] sm:text-base xl:text-base 2xl:text-lg -z-50'
 				style={{ transform: 'rotate(-10.62deg)', transformOrigin: '0 0', color: '#FF6108', fontWeight: '400' }}>
 				You all are coming right ??...
 			</PersonalizedText>
 
-			<Paragraph variant='body2' className='text-center mx-auto px-[20%] mt-[-60px] pb-[5%] text-xs sm:text-2xl'>
+			<Paragraph
+				variant='body2'
+				className='text-center mx-auto px-[30px] sm:px-[135px] mt-[-60px] pb-[25px] sm:pb-[40px] md:pb-[55px] lg:pb-[80px] text-xs sm:text-2xl'>
 				{aboutUsData.content1}{' '}
 				<span className='font-syne text-left text-base sm:text-3.5xl font-bold mr-[15px]'> {aboutUsData.content2}</span>
 				<img
