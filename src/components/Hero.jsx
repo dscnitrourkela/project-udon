@@ -4,8 +4,8 @@ import { Paragraph } from './shared/typography';
 const Hero = () => {
 	return (
 		<>
-			<div className='flex'>
-				<div className='w-1/2  ' style={{ height: '600px' }}>
+			<div className='flex flex-col md:flex-row' style={{ border: '1px solid red' }}>
+				<div className='w-[100%] md:w-1/2  ' style={{ border: '1px solid red' }}>
 					<div className='h-1/3 flex flex-col justify-end ml-2' style={{ color: '#FF4409' }}>
 						<PersonalizedText>Welcome family...</PersonalizedText>
 					</div>
@@ -28,9 +28,9 @@ const Hero = () => {
 						</button>
 					</div>
 				</div>
-				<div className='w-1/2  flex justify-center items-center' style={{ height: '600px' }}>
+				<div className='w-[100%] md:w-1/2 flex items-center relative' style={{ height: '600px', border: '1px solid navy' }}>
 					<div
-						className='absolute top-50 right-200'
+						className='absolute top-50 left-10 '
 						style={{
 							borderRadius: '6px',
 							border: '1px solid #000',
@@ -53,6 +53,7 @@ const Hero = () => {
 						/>
 					</div>
 					<div
+						className='absolute top-50 left-200'
 						style={{
 							borderRadius: '6px',
 							border: '1px solid #000',
