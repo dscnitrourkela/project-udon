@@ -1,5 +1,5 @@
 import { PersonalizedText } from './shared/typography';
-import { Paragraph } from './shared/typography';
+import { Heading } from './shared/typography';
 
 const Hero = () => {
 	return (
@@ -10,9 +10,9 @@ const Hero = () => {
 						<PersonalizedText>Welcome family...</PersonalizedText>
 					</div>
 					<div className='h-1/3'>
-						<Paragraph style={{ fontSize: '75px', fontWeight: '500', letterSpacing: '0.75px', lineHeight: 'normal' }}>
+						<Heading variant='h1' style={{ fontSize: '75px', fontWeight: '500' }}>
 							Lorem Ipsum Dolar sit Amet Luyto
-						</Paragraph>
+						</Heading>
 					</div>
 					<div className='h-1/4'>
 						<button
