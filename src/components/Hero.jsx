@@ -1,14 +1,13 @@
 import { PersonalizedText } from './shared/typography';
 import { Heading } from './shared/typography';
 import Button from './shared/Button';
+import { imgURLs } from '../data/eventsData';
 
 const Hero = () => {
 	return (
 		<>
 			<div className='flex flex-col justify-center md:flex-row'>
-				<div
-					className='w-[100%] h-[100vw] sm:h-[60vw] md:h-[600px] md:w-1/2 flex flex-col justify-center'
-					style={{ border: '1px solid aqua' }}>
+				<div className='w-[100%] h-[100vw] sm:h-[60vw] md:h-[600px] md:w-1/2 flex flex-col justify-center'>
 					<div className='ml-2' style={{ color: '#FF4409' }}>
 						<PersonalizedText>Welcome family...</PersonalizedText>
 					</div>
@@ -22,9 +21,7 @@ const Hero = () => {
 					</div>
 				</div>
 
-				<div
-					className='w-[100%] md:w-1/2 h-[60vw] md:h-[600px] flex items-center justify-center relative '
-					style={{ border: '1px solid pink' }}>
+				<div className='w-[100%] md:w-1/2 h-[60vw] md:h-[600px] flex items-center justify-center relative '>
 					<div
 						className=' border border-solid border-black rounded-md absolute w-[201px] h-[270px] md:w-[303.075px] md:h-[404.558px]'
 						style={{
@@ -39,7 +36,7 @@ const Hero = () => {
 						<div
 							className='md:w-[275px] md:h-[320px] w-[188px] h-[221px] md:mt-[12px] mt-[6px] md:ml-[12px] ml-[6px]'
 							style={{
-								backgroundImage: "url('https://res.cloudinary.com/dkpdi1wek/image/upload/v1709662790/left_vv4m1m.jpg')",
+								backgroundImage: imgURLs[0],
 								backgroundSize: 'cover',
 								backgroundPosition: 'center',
 								borderRadius: '4px',
@@ -50,7 +47,7 @@ const Hero = () => {
 						<div
 							className='rounded bg-center bg-cover md:w-[275px] md:h-[350px] w-[197px] h-[231px]  md:mt-[12px] mt-[6px] md:ml-[12px] ml-[6px]'
 							style={{
-								backgroundImage: "url('https://res.cloudinary.com/dkpdi1wek/image/upload/v1709662676/1_l7wivq.jpg')",
+								backgroundImage: imgURLs[1],
 							}}></div>
 
 						<div
@@ -97,7 +94,7 @@ const Hero = () => {
 						<div
 							className='md:w-[275px] md:h-[257.4px] w-[175px] h-[206px] md:mr-[10px] mr-[15px] md:ml-[12px] ml-[6px]'
 							style={{
-								backgroundImage: "url('https://res.cloudinary.com/dkpdi1wek/image/upload/v1709662873/right_guw2gk.jpg')",
+								backgroundImage: imgURLs[2],
 								backgroundSize: 'cover',
 								backgroundPosition: 'center',
 								borderRadius: '4px',
