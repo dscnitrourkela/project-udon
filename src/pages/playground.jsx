@@ -1,11 +1,15 @@
 import { Heading, HeroText, Paragraph, PersonalizedText, Text } from '../components/shared';
 import Footer from '../components/shared/marginals/footer.jsx';
+
 import Final from '../components/shared/Register/Final.jsx';
 import Register from '../components/shared/Register/Register.jsx';
+import AboutUs from '../components/AboutUs.jsx';
+import NavBar from '../components/shared/NavBar';
 
 export default function Playground() {
 	return (
 		<>
+			<NavBar />
 			<div className='container py-6'>
 				<HeroText>Hero Text</HeroText>
 				<PersonalizedText>Personalized Text</PersonalizedText>
@@ -31,8 +35,10 @@ export default function Playground() {
 					<li className='text-black-foreground'>Black Foreground</li>
 				</ul>
 			</div>
+
 			<Register />
 			<Final />
+			<AboutUs />
 			<Footer />
 		</>
 	);
