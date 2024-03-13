@@ -5,9 +5,9 @@ import Button from './shared/Button';
 const Hero = () => {
 	return (
 		<>
-			<div className='flex flex-col md:flex-row'>
+			<div className='flex flex-col justify-center md:flex-row'>
 				<div
-					className='w-[100%] h-[100vw] sm:h-[60vw] md:h-[39vw] md:w-1/2 flex flex-col justify-center'
+					className='w-[100%] h-[100vw] sm:h-[60vw] md:h-[600px] md:w-1/2 flex flex-col justify-center'
 					style={{ border: '1px solid aqua' }}>
 					<div className='ml-2' style={{ color: '#FF4409' }}>
 						<PersonalizedText>Welcome family...</PersonalizedText>
@@ -23,8 +23,8 @@ const Hero = () => {
 				</div>
 
 				<div
-					className='w-[100%] md:w-1/2  flex items-center justify-center relative '
-					style={{ height: '600px', marginLeft: '29px', border: '1px solid pink' }}>
+					className='w-[100%] md:w-1/2 h-[60vw] md:h-[600px] flex items-center justify-center relative '
+					style={{ border: '1px solid pink' }}>
 					<div
 						className=' border border-solid border-black rounded-md absolute w-[201px] h-[270px] md:w-[303.075px] md:h-[404.558px]'
 						style={{
