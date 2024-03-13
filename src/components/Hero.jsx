@@ -4,7 +4,7 @@ import { Paragraph } from './shared/typography';
 const Hero = () => {
 	return (
 		<>
-			<div className='flex flex-col md:flex-row '>
+			<div className='flex flex-col md:flex-row'>
 				<div className='w-[100%] md:w-1/2 '>
 					<div className='h-1/3 flex flex-col justify-end ml-2' style={{ color: '#FF4409' }}>
 						<PersonalizedText>Welcome family...</PersonalizedText>
