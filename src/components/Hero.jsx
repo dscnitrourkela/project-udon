@@ -34,20 +34,19 @@ const Hero = () => {
 							zIndex: 1,
 						}}>
 						<div
-							className='md:w-[275px] md:h-[320px] w-[188px] h-[221px] md:mt-[12px] mt-[6px] md:ml-[12px] ml-[6px]'
+							className='rounded-md bg-center bg-cover md:w-[275px] md:h-[320px] w-[188px] h-[221px] md:mt-[12px] mt-[6px] md:ml-[12px] ml-[6px]'
 							style={{
-								backgroundImage: imgURLs[0],
-								backgroundSize: 'cover',
-								backgroundPosition: 'center',
-								borderRadius: '4px',
+								backgroundImage: imgURLs[0].url,
 							}}></div>
 					</div>
 
-					<div className='rounded-md border border-solid border-black bg-white shadow-md z-10 absolute md:h-[414px] md:w-[300px] w-[210px] h-[278px]'>
+					<div
+						className='rounded-md border border-solid border-black bg-white shadow-md z-10 absolute md:h-[414px] md:w-[300px] w-[210px] h-[278px]'
+						style={{ boxShadow: '2px 3px 0px 0px #000' }}>
 						<div
 							className='rounded bg-center bg-cover md:w-[275px] md:h-[350px] w-[197px] h-[231px]  md:mt-[12px] mt-[6px] md:ml-[12px] ml-[6px]'
 							style={{
-								backgroundImage: imgURLs[1],
+								backgroundImage: imgURLs[1].url,
 							}}></div>
 
 						<div
@@ -94,7 +93,7 @@ const Hero = () => {
 						<div
 							className='md:w-[275px] md:h-[257.4px] w-[175px] h-[206px] md:mr-[10px] mr-[15px] md:ml-[12px] ml-[6px]'
 							style={{
-								backgroundImage: imgURLs[2],
+								backgroundImage: imgURLs[2].url,
 								backgroundSize: 'cover',
 								backgroundPosition: 'center',
 								borderRadius: '4px',
