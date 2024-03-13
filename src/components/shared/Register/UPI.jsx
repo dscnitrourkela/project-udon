@@ -1,6 +1,7 @@
 import Paragraph from '../typography/Paragraph';
 import { UPIdata } from '../../../data/Paymentdata';
-// import '../../../assets/images/Scanner.png';
+import ScannerImage from '../../../assets/images/Scanner.png';
+
 export default function UPI() {
 	return (
 		<>
@@ -12,7 +13,7 @@ export default function UPI() {
 								{item}
 							</Paragraph>
 						))}
-						{/* <img src='Scanner.png' alt='Scannerimage' className='w-64 h-64 object-cover' /> */}
+						<img src={ScannerImage} alt='Scannerimage' className='w-64 h-64 object-cover' />
 						{UPIdata.slice(1).map((item, index) => (
 							<Paragraph variant='body3' key={index} className='text-center lg:mb-4'>
 								{item}
