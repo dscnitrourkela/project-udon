@@ -6,7 +6,9 @@ const Hero = () => {
 	return (
 		<>
 			<div className='flex flex-col md:flex-row'>
-				<div className='w-[100%] h-[39vw] md:w-1/2 flex flex-col justify-center'>
+				<div
+					className='w-[100%] h-[100vw] sm:h-[60vw] md:h-[39vw] md:w-1/2 flex flex-col justify-center'
+					style={{ border: '1px solid aqua' }}>
 					<div className='ml-2' style={{ color: '#FF4409' }}>
 						<PersonalizedText>Welcome family...</PersonalizedText>
 					</div>
@@ -19,17 +21,15 @@ const Hero = () => {
 						<Button>Register Now</Button>
 					</div>
 				</div>
+
 				<div
 					className='w-[100%] md:w-1/2  flex items-center justify-center relative '
-					style={{ height: '600px', marginLeft: '29px' }}>
+					style={{ height: '600px', marginLeft: '29px', border: '1px solid pink' }}>
 					<div
-						className='absolute w-[201px] h-[270px] md:w-[303.075px] md:h-[404.558px]'
+						className=' border border-solid border-black rounded-md absolute w-[201px] h-[270px] md:w-[303.075px] md:h-[404.558px]'
 						style={{
-							borderRadius: '6px',
-							border: '1px solid #000',
 							background: '#FFF',
 							boxShadow: '2px 3px 0px 0px #000',
-							// top: '100px',
 							right: '42%',
 							transform: 'rotate(-7.121deg)',
 							flexShrink: 0,
@@ -45,7 +45,8 @@ const Hero = () => {
 								borderRadius: '4px',
 							}}></div>
 					</div>
-					<div className='rounded-md border border-solid border-black bg-white shadow-md z-2 absolute md:h-[414px] md:w-[300px] w-[210px] h-[278px]'>
+
+					<div className='rounded-md border border-solid border-black bg-white shadow-md z-10 absolute md:h-[414px] md:w-[300px] w-[210px] h-[278px]'>
 						<div
 							className='rounded bg-center bg-cover md:w-[275px] md:h-[350px] w-[197px] h-[231px]  md:mt-[12px] mt-[6px] md:ml-[12px] ml-[6px]'
 							style={{
@@ -68,15 +69,11 @@ const Hero = () => {
 							fill='none'
 							className='absolute md:w-[110.226px] md:h-[110.226px] w-[49px] h-[49px] md:bottom-[360px] bottom-[253px] md:left-[230px] left-[180px]'
 							style={{
-								// width: '110.226px',
-								// height: '110.226px',
 								transform: 'rotate(-90.062deg)',
 								flexShrink: 0,
 								fill: '#FFE500',
 								strokeWidth: '1.2px',
 								stroke: '#000',
-								// bottom: '360',
-								// left: '230',
 							}}>
 							<path
 								d='M1.4381 56.106C1.43808 56.106 1.43806 56.106 1.43804 56.106C0.401629 55.984 0.399996 54.4803 1.43614 54.3561C1.43616 54.3561 1.43618 54.3561 1.4362 54.3561L16.0482 52.6062C35.1916 50.3137 50.2703 35.2022 52.5212 16.054L54.2394 1.43818C54.3613 0.401548 55.8651 0.399915 55.9893 1.43633L57.7391 16.0483C60.0317 35.1916 75.1432 50.2703 94.2914 52.5212L108.907 54.2393C109.944 54.3613 109.945 55.865 108.909 55.9892L94.297 57.7391C75.1538 60.0316 60.0751 75.1431 57.8241 94.2915L56.106 108.907C56.106 108.907 56.106 108.907 56.106 108.907C55.984 109.944 54.4804 109.945 54.3561 108.909C54.3561 108.909 54.3561 108.909 54.3561 108.909L52.6062 94.2972C50.3137 75.1537 35.2022 60.075 16.0539 57.8241L1.4381 56.106Z'
@@ -86,15 +83,12 @@ const Hero = () => {
 							/>
 						</svg>
 					</div>
+
 					<div
-						className='absolute md:w-[303.075px] md:h-[325.558px] w-[187px] h-[250px]'
+						className='border border-solid border-black rounded-6 absolute md:w-[303.075px] md:h-[325.558px] w-[187px] h-[250px]'
 						style={{
-							borderRadius: '6px',
-							border: '1px solid #000',
 							background: '#FFF',
 							boxShadow: '2px 3px 0px 0px #000',
-							// width: '303.075px',
-							// height: '325.558px',
 							transform: 'rotate(15.801deg)',
 							flexShrink: 0,
 							left: '45%',
@@ -107,11 +101,6 @@ const Hero = () => {
 								backgroundSize: 'cover',
 								backgroundPosition: 'center',
 								borderRadius: '4px',
-								// height: 'calc(100% - 40px)',
-								// width: '275px',
-								// height: '257.4px',
-								// marginLeft: '12px',
-								// marginTop: '10px',
 							}}></div>
 					</div>
 				</div>
