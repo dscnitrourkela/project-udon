@@ -52,6 +52,8 @@ export const inputContent = [
 		label: 'Let us know where you currently stay',
 		type: ['text', 'text', 'text'],
 		regex: '',
+		minLength: [3, 3, 3],
+		maxLength: [50, 50, 50],
 		placeholder: ['Country', 'State', 'City'],
 	},
 	{

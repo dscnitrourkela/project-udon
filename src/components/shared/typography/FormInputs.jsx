@@ -1,11 +1,36 @@
-export default function Inputs({ className, id, placeholder }) {
+import { useState } from 'react';
+
+export default function Inputs({ type, minLength, maxLength, regex, className, id, placeholder }) {
+	const [errorMessage, setErrorMessage] = useState('');
+
+	const validateInput = event => {
+		const value = event.target.value;
+		if (regex && value) {
+			const isValid = value.match(regex);
+			if (!isValid) {
+				console.log(`Invalid input for ${id}`);
+				event.target.style.border = '1px solid red';
+				setErrorMessage(`Invalid input for ${id}`);
+			} else {
+				setErrorMessage('');
+				event.target.style.border = '1px solid #FF7647';
+			}
+		}
+	};
+
 	return (
-		<input
-			type='text'
-			id={id}
-			className={'outline-none bg-inherit rounded-md my-1 mb-6 text-[#B0B0B0] p-2 ' + className}
-			style={{ border: '1px solid #FF7647', boxShadow: '2px 2px 0px 0px #F9F9F9' }}
-			placeholder={placeholder}
-		/>
+		<>
+			<input
+				type={type}
+				minLength={minLength}
+				maxLength={maxLength}
+				id={id}
+				className={'outline-none bg-inherit rounded-md my-1 mb-6 text-[#B0B0B0] p-2 ' + className}
+				style={{ border: '1px solid #FF7647', boxShadow: '2px 2px 0px 0px #F9F9F9' }}
+				placeholder={placeholder}
+				onBlur={validateInput}
+			/>
+			{errorMessage && <span style={{ color: 'red' }}>{errorMessage}</span>}
+		</>
 	);
 }

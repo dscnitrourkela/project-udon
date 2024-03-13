@@ -76,10 +76,27 @@ const FormContainer = () => {
 						</Paragraph>{' '}
 						{Array.isArray(item.id) ? (
 							item.id.map((id, idx) => (
-								<Inputs className='inline mr-3 w-[31.3%]' id={id} placeholder={item.placeholder[idx]} key={idx} />
+								<Inputs
+									type={item.type[idx]}
+									minLength={item.minLength[idx]}
+									maxLength={item.maxLength[idx]}
+									regex={item.regex[idx]}
+									className='inline mr-3 w-[31.3%]'
+									id={id}
+									placeholder={item.placeholder[idx]}
+									key={idx}
+								/>
 							))
 						) : (
-							<Inputs className='block w-[98%]' id={item.id} placeholder={item.placeholder} />
+							<Inputs
+								type={item.type}
+								minLength={item.minLength}
+								maxLength={item.maxLength}
+								regex={item.regex}
+								className='block w-[98%]'
+								id={item.id}
+								placeholder={item.placeholder}
+							/>
 						)}
 					</React.Fragment>
 				))}
