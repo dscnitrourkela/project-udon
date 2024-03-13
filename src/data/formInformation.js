@@ -24,7 +24,7 @@ export const inputContent = [
 		id: 'recRollNumber',
 		label: 'REC Roll Number',
 		type: 'text',
-		regex: '^d{3}[a-zA-Z]{2}d{4}$',
+		regex: '^\d{3}[a-zA-Z]{2}\d{4}$',
 		maxLength: 11,
 		minLength: 7,
 		placeholder: 'REC Roll Number (for Example: A4275)',
