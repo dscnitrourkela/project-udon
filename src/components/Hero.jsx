@@ -49,30 +49,11 @@ const Hero = () => {
 								// marginTop: '10px',
 							}}></div>
 					</div>
-					<div
-						className='absolute md:h-[414px] md:w-[300px] w-[210px] h-[278px]'
-						style={{
-							borderRadius: '6px',
-							border: '1px solid #000',
-							background: '#FFF',
-							boxShadow: '2px 3px 0px 0px #000',
-							// width: '300px',
-							// height: '414px',
-							zIndex: 2,
-							position: 'relative',
-						}}>
+					<div className='rounded-md border border-solid border-black bg-white shadow-md z-2 absolute md:h-[414px] md:w-[300px] w-[210px] h-[278px]'>
 						<div
-							className='md:w-[275px] md:h-[350px] w-[197px] h-[231px]  md:mt-[12px] mt-[6px] md:ml-[12px] ml-[6px]'
+							className='rounded bg-center bg-cover md:w-[275px] md:h-[350px] w-[197px] h-[231px]  md:mt-[12px] mt-[6px] md:ml-[12px] ml-[6px]'
 							style={{
 								backgroundImage: "url('https://res.cloudinary.com/dkpdi1wek/image/upload/v1709662676/1_l7wivq.jpg')",
-								backgroundSize: 'cover',
-								backgroundPosition: 'center',
-								borderRadius: '4px',
-								// height: 'calc(100% - 40px)',
-								// width: '275px',
-								// height: '350px',
-								//marginLeft: '12px',
-								// marginTop: '12px',
 							}}></div>
 
 						<div
