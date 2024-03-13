@@ -8,23 +8,26 @@ export default function Event() {
 				variant='h1'
 				className='text-primary-yellow text-center'
 				style={{
+					fontSize: '80px',
 					textShadow: '4.608px 4.608px 0px #000',
 					WebkitTextStrokeWidth: 2.71052622795105,
 					WebkitTextStrokeColor: '#252525',
 				}}>
 				Events
 			</Heading>
-			<div className='flex justify-between mt-12 space-x-8' style={{ border: '1px solid blue' }}>
+			<div
+				className='flex flex-wrap justify-between mt-12 space-y-8 space-x-0 sm:space-y-0 sm:space-x-8'
+				style={{ border: '1px solid blue' }}>
 				{eventData.map((event, index) => (
 					<div
 						key={index}
-						className='bg-[#ffcccb] p-6 rounded-lg w-80 relative'
+						className='bg-[#ffcccb] p-6 rounded-lg w-full sm:w-80 relative flex-shrink-0'
 						style={{
 							borderRadius: '8px',
 							border: '1px solid #000',
 							background: '#FF9E7C',
 							boxShadow: '4px 4px 0px 0px #000',
-							gap: '64px',
+							gap: '20.54px',
 							width: 'auto',
 						}}>
 						<div
@@ -35,6 +38,7 @@ export default function Event() {
 								background: 'var(--Accent-Yellow, #F2DA05)',
 								whiteSpace: 'nowrap',
 								width: 'auto',
+								fontSize: '14px',
 							}}>
 							{event.time}
 						</div>
@@ -49,7 +53,7 @@ export default function Event() {
 						<ul className='text-[#d45500]'>
 							{event.agenda.map((item, index) => (
 								<li key={index}>
-									<Text style={{ color: '#000' }}>{item}</Text>
+									<Text style={{ color: '#000', fontSize: '16px' }}>{item}</Text>{' '}
 								</li>
 							))}
 						</ul>
