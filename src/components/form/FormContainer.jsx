@@ -66,7 +66,7 @@ const FormContainer = () => {
 						<Paragraph
 							variant='body2'
 							htmlFor={item.id}
-							className='inline shadow-white px-2'
+							className=' shadow-white px-2'
 							style={{
 								textShadow: ' 1px 1px 0px #FF7342',
 								WebkitTextStrokeWidth: 0.5,
@@ -74,7 +74,6 @@ const FormContainer = () => {
 							}}>
 							{item.label}
 						</Paragraph>{' '}
-						<br />
 						{Array.isArray(item.id) ? (
 							item.id.map((id, idx) => (
 								<Inputs className='inline mr-3 w-[31.3%]' id={id} placeholder={item.placeholder[idx]} key={idx} />
@@ -82,7 +81,6 @@ const FormContainer = () => {
 						) : (
 							<Inputs className='block w-[98%]' id={item.id} placeholder={item.placeholder} />
 						)}
-						<br />
 					</React.Fragment>
 				))}
 
