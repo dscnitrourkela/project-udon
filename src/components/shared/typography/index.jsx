@@ -3,7 +3,6 @@ import { cn } from '../../../lib/utils';
 export { default as Heading } from './Heading';
 export { default as Paragraph } from './Paragraph';
 export { default as Text } from './Text';
-export { default as Inputs } from './FormInputs';
 
 export const HeroText = ({ children, className, ...props }) => {
 	return (

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Heading, Inputs, Paragraph } from '../shared';
+import { Heading, Paragraph } from '../shared';
+import { Inputs } from '../shared/partials/FormInputs';
 import formimg from '../../assets/images/form-tickets.png';
 import { feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
 
