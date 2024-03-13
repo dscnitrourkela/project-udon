@@ -1,20 +1,21 @@
 import { PersonalizedText } from './shared/typography';
-import { Heading, Button } from './shared/typography';
+import { Heading } from './shared/typography';
+import Button from './shared/Button';
 
 const Hero = () => {
 	return (
 		<>
 			<div className='flex flex-col md:flex-row'>
-				<div className='w-[100%] md:w-1/2 '>
+				<div className='w-[100%] md:w-1/2 flex flex-col'>
 					<div className='h-1/3 flex flex-col justify-end ml-2' style={{ color: '#FF4409' }}>
 						<PersonalizedText>Welcome family...</PersonalizedText>
 					</div>
-					<div className='h-1/3'>
+					<div>
 						<Heading variant='h1' style={{ fontSize: '75px', fontWeight: '500' }}>
 							Lorem Ipsum Dolar sit Amet Luyto
 						</Heading>
 					</div>
-					<div className='h-1/4'>
+					<div className='m-2'>
 						<Button>Register Now</Button>
 					</div>
 				</div>
@@ -42,11 +43,6 @@ const Hero = () => {
 								backgroundSize: 'cover',
 								backgroundPosition: 'center',
 								borderRadius: '4px',
-								// height: 'calc(100% - 40px)',
-								// width: '275px',
-								// height: '320px',
-								// marginLeft: '12px',
-								// marginTop: '10px',
 							}}></div>
 					</div>
 					<div className='rounded-md border border-solid border-black bg-white shadow-md z-2 absolute md:h-[414px] md:w-[300px] w-[210px] h-[278px]'>
@@ -61,13 +57,6 @@ const Hero = () => {
 							style={{
 								color: '#0E0E0E',
 								fontFamily: 'Gotham',
-								// fontSize: '18px',
-								// fontStyle: 'normal',
-								// fontWeight: '400',
-								// lineHeight: 'normal',
-								// letterSpacing: '0.9px',
-								// padding: '10px',
-								// bottom: '14px',
 							}}>
 							Batch: 1999
 						</div>
