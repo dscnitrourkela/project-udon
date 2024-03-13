@@ -1,6 +1,7 @@
-import { Heading } from '../components/shared';
-import Paragraph from '../components/shared/typography/Paragraph';
-import { Stepstoregister } from '../data/Registerdata';
+import { Heading } from '../..';
+import Paragraph from '../../typography/Paragraph';
+import { Stepstoregister } from '../../../../data/Registerdata';
+
 export default function Register() {
 	return (
 		<>
@@ -11,7 +12,7 @@ export default function Register() {
 					style={{
 						textShadow: ' 2.7px 2.7px 0px #000000',
 						WebkitTextStrokeWidth: 2,
-						WebkitTextStrokeColor: 'black',
+						WebkitTextStrokeColor: '#252525',
 					}}>
 					Registration
 				</Heading>

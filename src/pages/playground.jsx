@@ -1,7 +1,7 @@
 import { Heading, HeroText, Paragraph, PersonalizedText, Text } from '../components/shared';
 import Footer from '../components/shared/marginals/footer.jsx';
-import Payment from './Payment.jsx';
-import Register from './Register.jsx';
+import Final from '../components/shared/marginals/Register/Final.jsx';
+import Register from '../components/shared/marginals/Register/Register.jsx';
 
 export default function Playground() {
 	return (
@@ -32,7 +32,7 @@ export default function Playground() {
 				</ul>
 			</div>
 			<Register />
-			<Payment />
+			<Final />
 			<Footer />
 		</>
 	);

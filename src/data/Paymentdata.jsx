@@ -6,3 +6,5 @@ export const Paymentdata = [
 	'MICR Code:769002007',
 	'Branch Code: 002109',
 ];
+
+export const UPIdata = ['SCAN and PAY', 'NIT ROURKELA 1999 ALUMNI', 'UPI ID:41728775160@SBI'];
