@@ -1,5 +1,5 @@
 import { PersonalizedText } from './shared/typography';
-import { Heading } from './shared/typography';
+import { Heading, Button } from './shared/typography';
 
 const Hero = () => {
 	return (
@@ -15,16 +15,7 @@ const Hero = () => {
 						</Heading>
 					</div>
 					<div className='h-1/4'>
-						<button
-							className='px-4 py-2 rounded-md border border-solid border-black bg-orange-500 shadow-button mt-20 md:mt-35'
-							style={{
-								boxShadow: '2px 2px 0px 0px #000, 3px 4px 9.2px 0px rgba(222, 222, 222, 0.48) inset',
-								fontFamily: 'Syne, sans-serif',
-								fontWeight: '700',
-								marginLeft: '20px',
-							}}>
-							Register Now
-						</button>
+						<Button>Register Now</Button>
 					</div>
 				</div>
 				<div
