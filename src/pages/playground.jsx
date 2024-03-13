@@ -5,6 +5,7 @@ import Register from '../components/shared/marginals/Register/Register.jsx';
 export default function Playground() {
 	return (
 		<>
+			<NavBar />
 			<div className='container py-6'>
 				<HeroText>Hero Text</HeroText>
 				<PersonalizedText>Personalized Text</PersonalizedText>
@@ -30,8 +31,10 @@ export default function Playground() {
 					<li className='text-black-foreground'>Black Foreground</li>
 				</ul>
 			</div>
+
 			<Register />
 			<Final />
+
 			<Footer />
 		</>
 	);
