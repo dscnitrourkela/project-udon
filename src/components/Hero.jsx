@@ -1,4 +1,4 @@
-import { PersonalizedText } from './shared/typography';
+import { Paragraph, PersonalizedText } from './shared/typography';
 import { Heading } from './shared/typography';
 import Button from './shared/Button';
 import { imgURLs } from '../data/eventsData';
@@ -17,7 +17,9 @@ const Hero = () => {
 						</Heading>
 					</div>
 					<div className='m-2'>
-						<Button>Register Now</Button>
+						<Button style={{ boxShadow: '2px 3px 0px 0px #000' }}>
+							<Paragraph variant='body3'>Register Now</Paragraph>
+						</Button>
 					</div>
 				</div>
 
