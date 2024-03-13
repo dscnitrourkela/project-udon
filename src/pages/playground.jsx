@@ -1,8 +1,8 @@
 import { Heading, HeroText, Paragraph, PersonalizedText, Text } from '../components/shared';
 
+
 import Footer from '../components/shared/marginals/footer.jsx';
 import FormContainer from '../components/form/FormContainer.jsx';
-
 import NavBar from '../components/shared/NavBar';
 
 export default function Playground() {
