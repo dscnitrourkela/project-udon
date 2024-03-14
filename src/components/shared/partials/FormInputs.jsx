@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-//import { AuthContext } from '../../../context/AuthContext';
+import { AuthContext } from '../../../context/AuthContext';
 import { STAGES, currentUser } from '../../../data/formInformation';
-//import { count } from 'firebase/firestore';
+import { count } from 'firebase/firestore';
 
 export default function Inputs({ className, formData }) {
 	const { type, minLength, maxLength, regex, id, placeholder } = formData;
@@ -9,7 +9,6 @@ export default function Inputs({ className, formData }) {
 
 	const [stage, setStage] = useState(STAGES.TYPE_OF_USER);
 	const [inputData, setInputData] = useState(currentUser);
-	//const [isNITR, setIsNITR] = useState(false);
 	//const [verified, setVerified] = useState(false);
 	//const { userData } = useContext(AuthContext);
 
