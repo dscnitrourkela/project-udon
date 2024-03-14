@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AuthContext } from '../../../context/AuthContext';
+//import { AuthContext } from '../../../context/AuthContext';
 import { STAGES, currentUser } from '../../../data/formInformation';
 import { count } from 'firebase/firestore';
 

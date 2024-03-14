@@ -2,7 +2,7 @@ import React from 'react';
 import { Heading, Paragraph } from '../shared';
 import Inputs from '../shared/partials/FormInputs';
 import formimg from '../../assets/images/form-tickets.png';
-import { feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
+import { feeCoverage, initialContent, inputContent, registerUser, lastPartContent } from '../../data/formInformation';
 
 const FormContainer = () => {
 	return (
@@ -120,7 +120,7 @@ const FormContainer = () => {
 					className='bg-[#FF7647] text-black rounded-md p-2 mt-6 w-[100%] '
 					style={{ boxShadow: '2px 2px 0px 0px #FFF6F6' }}>
 					{' '}
-					<Paragraph variant='body3' className='inline mx-auto text-xl'>
+					<Paragraph variant='body3' className='inline mx-auto text-xl' onClick={registerUser}>
 						Register Now
 					</Paragraph>
 				</button>
