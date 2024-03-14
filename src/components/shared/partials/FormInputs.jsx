@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-export default function Inputs({ type, minLength, maxLength, regex, className, id, placeholder }) {
+export default function Inputs({ className, formData }) {
+	const { type, minLength, maxLength, regex, id, placeholder } = formData;
 	const [errorMessage, setErrorMessage] = useState('');
 
 	const validateInput = event => {
