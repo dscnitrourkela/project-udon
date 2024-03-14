@@ -19,6 +19,30 @@ export const feeCoverage = [
 	'Transportation and logistics to and from hotel to venue/NIT Rourkela from Dec 22nd through Dec 24th.',
 ];
 
+export const STAGES = {
+	TYPE_OF_USER: 'Are you an NITR Student?',
+	STUDENT_FORM: 'Register',
+	REGISTRATION_CLOSED: 'Registration Closed',
+};
+
+export const INIT_STATE = {
+	value: '',
+	errorVisibility: false,
+	errorMessage: '',
+};
+
+export const currentUser = {
+	rollNumber: '',
+	name: '',
+	email: '',
+	country: '',
+	state: '',
+	city: '',
+	prefix: '',
+	phoneNumber: '',
+	regType: '',
+};
+
 export const inputContent = [
 	{
 		id: 'recRollNumber',
