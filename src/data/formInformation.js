@@ -45,6 +45,7 @@ export const currentUser = {
 
 export const inputContent = [
 	{
+		key: 1,
 		id: 'recRollNumber',
 		label: 'REC Roll Number',
 		type: 'text',
@@ -54,6 +55,7 @@ export const inputContent = [
 		placeholder: 'REC Roll Number (for Example: A4275)',
 	},
 	{
+		key: 2,
 		id: 'name',
 		label: 'Name',
 		type: 'text',
@@ -63,6 +65,7 @@ export const inputContent = [
 		placeholder: 'Enter Your Name here',
 	},
 	{
+		key: 3,
 		id: 'email',
 		label: 'Email Address',
 		type: 'email',
@@ -72,6 +75,7 @@ export const inputContent = [
 		placeholder: 'Enter your Email here',
 	},
 	{
+		key: 4,
 		id: ['country', 'state', 'city'],
 		label: 'Let us know where you currently stay',
 		type: ['text', 'text', 'text'],
@@ -81,6 +85,7 @@ export const inputContent = [
 		placeholder: ['Country', 'State', 'City'],
 	},
 	{
+		key: 5,
 		id: ['prefix', 'phoneNumber'],
 		label: 'Contact Number',
 		type: ['number', 'number'],

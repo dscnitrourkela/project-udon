@@ -1,34 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 //import { AuthContext } from '../../../context/AuthContext';
-import { STAGES, currentUser } from '../../../data/formInformation';
-import { count } from 'firebase/firestore';
+//import { STAGES, currentUser } from '../../../data/formInformation';
+//import { count } from 'firebase/firestore';
 
-export default function Inputs({ className, formData }) {
-	const { type, minLength, maxLength, regex, id, placeholder } = formData;
+export default function Inputs({ className, formData, onChange }) {
+	const { type, minLength, maxLength, regex, id, placeholder, value } = formData;
 	const [errorMessage, setErrorMessage] = useState('');
-
-	const [stage, setStage] = useState(STAGES.TYPE_OF_USER);
-	const [inputData, setInputData] = useState(currentUser);
-	//const [verified, setVerified] = useState(false);
-	//const { userData } = useContext(AuthContext);
-
-	/*
-	useEffect(() => {
-		if (userData) {
-			setInputData({
-				rollNumber: userData?.rollNumber || '',
-				name: userData?.name || '',
-				email: userData?.email || '',
-				county: userData?.county || '',
-				state: userData?.state || '',
-				city: userData?.city || '',
-				prefix: userData?.prefix || '',
-				mobile: userData?.mobile || '',
-				regType: userData?.regType || '',
-			});
-		}
-	}, [userData]); 
-	*/
 
 	const validateInput = event => {
 		const value = event.target.value;
@@ -55,7 +32,9 @@ export default function Inputs({ className, formData }) {
 				className={'outline-none bg-inherit rounded-md my-1 mb-6 text-[#B0B0B0] p-2 ' + className}
 				style={{ border: '1px solid #FF7647', boxShadow: '2px 2px 0px 0px #F9F9F9' }}
 				placeholder={placeholder}
+				value={value}
 				onBlur={validateInput}
+				onChange={onChange}
 			/>
 			{errorMessage && <span style={{ color: 'red' }}>{errorMessage}</span>}
 		</>

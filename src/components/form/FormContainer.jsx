@@ -1,10 +1,48 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Heading, Paragraph } from '../shared';
 import Inputs from '../shared/partials/FormInputs';
 import formimg from '../../assets/images/form-tickets.png';
-import { feeCoverage, initialContent, inputContent, registerUser, lastPartContent } from '../../data/formInformation';
+import { feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
 
 const FormContainer = () => {
+	const [inputData, setInputData] = useState({});
+	//const [verified, setVerified] = useState(false);
+	// const { userData } = useContext(AuthContext);
+	const userData = undefined;
+
+	const setInputValue = (key, value) => {
+		if (!key) return;
+		setInputData(prev => ({
+			...prev,
+			[key]: {
+				...prev[key],
+				value,
+			},
+		}));
+	};
+
+	useEffect(() => {
+		if (userData) {
+			setInputData({
+				recRollNumber: userData?.rollNumber || '',
+				name: userData?.name || '',
+				email: userData?.email || '',
+				county: userData?.county || '',
+				state: userData?.state || '',
+				city: userData?.city || '',
+				prefix: userData?.prefix || '',
+				mobile: userData?.mobile || '',
+				regType: userData?.regType || '',
+			});
+		}
+	}, [userData]);
+
+	const registerUser = () => {
+		console.log('User Registered', inputData);
+		// firebase code here
+		// push userData to firestore
+	};
+
 	return (
 		<div
 			className='text-white bg-black flex flex-col md:flex-row justify-between py-6'
@@ -62,8 +100,8 @@ const FormContainer = () => {
 			</div>
 
 			<div id='form' className='w-[90%] md:w-[55%] m-8 p-2'>
-				{inputContent.map((item, index) => (
-					<React.Fragment key={index}>
+				{inputContent.map(item => (
+					<React.Fragment key={item.key}>
 						<Paragraph
 							variant='body2'
 							htmlFor={item.id}
@@ -80,12 +118,14 @@ const FormContainer = () => {
 								<Inputs
 									key={idx}
 									className='inline mr-3 w-[31.3%]'
+									onChange={e => setInputValue(id, e.target.value)}
 									formData={{
 										type: item.type[idx],
 										minLength: item.minLength[idx],
 										maxLength: item.maxLength[idx],
 										regex: item.regex[idx],
 										id: id,
+										value: inputData[id]?.value || '',
 										placeholder: item.placeholder[idx],
 									}}
 								/>
@@ -99,6 +139,7 @@ const FormContainer = () => {
 									maxLength: item.maxLength,
 									regex: item.regex,
 									id: item.id,
+									value: inputData[item.id],
 									placeholder: item.placeholder,
 								}}
 							/>
