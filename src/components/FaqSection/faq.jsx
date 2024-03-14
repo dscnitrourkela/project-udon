@@ -2,13 +2,11 @@ import faqData from '../../config/content/faqData.js';
 import { PersonalizedText, Heading, Paragraph } from '../shared/index.js';
 
 function FAQ() {
+	const Header1 = faqData.Header1;
+	const Header2 = faqData.Header2;
+
 	return (
-		<div
-			style={{
-				justifyItems: 'center',
-				margin: '10px auto 44px auto',
-			}}
-			className='md:w-[76%] w-[92%]'>
+		<div className='md:w-[76%] w-[92%] justify-items-center mt-[10px] mb-[44px] mx-auto'>
 			<div className='flex flex-col items-center justify-center mb-[40px]'>
 				<Heading
 					variant='h1'
@@ -18,33 +16,15 @@ function FAQ() {
 						webkitTextStrokeWidth: '2.71052622795105',
 						webkitTextStrokeColor: '#252525',
 					}}>
-					FAQs
+					{Header1}
 				</Heading>
-				<PersonalizedText style={{ color: 'var(--orange-dash, #FF4409)' }}>You got questions & we got you</PersonalizedText>
+				<PersonalizedText style={{ color: 'var(--orange-dash, #FF4409)' }}>{Header2}</PersonalizedText>
 			</div>
-			<div
-				style={{
-					display: 'flex',
-					flexDirection: 'column',
-					alignItems: 'flex-start',
-					gap: '38px',
-				}}>
+			<div className='flex flex-col items-start gap-[38px]'>
 				{faqData.questions.map(({ id, question, answer }) => (
-					<div
-						style={{
-							display: 'flex',
-							flexDirection: 'column',
-							justifyContent: 'center',
-							gap: '10px',
-						}}
-						key={id}>
+					<div className='flex flex-col justify-center gap-[10px]' key={id}>
 						<div className='flex gap-[10px] md:gap-[12px] flex-row'>
-							<img
-								src='https://res.cloudinary.com/dv1src8un/image/upload/v1710406763/star_l1eniz.png'
-								alt='Star'
-								className='h-[32px]'
-								style={{ aspectRatio: 1 }}
-							/>
+							<img className='h-[32px] aspect-square' src={faqData.img.src} alt={faqData.img.alt} />
 							<Heading variant='h3'>{question}</Heading>
 						</div>
 						{answer instanceof Array ? (

@@ -1,5 +1,11 @@
 export default {
 	id: 'faq',
+	Header1: 'FAQs',
+	Header2: 'You got questions & we got you',
+	img: {
+		src: 'https://res.cloudinary.com/dv1src8un/image/upload/v1710406763/star_l1eniz.png',
+		alt: 'Star',
+	},
 	questions: [
 		{
 			id: 1,
