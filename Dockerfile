@@ -1,23 +1,27 @@
 # Use official Node.js image as base
-FROM node:alpine
+FROM node:20-slim AS base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
 
 # Install pnpm globally
-RUN npm install -g pnpm
+RUN corepack enable
+COPY . /app
+WORKDIR /app
 
-# Set working directory inside the container
-WORKDIR /src
+FROM base AS prod-deps
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
 
-# Copy package.json and pnpm-lock.yaml to the container
-COPY ["package.json", "pnpm-lock.yaml", "./"]
+FROM base AS build
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+RUN pnpm run build
 
-# Install dependencies using pnpm
-RUN pnpm i
 
-# Copy the rest of the application code to the container
-COPY . .
+FROM base
+COPY --from=prod-deps /app/node_modules /app/node_modules
+COPY --from=build /app/dist /app/dist
 
 # Expose the port that Next.js is running on
 EXPOSE 5173
 
 # Start the Next.js application
-CMD ["pnpm", "dev"]
+CMD ["pnpm", "preview"]
