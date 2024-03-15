@@ -14,7 +14,7 @@ export const HeroText2 = ({ children, className, ...props }) => {
 
 export const HeroText1 = ({ children, className, ...props }) => {
 	return (
-		<h1 className={cn('text-12.5xl leading-16 font-semibold font-syne text-left', className)} {...props}>
+		<h1 className={cn('md:text-12.5xl leading-16 font-semibold font-syne text-left text-4.5xl', className)} {...props}>
 			{children}
 		</h1>
 	);

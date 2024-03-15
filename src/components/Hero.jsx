@@ -1,6 +1,7 @@
 import { PersonalizedText } from './shared/typography';
 import { HeroText1 } from './shared/typography';
-//import { HeroText2 } from './shared/typography';
+import { HeroText2 } from './shared/typography';
+import { imgURLs } from '../data/eventsData';
 
 const Hero = () => {
 	return (
@@ -12,7 +13,7 @@ const Hero = () => {
 					</div>
 
 					<HeroText1>
-						Lorem Ipsum Dolar <span style={{ fontFamily: 'agoka', fontStyle: 'normal' }}>sit Amet</span> luyto
+						Lorem Ipsum Dolar <HeroText2 style={{ display: 'inline-block' }}> sit Amet</HeroText2> luyto
 					</HeroText1>
 
 					<button
@@ -31,13 +32,12 @@ const Hero = () => {
 					className='w-[100%] md:w-1/2  flex items-center justify-center relative '
 					style={{ height: '600px', marginLeft: '29px' }}>
 					<div
-						className='absolute w-[201px] h-[270px] md:w-[303.075px] md:h-[404.558px]'
+						className='absolute w-[189px] h-[270px] md:w-[303.075px] md:h-[404.558px] '
 						style={{
 							borderRadius: '6px',
 							border: '1px solid #000',
 							background: '#FFF',
 							boxShadow: '2px 3px 0px 0px #000',
-							// top: '100px',
 							right: '42%',
 							transform: 'rotate(-7.121deg)',
 							flexShrink: 0,
@@ -47,15 +47,10 @@ const Hero = () => {
 						<div
 							className='md:w-[275px] md:h-[320px] w-[188px] h-[221px] md:mt-[12px] mt-[6px] md:ml-[12px] ml-[6px] lg:w-[200px]'
 							style={{
-								backgroundImage: "url('https://res.cloudinary.com/dkpdi1wek/image/upload/v1709662790/left_vv4m1m.jpg')",
+								backgroundImage: imgURLs[0].url,
 								backgroundSize: 'cover',
 								backgroundPosition: 'center',
 								borderRadius: '4px',
-								// height: 'calc(100% - 40px)',
-								// width: '275px',
-								// height: '320px',
-								// marginLeft: '12px',
-								// marginTop: '10px',
 							}}></div>
 					</div>
 					<div
@@ -65,37 +60,26 @@ const Hero = () => {
 							border: '1px solid #000',
 							background: '#FFF',
 							boxShadow: '2px 3px 0px 0px #000',
-							// width: '300px',
-							// height: '414px',
 							zIndex: 2,
 							position: 'relative',
 						}}>
 						<div
 							className='md:w-[275px] md:h-[350px] w-[197px] h-[231px]  md:mt-[12px] mt-[6px] md:ml-[12px] ml-[6px]'
 							style={{
-								backgroundImage: "url('https://res.cloudinary.com/dkpdi1wek/image/upload/v1709662676/1_l7wivq.jpg')",
+								backgroundImage: imgURLs[1].url,
 								backgroundSize: 'cover',
 								backgroundPosition: 'center',
 								borderRadius: '4px',
-								// height: 'calc(100% - 40px)',
-								// width: '275px',
-								// height: '350px',
-								//marginLeft: '12px',
-								// marginTop: '12px',
 							}}></div>
-
+						<img
+							className='absolute w-[65px] right-[-28px] bottom-[245px] md:w-[100px] md:right-[-45px] md:bottom-[360px]'
+							src={imgURLs[3].url}
+						/>
 						<div
 							className='absolute bottom-[8px] right-[5px] font-sizes-[9.75px] font-weight-400 line-height-1.5 letter-spacing-0.488px padding-10px md:font-sizes-18px md:font-weight-400 md:line-height-1.5 md:letter-spacing-0.9px md:pr-[10px] md:bottom-[16px]'
 							style={{
 								color: '#0E0E0E',
 								fontFamily: 'Gotham',
-								// fontSize: '18px',
-								// fontStyle: 'normal',
-								// fontWeight: '400',
-								// lineHeight: 'normal',
-								// letterSpacing: '0.9px',
-								// padding: '10px',
-								// bottom: '14px',
 							}}>
 							Batch: 1999
 						</div>
@@ -112,8 +96,6 @@ const Hero = () => {
 							border: '1px solid #000',
 							background: '#FFF',
 							boxShadow: '2px 3px 0px 0px #000',
-							// width: '303.075px',
-							// height: '325.558px',
 							transform: 'rotate(15.801deg)',
 							flexShrink: 0,
 							left: '45%',
@@ -122,15 +104,10 @@ const Hero = () => {
 						<div
 							className='md:w-[275px] md:h-[257.4px] w-[175px] h-[206px] md:mr-[10px] mr-[15px] md:ml-[12px] ml-[6px]'
 							style={{
-								backgroundImage: "url('https://res.cloudinary.com/dkpdi1wek/image/upload/v1709662873/right_guw2gk.jpg')",
+								backgroundImage: imgURLs[2].url,
 								backgroundSize: 'cover',
 								backgroundPosition: 'center',
 								borderRadius: '4px',
-								// height: 'calc(100% - 40px)',
-								// width: '275px',
-								// height: '257.4px',
-								// marginLeft: '12px',
-								// marginTop: '10px',
 							}}></div>
 					</div>
 				</div>
