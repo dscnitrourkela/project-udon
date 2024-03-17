@@ -3,7 +3,7 @@ import { useState } from 'react';
 //import { STAGES, currentUser } from '../../../data/formInformation';
 //import { count } from 'firebase/firestore';
 
-export default function Inputs({ className, formData, onChange }) {
+export default function Inputs({ className, formData, onChange, validated }) {
 	const { type, minLength, maxLength, regex, id, placeholder, value } = formData;
 	const [errorMessage, setErrorMessage] = useState('');
 
@@ -18,6 +18,7 @@ export default function Inputs({ className, formData, onChange }) {
 			} else {
 				setErrorMessage('');
 				event.target.style.border = '1px solid #FF7647';
+				validated = true;
 			}
 		}
 	};

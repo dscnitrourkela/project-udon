@@ -3,27 +3,27 @@ import { Heading, Paragraph } from '../shared';
 import Inputs from '../shared/partials/FormInputs';
 import formimg from '../../assets/images/form-tickets.png';
 import { feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
+import { storeFormData } from '../../firebase/registration';
 
 const FormContainer = () => {
-	const [inputData, setInputData] = useState({});
+	const [formData, setFormData] = useState({});
 	//const [verified, setVerified] = useState(false);
 	// const { userData } = useContext(AuthContext);
 	const userData = undefined;
+	console.log('formData:', formData);
 
-	const setInputValue = (key, value) => {
-		if (!key) return;
-		setInputData(prev => ({
+	const setInputValue = (key, value, isValid) => {
+		if (!key || !isValid) return;
+
+		setFormData(prev => ({
 			...prev,
-			[key]: {
-				...prev[key],
-				value,
-			},
+			[key]: value,
 		}));
 	};
 
 	useEffect(() => {
 		if (userData) {
-			setInputData({
+			setFormData({
 				recRollNumber: userData?.rollNumber || '',
 				name: userData?.name || '',
 				email: userData?.email || '',
@@ -37,10 +37,25 @@ const FormContainer = () => {
 		}
 	}, [userData]);
 
-	const registerUser = () => {
-		console.log('User Registered', inputData);
-		// firebase code here
-		// push userData to firestore
+	const registerUser = async e => {
+		e.preventDefault();
+		try {
+			const documentId = await storeFormData(formData);
+			console.log('Document ID:', documentId);
+			// Reset form after successful submission
+			setFormData({
+				recRollNumber: '',
+				name: '',
+				email: '',
+				country: '',
+				state: '',
+				city: '',
+				contactNumber: '',
+			});
+		} catch (error) {
+			console.error('Error:', error);
+		}
+		console.log('Form Data:', formData);
 	};
 
 	return (
@@ -118,14 +133,14 @@ const FormContainer = () => {
 								<Inputs
 									key={idx}
 									className='inline mr-3 w-[31.3%]'
-									onChange={e => setInputValue(id, e.target.value)}
+									onChange={e => setInputValue(id, e.target.value, e.target.validated)}
+									validated={false}
 									formData={{
 										type: item.type[idx],
 										minLength: item.minLength[idx],
 										maxLength: item.maxLength[idx],
 										regex: item.regex[idx],
 										id: id,
-										value: inputData[id]?.value || '',
 										placeholder: item.placeholder[idx],
 									}}
 								/>
@@ -133,13 +148,14 @@ const FormContainer = () => {
 						) : (
 							<Inputs
 								className='block w-[98%]'
+								onChange={e => setInputValue(item.id, e.target.value, e.target.validated)}
+								validated={false}
 								formData={{
 									type: item.type,
 									minLength: item.minLength,
 									maxLength: item.maxLength,
 									regex: item.regex,
 									id: item.id,
-									value: inputData[item.id],
 									placeholder: item.placeholder,
 								}}
 							/>
