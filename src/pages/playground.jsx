@@ -4,5 +4,4 @@ export default function Playground() {
 		<div className='container py-6'>
 			<Hero />
 		</div>
-	);
 }
