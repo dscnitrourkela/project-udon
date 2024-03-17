@@ -19,7 +19,7 @@ export default function AboutUs() {
 				</Paragraph>
 			</div>
 
-			<div className='flex justify-between px-[0px] sm:px-[77px] md:px-[115px] lg:px-[175px] grid grid-cols-1 sm:grid-cols-3 gap-3 pb-[70px] sm:pb-[130px] md:pb-[135px]'>
+			<div className='justify-between px-[0px] sm:px-[77px] md:px-[115px] lg:px-[175px] grid grid-cols-1 sm:grid-cols-3 gap-3 pb-[70px] sm:pb-[130px] md:pb-[135px]'>
 				{aboutUsData.lists.map((list, index) => (
 					<div key={index} className='flex flex-col pb-[10px]'>
 						<img src={list.img_url} alt={list.title} className='mx-auto md:w-[85px] sm:w-[70px] w-[55px] pb-[15px]' />
