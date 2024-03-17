@@ -26,7 +26,7 @@ const Hero = () => {
 				</div>
 				<div
 					className={`w-[100%] xl:w-1/2 md:w-2/3  flex items-center justify-center relative h-[100%]
-            sm:scale-125 md:scale-75 lg:scale-[0.8] xl:scale-100 translate-x-10 md:translate-x-0`}>
+            max-[380px]:scale-[0.8] max-[420px]:scale-90 sm:scale-125 md:scale-75 lg:scale-[0.8] xl:scale-100 translate-x-10 md:translate-x-0`}>
 					<div
 						className={`absolute w-[189px] h-[270px] md:w-[303.075px] md:h-[404.558px] 
               rounded-lg border-solid border-2 border-black shadow-3xl right-[42%] 
