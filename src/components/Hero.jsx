@@ -1,14 +1,14 @@
-import { PersonalizedText } from './shared/typography';
+import { PersonalizedText, Text } from './shared/typography';
 import { HeroText1 } from './shared/typography';
 import { HeroText2 } from './shared/typography';
 import { imgURLs } from '../data/eventsData';
 
 const Hero = () => {
 	return (
-		<div style={{ margin: '0 60px' }}>
-			<div className='flex flex-col md:flex-row'>
-				<div className='w-[100%] md:w-1/2 '>
-					<div className='h-1/3 flex flex-col justify-end ml-2' style={{ color: '#FF4409' }}>
+		<div className='mx-5 lg:mx-14 xl:max-w-[1483px]'>
+			<div className='flex flex-col md:flex-row justify-center items-center min-h-screen gap-20 lg:gap-10'>
+				<div className='w-[100%] md:w-1/2 h-fit'>
+					<div className='flex flex-col justify-end ml-2' style={{ color: '#FF4409' }}>
 						<PersonalizedText>Welcome family...</PersonalizedText>
 					</div>
 
@@ -17,52 +17,34 @@ const Hero = () => {
 					</HeroText1>
 
 					<button
-						className='px-4 py-2 rounded-md border border-solid border-black bg-orange-500 shadow-button  '
+						className='px-4 py-2 rounded-md border border-solid border-black bg-orange-500 shadow-button mt-5'
 						style={{
 							boxShadow: '2px 2px 0px 0px #000, 3px 4px 9.2px 0px rgba(222, 222, 222, 0.48) inset',
-							fontFamily: 'Syne, sans-serif',
-							fontWeight: '700',
-							marginTop: '20px',
-							marginBottom: '20px',
 						}}>
-						Register Now
+						<Text variant='button'>Register Now</Text>
 					</button>
 				</div>
 				<div
-					className='w-[100%] md:w-1/2  flex items-center justify-center relative -z-10'
-					style={{ height: '600px', marginLeft: '29px' }}>
+					className={`w-[100%] xl:w-1/2 md:w-2/3  flex items-center justify-center relative h-[100%]
+            max-[380px]:scale-[0.8] max-[420px]:scale-90 sm:scale-125 md:scale-75 lg:scale-[0.8] xl:scale-100 translate-x-10 md:translate-x-0`}>
 					<div
-						className='absolute w-[189px] h-[270px] md:w-[303.075px] md:h-[404.558px] '
-						style={{
-							borderRadius: '6px',
-							border: '1px solid #000',
-							background: '#FFF',
-							boxShadow: '2px 3px 0px 0px #000',
-							right: '42%',
-							transform: 'rotate(-7.121deg)',
-							flexShrink: 0,
-							marginRight: '20px',
-							zIndex: 1,
-						}}>
+						className={`absolute w-[189px] h-[270px] md:w-[303.075px] md:h-[404.558px] 
+              rounded-lg border-solid border-2 border-black shadow-3xl right-[42%] 
+              transform rotate-[-7.121deg] flex-shrink-0 mr-20 z-1 bg-white`}>
 						<div
-							className='md:w-[275px] md:h-[320px] w-[188px] h-[221px] md:mt-[12px] mt-[6px] md:ml-[12px] ml-[6px] lg:w-[200px]'
+							className={`md:w-[275px] md:h-[320px] w-[188px] h-[221px] md:mt-[12px] 
+                mt-[6px] md:ml-[12px] ml-[6px] lg:w-[200px]`}
 							style={{
 								backgroundImage: imgURLs[0].url,
 								backgroundSize: 'cover',
 								backgroundPosition: 'center',
 								borderRadius: '4px',
-							}}></div>
+							}}
+						/>
 					</div>
 					<div
-						className='absolute md:h-[414px] md:w-[300px] w-[210px] h-[278px] '
-						style={{
-							borderRadius: '6px',
-							border: '1px solid #000',
-							background: '#FFF',
-							boxShadow: '2px 3px 0px 0px #000',
-							zIndex: 2,
-							position: 'relative',
-						}}>
+						className={`relative bg-white md:h-[414px] md:w-[300px] w-[210px] h-[278px]
+              rounded-lg border-solid border-2 border-black shadow-3xl flex-shrink-0 z-10`}>
 						<div
 							className='md:w-[275px] md:h-[350px] w-[197px] h-[231px]  md:mt-[12px] mt-[6px] md:ml-[12px] ml-[6px]'
 							style={{
@@ -90,17 +72,8 @@ const Hero = () => {
 							}}></div>
 					</div>
 					<div
-						className='absolute md:w-[303.075px] md:h-[325.558px] w-[187px] h-[250px]'
-						style={{
-							borderRadius: '6px',
-							border: '1px solid #000',
-							background: '#FFF',
-							boxShadow: '2px 3px 0px 0px #000',
-							transform: 'rotate(15.801deg)',
-							flexShrink: 0,
-							left: '45%',
-							zIndex: 1,
-						}}>
+						className={`absolute md:w-[303.075px] md:h-[325.558px] w-[187px] h-[250px] rounded-lg
+              border-solid border-2 border-black shadow-3xl left-[45%] z-1 flex-shrink-0 bg-white`}>
 						<div
 							className='md:w-[275px] md:h-[257.4px] w-[175px] h-[206px] md:mr-[10px] mr-[15px] md:ml-[12px] ml-[6px]'
 							style={{

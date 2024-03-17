@@ -64,6 +64,9 @@ export default {
 			cassandra: ['Cassandra', ...defaultTheme.fontFamily.sans],
 		},
 		extend: {
+			boxShadow: {
+				'3xl': '2px 3px 0px 0px #000',
+			},
 			colors: {
 				/** Design System Starts */
 				primary: {
