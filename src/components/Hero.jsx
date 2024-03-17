@@ -29,7 +29,7 @@ const Hero = () => {
 					</button>
 				</div>
 				<div
-					className='w-[100%] md:w-1/2  flex items-center justify-center relative '
+					className='w-[100%] md:w-1/2  flex items-center justify-center relative -z-10'
 					style={{ height: '600px', marginLeft: '29px' }}>
 					<div
 						className='absolute w-[189px] h-[270px] md:w-[303.075px] md:h-[404.558px] '
