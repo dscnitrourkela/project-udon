@@ -24,4 +24,6 @@ dist-ssr
 *.sw?
 
 # env files
+import.meta.env
+process.env
 .env
