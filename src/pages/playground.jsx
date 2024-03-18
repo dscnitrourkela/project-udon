@@ -1,4 +1,4 @@
-import { Heading, HeroText, Paragraph, PersonalizedText, Text } from '../components/shared';
+import { Heading, HeroText1, Paragraph, PersonalizedText, Text } from '../components/shared';
 import Footer from '../components/shared/marginals/footer.jsx';
 
 import Final from '../components/shared/Register/Final.jsx';
@@ -11,7 +11,7 @@ export default function Playground() {
 		<>
 			<NavBar />
 			<div className='container py-6'>
-				<HeroText>Hero Text</HeroText>
+				<HeroText1>Hero Text</HeroText1>
 				<PersonalizedText>Personalized Text</PersonalizedText>
 				<Heading variant='h1'>Heading 1</Heading>
 				<Heading variant='h2'>Heading 2</Heading>
@@ -42,6 +42,4 @@ export default function Playground() {
 			<Footer />
 		</>
 	);
-
-
 }
