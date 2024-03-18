@@ -6,14 +6,15 @@ import { feeCoverage, initialContent, inputContent, lastPartContent } from '../.
 import { storeFormData } from '../../firebase/registration';
 
 const FormContainer = () => {
+	const [isValid, setValid] = useState(false);
 	const [formData, setFormData] = useState({});
 	//const [verified, setVerified] = useState(false);
 	// const { userData } = useContext(AuthContext);
 	const userData = undefined;
 	console.log('formData:', formData);
 
-	const setInputValue = (key, value, isValid) => {
-		if (!key || !isValid) return;
+	const setInputValue = (key, value) => {
+		if (!key) return;
 
 		setFormData(prev => ({
 			...prev,
@@ -38,11 +39,16 @@ const FormContainer = () => {
 	}, [userData]);
 
 	const registerUser = async e => {
+		/* if (!isValid) {
+			console.log('Invalid inputs in form');
+			return;
+		} */
 		e.preventDefault();
 		try {
 			const documentId = await storeFormData(formData);
 			console.log('Document ID:', documentId);
-			// Reset form after successful submission
+			window.alert('Registration Successful');
+
 			setFormData({
 				recRollNumber: '',
 				name: '',
@@ -54,6 +60,7 @@ const FormContainer = () => {
 			});
 		} catch (error) {
 			console.error('Error:', error);
+			window.alert('Registration Failed');
 		}
 		console.log('Form Data:', formData);
 	};
@@ -134,7 +141,7 @@ const FormContainer = () => {
 									key={idx}
 									className='inline mr-3 w-[31.3%]'
 									onChange={e => setInputValue(id, e.target.value, e.target.validated)}
-									validated={false}
+									validated={k => setValid(k)}
 									formData={{
 										type: item.type[idx],
 										minLength: item.minLength[idx],
