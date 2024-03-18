@@ -1,10 +1,9 @@
-import { Heading, HeroText, Paragraph, PersonalizedText, Text } from '../components/shared';
+import { Heading, Paragraph, PersonalizedText, Text } from '../components/shared';
 import Event from '../components/shared/marginals/events.jsx';
 export default function Playground() {
 	return (
 		<>
 			<div className='container py-6'>
-				<HeroText>Hero Text</HeroText>
 				<PersonalizedText>Personalized Text</PersonalizedText>
 				<Heading variant='h1'>Heading 1</Heading>
 				<Heading variant='h2'>Heading 2</Heading>
