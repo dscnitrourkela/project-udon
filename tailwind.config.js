@@ -41,6 +41,7 @@ export default {
 			4: '16px',
 			4.5: '18px',
 			5: '20px',
+			5.3: '21.6px',
 			5.5: '22px',
 			6: '24px',
 			7: '28px',
@@ -63,6 +64,9 @@ export default {
 			cassandra: ['Cassandra', ...defaultTheme.fontFamily.sans],
 		},
 		extend: {
+			boxShadow: {
+				'3xl': '2px 3px 0px 0px #000',
+			},
 			colors: {
 				/** Design System Starts */
 				primary: {

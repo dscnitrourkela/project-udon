@@ -1,5 +1,4 @@
 import { Heading, HeroText, Paragraph, PersonalizedText, Text } from '../components/shared';
-//import Footer from '../components/shared/marginals/footer.jsx';
 import Event from '../components/shared/marginals/events.jsx';
 export default function Playground() {
 	return (
