@@ -15,7 +15,7 @@ const hamburgerVariants = cva(['hamburger-icon', 'flex-col'], {
 
 export default function Hamburger({ isOpen, onClick }) {
 	return (
-		<button className={cn(hamburgerVariants({ isOpen }), 'md:hidden', 'mr-[56.6px]', 'mt-2')} onClick={onClick}>
+		<button className={cn(hamburgerVariants({ isOpen }), 'md:hidden', 'mr-[23px]', 'mt-2')} onClick={onClick}>
 			<div
 				id='line1'
 				className='md:w-[52px] w-[44px] md:h-2 h-1 bg-black mb-2 rounded-lg border-black border-solid bg-orange-600'
