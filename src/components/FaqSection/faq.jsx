@@ -24,18 +24,13 @@ function FAQ() {
 					<div className='flex flex-col justify-center gap-[5px] md:gap-[10px]' key={id}>
 						<div className='flex gap-[5px] sm:gap-[10px] md:gap-[12px] flex-row'>
 							<img className='h-[18px] md:h-[32px] aspect-square' src={faqData.img.src} alt={faqData.img.alt} />
-							<Heading variant='h3' className='text-xs md:text-2xl'>
-								{question}
-							</Heading>
+							<Heading variant='h3'>{question}</Heading>
 						</div>
 						{answer instanceof Array ? (
 							<ul className='list-[square] px-7'>
 								{answer.map(({ key, content, bulleted }) => (
 									<li key={key} className={bulleted ? '' : 'list-none'}>
-										<Paragraph variant='body3' className='text-xs md:text-lg'>
-											{' '}
-											{content}
-										</Paragraph>
+										<Paragraph variant='body3'> {content}</Paragraph>
 									</li>
 								))}
 							</ul>

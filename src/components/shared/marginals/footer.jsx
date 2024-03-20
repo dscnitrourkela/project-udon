@@ -21,7 +21,7 @@ export default function Footer() {
 						<div className=''>
 							<Heading
 								variant='h3'
-								className='text-primary-yellow pb-4 md:pb-8 text-center md:text-start'
+								className='text-primary-yellow pb-4 md:pb-8 text-center md:text-start text-2xl'
 								style={{
 									textShadow: ' 1.7px 1.7px 0px #FFF',
 									WebkitTextStrokeWidth: 1,
@@ -46,7 +46,7 @@ export default function Footer() {
 						<div>
 							<Heading
 								variant='h2'
-								className='text-primary-yellow pb-4 md:pb-8 text-center md:text-start text-[28px] md:text-3.5xl'
+								className='text-primary-yellow pb-4 md:pb-8 text-center md:text-start text-[28px]'
 								style={{
 									textShadow: ' 1.7px 1.7px 0px #FFF',
 									WebkitTextStrokeWidth: 1,
@@ -58,7 +58,7 @@ export default function Footer() {
 								<div className='flex flex-col gap-4 text-center md:text-start pr-[30px] md:pr-[0px]'>
 									{footerData.links.links1.map(({ name, link }) => (
 										<a href={link} key={name}>
-											<Paragraph variant='body3' className='text-white text-base md:text-lg'>
+											<Paragraph variant='body3' className='text-white text-base'>
 												{name}
 											</Paragraph>
 										</a>
@@ -67,7 +67,7 @@ export default function Footer() {
 								<div className='flex flex-col gap-4 text-center md:text-start'>
 									{footerData.links.links2.map(({ name, link }) => (
 										<a href={link} key={name}>
-											<Paragraph variant='body3' className='text-white text-base md:text-lg'>
+											<Paragraph variant='body3' className='text-white text-base'>
 												{name}
 											</Paragraph>
 										</a>
