@@ -8,7 +8,7 @@ const Hero = () => {
 		<div className='mx-5 lg:mx-14 xl:max-w-[1483px] -z-1 relative'>
 			<div className='flex flex-col md:flex-row justify-center items-center min-h-screen gap-20 lg:gap-10'>
 				<div className='w-[100%] md:w-1/2 h-fit'>
-					<div className='flex flex-col justify-end ml-2' style={{ color: '#FF4409' }}>
+					<div className='flex flex-col justify-end ml-2 text-primary-foreground'>
 						<PersonalizedText>Welcome family...</PersonalizedText>
 					</div>
 

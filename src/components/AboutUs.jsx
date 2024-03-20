@@ -31,8 +31,8 @@ export default function AboutUs() {
 			</div>
 
 			<PersonalizedText
-				className='relative pl-[20px] sm:pl-[90px] md:pl-[80px] lg:pl-[90px] xl:pl-[100px] 2xl:pl-[300px] pb-[50px] sm:pb-[32px] md:pb-[23px] lg:pb-[33px] text-[8px] sm:text-base xl:text-base 2xl:text-lg -z-50'
-				style={{ transform: 'rotate(-10.62deg)', transformOrigin: '0 0', color: '#FF6108', fontWeight: '400' }}>
+				className='relative pl-[20px] sm:pl-[90px] md:pl-[80px] lg:pl-[90px] xl:pl-[100px] 2xl:pl-[110px] pb-[50px] sm:pb-[32px] md:pb-[23px] lg:pb-[33px] text-[8px] sm:text-base xl:text-base 2xl:text-lg -z-50 text-primary-foreground font-normal'
+				style={{ transform: 'rotate(-10.62deg)', transformOrigin: '0 0' }}>
 				You all are coming right ??...
 			</PersonalizedText>
 
@@ -41,12 +41,7 @@ export default function AboutUs() {
 				className='text-center mx-auto px-[30px] sm:px-[135px] mt-[-60px] pb-[25px] sm:pb-[40px] md:pb-[55px] lg:pb-[80px] text-xs sm:text-2xl'>
 				{aboutUsData.content1}{' '}
 				<span className='font-syne text-left text-base sm:text-3.5xl font-bold mr-[15px]'> {aboutUsData.content2}</span>
-				<img
-					src={aboutUsData.star_img_url}
-					alt='star'
-					className='sm:h-[76px] sm:w-[76px] h-[45px]'
-					style={{ display: 'inline-block', verticalAlign: 'top' }}
-				/>
+				<img src={aboutUsData.star_img_url} alt='star' className='sm:h-[76px] sm:w-[76px] h-[45px] inline-block align-top' />
 			</Paragraph>
 		</section>
 	);
