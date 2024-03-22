@@ -1,5 +1,4 @@
-import { Heading, HeroText, Paragraph, PersonalizedText, Text } from '../components/shared';
-
+import { Heading, Paragraph, PersonalizedText, Text } from '../components/shared';
 
 import Footer from '../components/shared/marginals/footer.jsx';
 import FormContainer from '../components/form/FormContainer.jsx';
@@ -10,7 +9,7 @@ export default function Playground() {
 		<div>
 			<NavBar />
 			<div className='container py-6'>
-				<HeroText>Hero Text</HeroText>
+				<h1>Hero Text</h1>
 				<PersonalizedText>Personalized Text</PersonalizedText>
 				<Heading variant='h1'>Heading 1</Heading>
 				<Heading variant='h2'>Heading 2</Heading>

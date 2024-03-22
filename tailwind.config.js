@@ -66,6 +66,7 @@ export default {
 		extend: {
 			boxShadow: {
 				'3xl': '2px 3px 0px 0px #000',
+				subheading: '1px 1px 0px 0px #F9F9F9',
 			},
 			colors: {
 				/** Design System Starts */
@@ -114,9 +115,6 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)',
-			},
-			boxShadow: {
-				subheading: '1px 1px 0px 0px #F9F9F9',
 			},
 			keyframes: {
 				'accordion-down': {
