@@ -3,35 +3,31 @@ import eventData from '../../../data/eventData.js';
 
 export default function Event() {
 	return (
-		<div className='p-8' style={{ border: '1px solid red' }}>
+		<div className='p-8 border-1 border-red-500 '>
 			<Heading
 				variant='h1'
-				className='text-primary-yellow text-center'
+				className='text-primary-yellow text-center text-5xl md:text-6xl lg:text-7xl'
 				style={{
-					fontSize: '80px',
 					textShadow: '4.608px 4.608px 0px #000',
 					WebkitTextStrokeWidth: 2.71052622795105,
 					WebkitTextStrokeColor: '#252525',
 				}}>
 				Events
 			</Heading>
-			<div
-				className='flex flex-wrap justify-between mt-12 space-y-8 space-x-0 sm:space-y-0 sm:space-x-8'
-				style={{ border: '1px solid blue' }}>
+			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
 				{eventData.map((event, index) => (
 					<div
 						key={index}
-						className='bg-[#ffcccb] p-6 rounded-lg w-full sm:w-80 relative flex-shrink-0'
+						className='bg-[#ffcccb] p-6 rounded-lg flex-shrink-0 relative'
 						style={{
 							borderRadius: '8px',
 							border: '1px solid #000',
 							background: '#FF9E7C',
 							boxShadow: '4px 4px 0px 0px #000',
-							gap: '20.54px',
 							width: 'auto',
 						}}>
 						<div
-							className='bg-[#ff8c69] text-white px-3 py-1 rounded-full text-sm absolute -mt-10 ml-60'
+							className='bg-[#ff8c69] text-white px-3 py-1 rounded-full text-sm absolute top-0 right-0-mt-10 ml-60'
 							style={{
 								borderRadius: '9px',
 								border: '2px solid #000',
@@ -46,14 +42,12 @@ export default function Event() {
 							<Heading variant='h3'>{event.date}</Heading>
 						</h3>
 						<h4 className='text-lg font-semibold mb-4'>
-							<Heading variant='h3' style={{ whiteSpace: 'nowrap' }}>
-								{event.venue}
-							</Heading>
+							<Heading variant='h3'>{event.venue}</Heading>
 						</h4>
 						<ul className='text-[#d45500]'>
 							{event.agenda.map((item, index) => (
 								<li key={index}>
-									<Text style={{ color: '#000', fontSize: '16px' }}>{item}</Text>{' '}
+									<Text style={{ color: '#000', fontSize: '16px' }}>{item}</Text>
 								</li>
 							))}
 						</ul>
