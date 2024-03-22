@@ -1,8 +1,12 @@
-import { Link } from 'react-router-dom';
-import { Button } from '../components/ui/button';
+import AboutUs from '../components/AboutUs';
+import FAQ from '../components/FaqSection/faq';
+import Hero from '../components/Hero';
+import Navbar from '../components/shared/NavBar';
+import Footer from '../components/shared/marginals/footer';
 
 export default function Home() {
 	return (
+
 		<div className='container py-6'>
 			<h1 className='text-3xl font-bold'>1999 Reunion Tour</h1>
 			<div className='mt-4'>
