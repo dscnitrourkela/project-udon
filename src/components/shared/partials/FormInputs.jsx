@@ -3,7 +3,7 @@ import { useState } from 'react';
 //import { STAGES, currentUser } from '../../../data/formInformation';
 //import { count } from 'firebase/firestore';
 
-export default function Inputs({ className, formData, onChange, validated }) {
+export function Inputs({ className, formData, onChange, validated }) {
 	const { type, minLength, maxLength, regex, id, placeholder, value } = formData;
 	const [errorMessage, setErrorMessage] = useState('');
 
@@ -42,3 +42,13 @@ export default function Inputs({ className, formData, onChange, validated }) {
 		</>
 	);
 }
+
+export const TextAreaInput = () => {
+	return (
+		<textarea
+			className='outline-none	bg-inherit rounded-md my-3 mb-6 w-[98%] h-[8vw] text-[#B0B0B0] p-2 block'
+			style={{ border: '1px solid #FF7647', boxShadow: '2px 2px 0px 0px #F9F9F9' }}
+			placeholder='Registration Type'
+		/>
+	);
+};

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Heading, Paragraph } from '../shared';
-import Inputs from '../shared/partials/FormInputs';
+import { Inputs, TextAreaInput } from '../shared/partials/FormInputs';
 import formimg from '../../assets/images/form-tickets.png';
 import { feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
 import { storeFormData } from '../../firebase/registration';
@@ -170,11 +170,7 @@ const FormContainer = () => {
 					</React.Fragment>
 				))}
 
-				<textarea
-					className='outline-none	bg-inherit rounded-md my-3 mb-6 w-[98%] h-[8vw] text-[#B0B0B0] p-2 block'
-					style={{ border: '1px solid #FF7647', boxShadow: '2px 2px 0px 0px #F9F9F9' }}
-					placeholder='Registration Type'
-				/>
+				<TextAreaInput onChange={e => setInputValue(e.target.value)} />
 
 				<Paragraph variant='body3' className='mb-6 mt-10 text-xl'>
 					{lastPartContent}
