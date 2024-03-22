@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Heading, Paragraph } from '../shared';
 import { Inputs, TextAreaInput } from '../shared/partials/FormInputs';
 import formimg from '../../assets/images/form-tickets.png';
-import { feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
+import { donation, feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
 import { storeFormData } from '../../firebase/registration';
 
 const FormContainer = () => {
@@ -39,10 +39,10 @@ const FormContainer = () => {
 	}, [userData]);
 
 	const registerUser = async e => {
-		/* if (!isValid) {
+		if (!isValid) {
 			console.log('Invalid inputs in form');
-			return;
-		} */
+			//return;
+		}
 		e.preventDefault();
 		try {
 			const documentId = await storeFormData(formData);
@@ -89,11 +89,7 @@ const FormContainer = () => {
 				<div id='imgContainer' className='mx-auto my-8 w-[50vw] md:w-[408px]'>
 					<img src={formimg} height={'100%'} width={'100%'} alt='ticket-price' />
 				</div>
-				<Paragraph variant='body3'>
-					Alumni donating/contributing more than ₹50,000 can pay &quot;Individual Only (without family)&quot; registration
-					fee for their family registration and they do not need to pay &quot;With Family (spouse + kids)&quot; registration
-					fee.
-				</Paragraph>
+				<Paragraph variant='body3'>{donation}</Paragraph>
 
 				<Heading
 					variant='h3'

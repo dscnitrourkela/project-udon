@@ -19,6 +19,9 @@ export const feeCoverage = [
 	'Transportation and logistics to and from hotel to venue/NIT Rourkela from Dec 22nd through Dec 24th.',
 ];
 
+export const donation =
+	'Alumni donating/contributing more than ₹50,000 can pay &quot;Individual Only (without family)&quot; registration fee for their family registration and they do not need to pay &quot;With Family (spouse + kids)&quot; registration fee.';
+
 export const STAGES = {
 	TYPE_OF_USER: 'Are you an NITR Student?',
 	STUDENT_FORM: 'Register',
