@@ -9,10 +9,9 @@
 		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
 		"format": "prettier --write --config .prettierrc --ignore-path .prettierignore ./src",
-		"prepare": "husky install"
+		"prepare": "husky"
 	},
 	"dependencies": {
-		"@vitejs/plugin-react": "^4.2.1",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.0",
 		"firebase": "^10.9.0",
