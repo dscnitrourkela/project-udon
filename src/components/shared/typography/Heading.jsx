@@ -4,9 +4,9 @@ import { cn } from '../../../lib/utils';
 const headingVariants = cva(['font-syne', 'font-bold', 'text-left', 'leading-7.5'], {
 	variants: {
 		variant: {
-			h1: ['text-10xl', 'leading-15'],
-			h2: ['text-3.5xl'],
-			h3: ['text-2xl'],
+			h1: ['text-2xl', 'sm:text-10xl', 'leading-15'],
+			h2: ['text-base', 'sm:text-3.5xl'],
+			h3: ['text-xs', 'sm:text-2xl'],
 		},
 	},
 });
