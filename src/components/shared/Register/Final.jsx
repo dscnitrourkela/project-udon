@@ -17,7 +17,7 @@ function Final() {
 
 	return (
 		<>
-			<div className='container mx-auto px-4 lg:px-0'>
+			<div className='container mx-auto px-4 lg:px-0 mb-8'>
 				<Heading
 					variant='h2'
 					className='text-primary-yellow'
