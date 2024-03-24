@@ -3,6 +3,8 @@ import Payment from './Payment';
 import UPI from './UPI';
 import Heading from '../typography/Heading';
 import Paragraph from '../typography/Paragraph';
+import { Contactorg } from '../../../data/Paymentdata';
+import { Emaildata } from '../../../data/Paymentdata';
 
 function Final() {
 	const [isPayment, setIsPayment] = useState(true);
@@ -28,7 +30,7 @@ function Final() {
 					}}>
 					Payment
 				</Heading>
-				<Paragraph variant='body3'>Send an email to recrourkela1998@gmail.com with a screenshot of your payment.</Paragraph>
+				<Paragraph variant='body3'>{Emaildata}</Paragraph>
 			</div>
 
 			<div className='container mx-auto px-4 lg:px-0'>
@@ -36,22 +38,20 @@ function Final() {
 					<Heading variant='h3' className='text-center my-8 lg:my-5'>
 						Payment method we have
 					</Heading>
-					<div className='text-center'>
-						<div className='flex flex-col lg:flex-row justify-center lg:space-x-4 mt-9'>
-							<div className='flex justify-center space-x-4 mt-4 relative'>
-								<button
-									className={`px-4 py-2 rounded-lg border-2 border-black ${isPayment ? 'bg-orange-500 text-white' : 'bg-white text-black'}`}
-									onClick={switchToPayment}
-									style={{ zIndex: 9 }}>
-									Bank Transaction
-								</button>
-								<button
-									className={`px-4 py-2 rounded-lg border-2 border-black ${!isPayment ? 'bg-orange-500 text-white' : 'bg-white text-black'}`}
-									onClick={switchToUPI}
-									style={{ zIndex: 9 }}>
-									Via UPI using QR
-								</button>
-							</div>
+					<div className=' text-center flex flex-col lg:flex-row justify-center lg:space-x-4 mt-9'>
+						<div className='flex justify-center space-x-4 mt-4 relative'>
+							<button
+								className={`px-4 py-2 rounded-lg border-2 border-black ${isPayment ? 'bg-orange-500 text-white' : 'bg-white text-black'}`}
+								onClick={switchToPayment}
+								style={{ zIndex: 9 }}>
+								Bank Transaction
+							</button>
+							<button
+								className={`px-4 py-2 rounded-lg border-2 border-black ${!isPayment ? 'bg-orange-500 text-white' : 'bg-white text-black'}`}
+								onClick={switchToUPI}
+								style={{ zIndex: 9 }}>
+								Via UPI using QR
+							</button>
 						</div>
 					</div>
 					{isPayment ? <Payment /> : <UPI />}
@@ -59,7 +59,7 @@ function Final() {
 			</div>
 
 			<Heading variant='body3' className='text-primary-foreground flex justify-center'>
-				Please contact the organizers if you want to pay in installments or one of the above methods do not work for you.
+				{Contactorg}
 			</Heading>
 		</>
 	);
