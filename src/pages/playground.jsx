@@ -1,4 +1,11 @@
-import Hero from '../components/Hero';
+import Final from '../components/shared/Register/Final.jsx';
+import Register from '../components/shared/Register/Register.jsx';
+
 export default function Playground() {
-	return <Hero />;
+	return (
+		<>
+			<Register />
+			<Final />
+		</>
+	);
 }
