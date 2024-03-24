@@ -27,14 +27,18 @@ export default function Event() {
 							width: 'auto',
 						}}>
 						<div
-							className='bg-[#ff8c69] text-white px-3 py-1 rounded-full text-sm absolute top-0 right-0-mt-10 ml-60'
+							className='bg-[#ff8c69] text-white px-3 py-1 rounded-full text-sm absolute  '
 							style={{
+								top: '-0.5rem',
+								right: '-1.5rem',
 								borderRadius: '9px',
 								border: '2px solid #000',
 								background: 'var(--Accent-Yellow, #F2DA05)',
 								whiteSpace: 'nowrap',
 								width: 'auto',
 								fontSize: '14px',
+
+								zIndex: '10',
 							}}>
 							{event.time}
 						</div>
