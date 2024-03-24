@@ -6,9 +6,10 @@ export default function Event() {
 		<div className='p-8 border-1 border-red-500 '>
 			<div className=' flex items-center justify-center mx:auto'>
 				<HeroText1
-					className='text-primary-yellow text-center '
+					className='text-primary-yellow text-center sm:text-4xl'
 					style={{
 						textShadow: '4.608px 4.608px 0px #000',
+
 						WebkitTextStrokeWidth: 2.71052622795105,
 						WebkitTextStrokeColor: '#252525',
 					}}>
@@ -55,7 +56,7 @@ export default function Event() {
 					</div>
 				))}
 			</div>
-			<div className=' bottom-0 right-0 mb-2 mr-2 '>
+			<div className='  bottom-0 right-0 my-px mr-2  '>
 				{eventData.length > 0 && <img src={eventData[0].imageUrl} alt='Vector' className=' w-44 h-60 stroke-3 ' />}
 			</div>
 		</div>
