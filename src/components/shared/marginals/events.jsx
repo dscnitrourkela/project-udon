@@ -4,15 +4,18 @@ import eventData from '../../../data/eventData.js';
 export default function Event() {
 	return (
 		<div className='p-8 border-1 border-red-500 '>
-			<HeroText1
-				className='text-primary-yellow text-center '
-				style={{
-					textShadow: '4.608px 4.608px 0px #000',
-					WebkitTextStrokeWidth: 2.71052622795105,
-					WebkitTextStrokeColor: '#252525',
-				}}>
-				Events
-			</HeroText1>
+			<div className=' flex items-center justify-center mx:auto'>
+				<HeroText1
+					className='text-primary-yellow text-center '
+					style={{
+						textShadow: '4.608px 4.608px 0px #000',
+						WebkitTextStrokeWidth: 2.71052622795105,
+						WebkitTextStrokeColor: '#252525',
+					}}>
+					Events
+				</HeroText1>
+				{eventData.length > 0 && <img src={eventData[0].titleUrl} alt='Icon' className='w-6 h-4 ml-2 lg:mt-10  sm: mt-6' />}
+			</div>
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
 				{eventData.map((event, index) => (
 					<div
@@ -51,6 +54,9 @@ export default function Event() {
 						</ul>
 					</div>
 				))}
+			</div>
+			<div className=' bottom-0 right-0 mb-2 mr-2 '>
+				{eventData.length > 0 && <img src={eventData[0].imageUrl} alt='Vector' className=' w-44 h-60 stroke-3 ' />}
 			</div>
 		</div>
 	);
