@@ -6,14 +6,26 @@ import { donation, feeCoverage, initialContent, inputContent, lastPartContent } 
 import { storeFormData } from '../../firebase/registration';
 
 const FormContainer = () => {
-	const [isValid, setValid] = useState(true);
+	const [isValid, setValid] = useState({
+		recRollNumber: false,
+		name: false,
+		email: false,
+		country: true,
+		state: true,
+		city: true,
+		prefix: true,
+		mobile: true,
+		regType: true,
+	});
+	var checkValidity = Object.values(isValid).every(value => value);
+	console.log('checkValidity:', checkValidity);
+
 	const [errorMessage, setErrorMessage] = useState('');
 	const [formData, setFormData] = useState({});
 	//const [verified, setVerified] = useState(false);
 	// const { userData } = useContext(AuthContext);
 	const userData = undefined;
 	//console.log('formData:', formData);
-	console.log(isValid);
 
 	const setInputValue = (key, value) => {
 		if (!key) return;
@@ -178,9 +190,10 @@ const FormContainer = () => {
 				</Paragraph>
 
 				<button
-					{...(!isValid && { disabled: true })}
+					{...(!checkValidity && { disabled: true })}
 					className={
-						'bg-[#FF7647] text-black rounded-md p-2 mt-6 w-[100%]' + (!isValid ? ' cursor-not-allowed, bg-[#8c503b]' : '')
+						'bg-[#FF7647] text-black rounded-md p-2 mt-6 w-[100%]' +
+						(!checkValidity ? ' cursor-not-allowed, bg-[#8c503b]' : '')
 					}
 					style={{ boxShadow: '2px 2px 0px 0px #FFF6F6' }}>
 					{' '}
@@ -188,7 +201,7 @@ const FormContainer = () => {
 						Register Now
 					</Paragraph>
 				</button>
-				{!isValid ? (
+				{!checkValidity ? (
 					<Paragraph variant='body3' className='my-2 text-red-600'>
 						{errorMessage}
 					</Paragraph>

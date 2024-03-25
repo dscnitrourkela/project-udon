@@ -1,4 +1,3 @@
-import { useState } from 'react';
 //import { AuthContext } from '../../../context/AuthContext';
 //import { STAGES, currentUser } from '../../../data/formInformation';
 //import { count } from 'firebase/firestore';
@@ -8,27 +7,29 @@ export function Inputs({ className, formData, onChange, validated, errormsg, req
 
 	const validateInput = event => {
 		const value = event.target.value;
-		var validity = true;
 
 		if (regex && value) {
 			const isValid = value.match(regex);
-			const isEmpty = !required || value.length === 0;
+			//const isEmpty = !required || value.length === 0;
 			if (!isValid) {
 				console.log(`Invalid input for ${id}`);
 				event.target.style.border = '1px solid #b91c1c';
 
-				validity = false;
-				//validated(false);
+				validated(prev => ({
+					...prev,
+					[id]: false,
+				}));
 				errormsg(prevMsg => prevMsg + `\nInvalid input for ${id}`);
 			} else {
 				event.target.style.border = '1px solid #FF7647';
 
-				validity = true;
-				//validated(true);
+				validated(prev => ({
+					...prev,
+					[id]: true,
+				}));
 				errormsg(prevMsg => prevMsg.replace(new RegExp(`\\nInvalid input for ${id}`, 'g'), ''));
 			}
 		}
-		validated(prev => prev && validity);
 	};
 
 	return (
