@@ -52,10 +52,11 @@ export const inputContent = [
 		id: 'recRollNumber',
 		label: 'REC Roll Number',
 		type: 'text',
-		regex: '^[a-zA-Z]+$',
+		regex: '^[a-zA-Z0-9]+$',
 		maxLength: 11,
 		minLength: 7,
 		placeholder: 'REC Roll Number (for Example: A4275)',
+		required: true,
 	},
 	{
 		key: 2,
@@ -66,6 +67,7 @@ export const inputContent = [
 		maxLength: 50,
 		minLength: 3,
 		placeholder: 'Enter Your Name here',
+		required: true,
 	},
 	{
 		key: 3,
@@ -76,6 +78,7 @@ export const inputContent = [
 		maxLength: 50,
 		minLength: 3,
 		placeholder: 'Enter your Email here',
+		required: true,
 	},
 	{
 		key: 4,

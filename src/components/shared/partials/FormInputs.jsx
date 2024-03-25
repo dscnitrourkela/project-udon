@@ -1,27 +1,34 @@
+import { useState } from 'react';
 //import { AuthContext } from '../../../context/AuthContext';
 //import { STAGES, currentUser } from '../../../data/formInformation';
 //import { count } from 'firebase/firestore';
 
-export function Inputs({ className, formData, onChange, validated, errormsg }) {
+export function Inputs({ className, formData, onChange, validated, errormsg, required }) {
 	const { type, minLength, maxLength, regex, id, placeholder, value } = formData;
 
 	const validateInput = event => {
 		const value = event.target.value;
+		var validity = true;
+
 		if (regex && value) {
 			const isValid = value.match(regex);
+			const isEmpty = !required || value.length === 0;
 			if (!isValid) {
 				console.log(`Invalid input for ${id}`);
 				event.target.style.border = '1px solid #b91c1c';
 
-				validated(false);
+				validity = false;
+				//validated(false);
 				errormsg(prevMsg => prevMsg + `\nInvalid input for ${id}`);
 			} else {
-				//setErrorMessage('');
-				errormsg(prevMsg => prevMsg.replace(new RegExp(`\\nInvalid input for ${id}`, 'g'), ''));
 				event.target.style.border = '1px solid #FF7647';
-				validated(true);
+
+				validity = true;
+				//validated(true);
+				errormsg(prevMsg => prevMsg.replace(new RegExp(`\\nInvalid input for ${id}`, 'g'), ''));
 			}
 		}
+		validated(prev => prev && validity);
 	};
 
 	return (
@@ -36,6 +43,7 @@ export function Inputs({ className, formData, onChange, validated, errormsg }) {
 			value={value}
 			onBlur={validateInput}
 			onChange={onChange}
+			required={required ? true : false}
 		/>
 	);
 }

@@ -6,7 +6,7 @@ import { donation, feeCoverage, initialContent, inputContent, lastPartContent } 
 import { storeFormData } from '../../firebase/registration';
 
 const FormContainer = () => {
-	const [isValid, setValid] = useState(false);
+	const [isValid, setValid] = useState(true);
 	const [errorMessage, setErrorMessage] = useState('');
 	const [formData, setFormData] = useState({});
 	//const [verified, setVerified] = useState(false);
@@ -165,6 +165,7 @@ const FormContainer = () => {
 									id: item.id,
 									placeholder: item.placeholder,
 								}}
+								required={item.required}
 							/>
 						)}
 					</React.Fragment>
