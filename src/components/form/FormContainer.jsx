@@ -17,8 +17,22 @@ const FormContainer = () => {
 		mobile: true,
 		regType: true,
 	});
+	const [isEmpty, setEmpty] = useState({
+		recRollNumber: true,
+		name: true,
+		email: true,
+		country: false,
+		state: false,
+		city: false,
+		prefix: false,
+		mobile: false,
+		regType: false,
+	});
 	var checkValidity = Object.values(isValid).every(value => value);
-	console.log('checkValidity:', checkValidity);
+	var checkIfEmpty = Object.values(isEmpty).some(value => value);
+
+	var notAllowed = !checkValidity || checkIfEmpty;
+	//console.log('checkValidity:', checkValidity, 'checkIfEmpty:', isEmpty);
 
 	const [errorMessage, setErrorMessage] = useState('');
 	const [formData, setFormData] = useState({});
@@ -152,6 +166,7 @@ const FormContainer = () => {
 									className='inline mr-3 w-[31.3%]'
 									onChange={e => setInputValue(id, e.target.value, e.target.validated)}
 									validated={setValid}
+									checkEmpty={setEmpty}
 									errormsg={setErrorMessage}
 									formData={{
 										type: item.type[idx],
@@ -168,6 +183,7 @@ const FormContainer = () => {
 								className='block w-[98%]'
 								onChange={e => setInputValue(item.id, e.target.value, e.target.validated)}
 								validated={setValid}
+								checkEmpty={setEmpty}
 								errormsg={setErrorMessage}
 								formData={{
 									type: item.type,
@@ -190,10 +206,9 @@ const FormContainer = () => {
 				</Paragraph>
 
 				<button
-					{...(!checkValidity && { disabled: true })}
+					{...(notAllowed && { disabled: true })}
 					className={
-						'bg-[#FF7647] text-black rounded-md p-2 mt-6 w-[100%]' +
-						(!checkValidity ? ' cursor-not-allowed, bg-[#8c503b]' : '')
+						'bg-[#FF7647] text-black rounded-md p-2 mt-6 w-[100%]' + (notAllowed ? ' cursor-not-allowed, bg-[#8c503b]' : '')
 					}
 					style={{ boxShadow: '2px 2px 0px 0px #FFF6F6' }}>
 					{' '}
@@ -201,7 +216,7 @@ const FormContainer = () => {
 						Register Now
 					</Paragraph>
 				</button>
-				{!checkValidity ? (
+				{notAllowed ? (
 					<Paragraph variant='body3' className='my-2 text-red-600'>
 						{errorMessage}
 					</Paragraph>

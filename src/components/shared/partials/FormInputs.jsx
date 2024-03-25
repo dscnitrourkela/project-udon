@@ -2,15 +2,17 @@
 //import { STAGES, currentUser } from '../../../data/formInformation';
 //import { count } from 'firebase/firestore';
 
-export function Inputs({ className, formData, onChange, validated, errormsg, required }) {
+export function Inputs({ className, formData, onChange, validated, checkEmpty, errormsg, required }) {
 	const { type, minLength, maxLength, regex, id, placeholder, value } = formData;
 
 	const validateInput = event => {
 		const value = event.target.value;
-
 		if (regex && value) {
 			const isValid = value.match(regex);
-			//const isEmpty = !required || value.length === 0;
+			const isEmpty = !required || value === '';
+			console.log(`isEmpty for ${id}`, isEmpty);
+			console.log(id, value);
+
 			if (!isValid) {
 				console.log(`Invalid input for ${id}`);
 				event.target.style.border = '1px solid #b91c1c';
@@ -28,6 +30,20 @@ export function Inputs({ className, formData, onChange, validated, errormsg, req
 					[id]: true,
 				}));
 				errormsg(prevMsg => prevMsg.replace(new RegExp(`\\nInvalid input for ${id}`, 'g'), ''));
+			}
+
+			if (isEmpty) {
+				checkEmpty(prev => ({
+					...prev,
+					[id]: true,
+				}));
+				errormsg(prevMsg => prevMsg + `\nEmpty input for ${id}`);
+			} else {
+				checkEmpty(prev => ({
+					...prev,
+					[id]: false,
+				}));
+				errormsg(prevMsg => prevMsg.replace(new RegExp(`\\nEmpty input for ${id}`, 'g'), ''));
 			}
 		}
 	};
