@@ -10,8 +10,6 @@ export function Inputs({ className, formData, onChange, validated, checkEmpty, e
 		if (regex && value) {
 			const isValid = value.match(regex);
 			const isEmpty = !required || value === '';
-			console.log(`isEmpty for ${id}`, isEmpty);
-			console.log(id, value);
 
 			if (!isValid) {
 				console.log(`Invalid input for ${id}`);

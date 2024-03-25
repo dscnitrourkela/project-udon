@@ -67,9 +67,9 @@ const FormContainer = () => {
 	}, [userData]);
 
 	const registerUser = async e => {
-		if (!isValid) {
-			console.log('Invalid inputs in form');
-			//return;
+		if (notAllowed) {
+			console.log('Invalid or empty inputs in form');
+			return;
 		}
 		e.preventDefault();
 		try {
