@@ -52,7 +52,7 @@ export const inputContent = [
 		id: 'recRollNumber',
 		label: 'REC Roll Number',
 		type: 'text',
-		regex: '',
+		regex: '^[a-zA-Z]+$',
 		maxLength: 11,
 		minLength: 7,
 		placeholder: 'REC Roll Number (for Example: A4275)',

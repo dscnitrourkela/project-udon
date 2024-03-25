@@ -7,11 +7,13 @@ import { storeFormData } from '../../firebase/registration';
 
 const FormContainer = () => {
 	const [isValid, setValid] = useState(false);
+	const [errorMessage, setErrorMessage] = useState('');
 	const [formData, setFormData] = useState({});
 	//const [verified, setVerified] = useState(false);
 	// const { userData } = useContext(AuthContext);
 	const userData = undefined;
-	console.log('formData:', formData);
+	//console.log('formData:', formData);
+	console.log(isValid);
 
 	const setInputValue = (key, value) => {
 		if (!key) return;
@@ -138,6 +140,7 @@ const FormContainer = () => {
 									className='inline mr-3 w-[31.3%]'
 									onChange={e => setInputValue(id, e.target.value, e.target.validated)}
 									validated={setValid}
+									errormsg={setErrorMessage}
 									formData={{
 										type: item.type[idx],
 										minLength: item.minLength[idx],
@@ -153,6 +156,7 @@ const FormContainer = () => {
 								className='block w-[98%]'
 								onChange={e => setInputValue(item.id, e.target.value, e.target.validated)}
 								validated={setValid}
+								errormsg={setErrorMessage}
 								formData={{
 									type: item.type,
 									minLength: item.minLength,
@@ -172,16 +176,24 @@ const FormContainer = () => {
 					{lastPartContent}
 				</Paragraph>
 
-				{
-					<button
-						className='bg-[#FF7647] text-black rounded-md p-2 mt-6 w-[100%] '
-						style={{ boxShadow: '2px 2px 0px 0px #FFF6F6' }}>
-						{' '}
-						<Paragraph variant='body3' className='inline mx-auto text-xl' onClick={registerUser}>
-							Register Now
-						</Paragraph>
-					</button>
-				}
+				<button
+					{...(!isValid && { disabled: true })}
+					className={
+						'bg-[#FF7647] text-black rounded-md p-2 mt-6 w-[100%]' + (!isValid ? ' cursor-not-allowed, bg-[#8c503b]' : '')
+					}
+					style={{ boxShadow: '2px 2px 0px 0px #FFF6F6' }}>
+					{' '}
+					<Paragraph variant='body3' className='inline mx-auto text-xl' onClick={registerUser}>
+						Register Now
+					</Paragraph>
+				</button>
+				{!isValid ? (
+					<Paragraph variant='body3' className='my-2 text-red-600'>
+						{errorMessage}
+					</Paragraph>
+				) : (
+					''
+				)}
 			</div>
 		</div>
 	);
