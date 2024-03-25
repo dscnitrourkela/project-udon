@@ -137,7 +137,7 @@ const FormContainer = () => {
 									key={idx}
 									className='inline mr-3 w-[31.3%]'
 									onChange={e => setInputValue(id, e.target.value, e.target.validated)}
-									validated={k => setValid(k)}
+									validated={setValid}
 									formData={{
 										type: item.type[idx],
 										minLength: item.minLength[idx],
@@ -152,7 +152,7 @@ const FormContainer = () => {
 							<Inputs
 								className='block w-[98%]'
 								onChange={e => setInputValue(item.id, e.target.value, e.target.validated)}
-								validated={false}
+								validated={setValid}
 								formData={{
 									type: item.type,
 									minLength: item.minLength,
@@ -172,14 +172,16 @@ const FormContainer = () => {
 					{lastPartContent}
 				</Paragraph>
 
-				<button
-					className='bg-[#FF7647] text-black rounded-md p-2 mt-6 w-[100%] '
-					style={{ boxShadow: '2px 2px 0px 0px #FFF6F6' }}>
-					{' '}
-					<Paragraph variant='body3' className='inline mx-auto text-xl' onClick={registerUser}>
-						Register Now
-					</Paragraph>
-				</button>
+				{
+					<button
+						className='bg-[#FF7647] text-black rounded-md p-2 mt-6 w-[100%] '
+						style={{ boxShadow: '2px 2px 0px 0px #FFF6F6' }}>
+						{' '}
+						<Paragraph variant='body3' className='inline mx-auto text-xl' onClick={registerUser}>
+							Register Now
+						</Paragraph>
+					</button>
+				}
 			</div>
 		</div>
 	);

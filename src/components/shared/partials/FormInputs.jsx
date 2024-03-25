@@ -15,12 +15,11 @@ export function Inputs({ className, formData, onChange, validated }) {
 				console.log(`Invalid input for ${id}`);
 				event.target.style.border = '1px solid red';
 				setErrorMessage(`Invalid input for ${id}`);
-				//validated(false);
-				console.log(validated);
+				validated(false);
 			} else {
 				setErrorMessage('');
 				event.target.style.border = '1px solid #FF7647';
-				//validated(true);
+				validated(true);
 			}
 		}
 	};
