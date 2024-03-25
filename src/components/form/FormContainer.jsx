@@ -4,10 +4,11 @@ import { Inputs, TextAreaInput } from '../shared/partials/FormInputs';
 import formimg from '../../assets/images/form-tickets.png';
 import { donation, feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
 import { storeFormData } from '../../firebase/registration';
+import { loggedUser } from '../../firebase/login';
 
 const FormContainer = () => {
 	// const { userData } = useContext(AuthContext);
-	const userData = undefined;
+	const userData = loggedUser;
 
 	const [isValid, setValid] = useState({
 		recRollNumber: false,
@@ -39,11 +40,9 @@ const FormContainer = () => {
 	const [errorMessage, setErrorMessage] = useState('');
 
 	const [formData, setFormData] = useState({});
-	//console.log('formData:', formData);
-
+	console.log('formData:', formData);
 	const setInputValue = (key, value) => {
 		if (!key) return;
-
 		setFormData(prev => ({
 			...prev,
 			[key]: value,
@@ -164,8 +163,9 @@ const FormContainer = () => {
 										maxLength: item.maxLength[idx],
 										regex: item.regex[idx],
 										id: id,
-										placeholder: item.placeholder[idx],
+										placeholder: formData?.id || item.placeholder[idx],
 									}}
+									value={formData[id]}
 								/>
 							))
 						) : (
@@ -184,6 +184,7 @@ const FormContainer = () => {
 									placeholder: item.placeholder,
 								}}
 								required={item.required}
+								value={formData[item.id]}
 							/>
 						)}
 					</React.Fragment>

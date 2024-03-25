@@ -1,3 +1,5 @@
+import { loggedUser } from '../firebase/login';
+
 export const initialContent = [
 	{
 		text: "Don't miss the 1999 Silver Jubilee event! Register now to secure your spot and confirm your registration by making a payment.",
@@ -66,7 +68,7 @@ export const inputContent = [
 		regex: '^[a-zA-Z]+$',
 		maxLength: 50,
 		minLength: 3,
-		placeholder: 'Enter Your Name here',
+		placeholder: loggedUser ? loggedUser.name : 'Enter Your Name here',
 		required: true,
 	},
 	{
@@ -77,7 +79,7 @@ export const inputContent = [
 		regex: '^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$',
 		maxLength: 50,
 		minLength: 3,
-		placeholder: 'Enter your Email here',
+		placeholder: loggedUser ? loggedUser.email : 'Enter your Email here',
 		required: true,
 	},
 	{
