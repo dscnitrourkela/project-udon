@@ -6,6 +6,9 @@ import { donation, feeCoverage, initialContent, inputContent, lastPartContent } 
 import { storeFormData } from '../../firebase/registration';
 
 const FormContainer = () => {
+	// const { userData } = useContext(AuthContext);
+	const userData = undefined;
+
 	const [isValid, setValid] = useState({
 		recRollNumber: false,
 		name: false,
@@ -33,12 +36,9 @@ const FormContainer = () => {
 
 	var notAllowed = !checkValidity || checkIfEmpty;
 	//console.log('checkValidity:', checkValidity, 'checkIfEmpty:', isEmpty);
-
 	const [errorMessage, setErrorMessage] = useState('');
+
 	const [formData, setFormData] = useState({});
-	//const [verified, setVerified] = useState(false);
-	// const { userData } = useContext(AuthContext);
-	const userData = undefined;
 	//console.log('formData:', formData);
 
 	const setInputValue = (key, value) => {
@@ -76,16 +76,6 @@ const FormContainer = () => {
 			const documentId = await storeFormData(formData);
 			console.log('Document ID:', documentId);
 			window.alert('Registration Successful');
-
-			setFormData({
-				recRollNumber: '',
-				name: '',
-				email: '',
-				country: '',
-				state: '',
-				city: '',
-				contactNumber: '',
-			});
 		} catch (error) {
 			console.error('Error:', error);
 			window.alert('Registration Failed');
