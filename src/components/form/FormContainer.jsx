@@ -8,7 +8,6 @@ import { loggedUser, logUserRegData } from '../../firebase/login';
 
 const FormContainer = () => {
 	const userData = logUserRegData;
-	//console.log('userData:', userData);
 
 	const [isValid, setValid] = useState({
 		recRollNumber: false,
@@ -36,8 +35,8 @@ const FormContainer = () => {
 	var checkIfEmpty = Object.values(isEmpty).some(value => value);
 
 	var notAllowed = !checkValidity || checkIfEmpty;
-	//console.log('checkValidity:', checkValidity, 'checkIfEmpty:', isEmpty);
 	const [errorMessage, setErrorMessage] = useState('');
+	//console.log('checkValidity:', checkValidity, 'checkIfEmpty:', isEmpty);
 
 	const [formData, setFormData] = useState({});
 	console.log('formData:', formData);
@@ -77,10 +76,8 @@ const FormContainer = () => {
 		try {
 			const documentId = await storeFormData(formData);
 			console.log('Document ID:', documentId);
-			window.alert('Registration Successful');
 		} catch (error) {
 			console.error('Error:', error);
-			window.alert('Registration Failed');
 		}
 		console.log('Form Data:', formData);
 	};
