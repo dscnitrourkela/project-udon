@@ -4,11 +4,11 @@ import { Inputs, TextAreaInput } from '../shared/partials/FormInputs';
 import formimg from '../../assets/images/form-tickets.png';
 import { donation, feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
 import { storeFormData } from '../../firebase/registration';
-import { loggedUser } from '../../firebase/login';
+import { loggedUser, logUserRegData } from '../../firebase/login';
 
 const FormContainer = () => {
-	// const { userData } = useContext(AuthContext);
-	const userData = loggedUser;
+	const userData = logUserRegData;
+	//console.log('userData:', userData);
 
 	const [isValid, setValid] = useState({
 		recRollNumber: false,
@@ -52,6 +52,7 @@ const FormContainer = () => {
 	useEffect(() => {
 		if (userData) {
 			setFormData({
+				uid: userData?.uid?.toString() || '',
 				recRollNumber: userData?.rollNumber || '',
 				name: userData?.name || '',
 				email: userData?.email || '',
@@ -61,6 +62,8 @@ const FormContainer = () => {
 				prefix: userData?.prefix || '',
 				mobile: userData?.mobile || '',
 				regType: userData?.regType || '',
+				googlName: loggedUser?.name || '',
+				googleMail: loggedUser?.email || '',
 			});
 		}
 	}, [userData]);
@@ -165,7 +168,6 @@ const FormContainer = () => {
 										id: id,
 										placeholder: formData?.id || item.placeholder[idx],
 									}}
-									value={formData[id]}
 								/>
 							))
 						) : (
@@ -184,7 +186,6 @@ const FormContainer = () => {
 									placeholder: item.placeholder,
 								}}
 								required={item.required}
-								value={formData[item.id]}
 							/>
 						)}
 					</React.Fragment>
@@ -197,9 +198,9 @@ const FormContainer = () => {
 				</Paragraph>
 
 				<button
-					{...(notAllowed && { disabled: true })}
+					{...(notAllowed ? 'disabled' : '')}
 					className={
-						'bg-[#FF7647] text-black rounded-md p-2 mt-6 w-[100%]' + (notAllowed ? ' cursor-not-allowed, bg-[#8c503b]' : '')
+						'bg-[#FF7647] text-black rounded-md p-2 mt-6 w-[100%]' + (notAllowed ? ' cursor-not-allowed, bg-[#80584a]' : '')
 					}
 					style={{ boxShadow: '2px 2px 0px 0px #FFF6F6' }}>
 					{' '}

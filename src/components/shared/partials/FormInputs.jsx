@@ -1,7 +1,3 @@
-//import { AuthContext } from '../../../context/AuthContext';
-//import { STAGES, currentUser } from '../../../data/formInformation';
-//import { count } from 'firebase/firestore';
-
 export function Inputs({ className, formData, onChange, validated, checkEmpty, errormsg, required }) {
 	const { type, minLength, maxLength, regex, id, placeholder, value } = formData;
 
