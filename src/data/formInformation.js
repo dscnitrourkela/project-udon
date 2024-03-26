@@ -63,7 +63,7 @@ export const inputContent = [
 		id: 'name',
 		label: 'Name',
 		type: 'text',
-		regex: '^[a-zA-Z]+$',
+		regex: '^[a-zA-Z\\s]+$',
 		maxLength: 50,
 		minLength: 3,
 		placeholder: 'Enter Your Name here',
