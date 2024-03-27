@@ -7,12 +7,13 @@ import FormContainer from '../components/form/FormContainer.jsx';
 import NavBar from '../components/shared/NavBar';
 
 export default function Playground() {
-	const [{ currentUser, userData }, setUserData] = useState({});
+	const [[currentUser, userData], setUserData] = useState([{}, {}]);
+	console.log('current user', currentUser);
 
 	return (
 		<AuthContext.Provider value={{ currentUser, userData, setUserData }}>
 			<div>
-				<NavBar />
+				<NavBar setUserData={setUserData} />
 				<div className='container py-6'>
 					<h1>Hero Text</h1>
 					<PersonalizedText>Personalized Text</PersonalizedText>
@@ -40,7 +41,7 @@ export default function Playground() {
 					</ul>
 				</div>
 
-				<FormContainer />
+				<FormContainer userValues={{ currentUser, userData }} />
 				<Footer />
 			</div>
 		</AuthContext.Provider>

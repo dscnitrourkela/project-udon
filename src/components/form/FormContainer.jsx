@@ -1,15 +1,18 @@
 import React, { useEffect, useState, useContext } from 'react';
-import AuthContext from '../../context/AuthContext';
+//import AuthContext from '../../context/AuthContext';
 import { Heading, Paragraph } from '../shared';
 import { Inputs, TextAreaInput } from '../shared/partials/FormInputs';
 import formimg from '../../assets/images/form-tickets.png';
 import { donation, feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
 import { storeFormData } from '../../firebase/registration';
-//import { loggedUser, logUserRegData } from '../../firebase/login';
+import { loggedUser, logUserRegData } from '../../firebase/login';
 
 const FormContainer = () => {
-	const { currentUser, userData } = useContext(AuthContext);
-	//const userData = logUserRegData;
+	//const { currentUser, userData } = useContext(AuthContext);
+
+	const currentUser = loggedUser,
+		userData = logUserRegData;
+	console.log('userData:', userData);
 
 	const [isValid, setValid] = useState({
 		recRollNumber: false,
