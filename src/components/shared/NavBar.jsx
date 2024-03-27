@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 //import AuthContext from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 import Text from './typography/Text';
@@ -9,7 +9,7 @@ import Logo from './Logo';
 import Hamburger from './Hamburger';
 import { signInWithGoogle } from '../../firebase/login';
 
-function NavBar({ setUserData }) {
+function NavBar() {
 	//const { setUserData } = useContext(AuthContext);
 
 	const { navItems, logo } = Navigation;

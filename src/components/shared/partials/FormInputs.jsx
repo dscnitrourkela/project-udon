@@ -1,6 +1,5 @@
 export function Inputs({ className, formData, onChange, validated, checkEmpty, errormsg, required }) {
 	const { type, minLength, maxLength, regex, id, placeholder, value } = formData;
-
 	const validateInput = event => {
 		const value = event.target.value;
 		if (regex && value) {
@@ -10,36 +9,35 @@ export function Inputs({ className, formData, onChange, validated, checkEmpty, e
 			if (!isValid) {
 				console.log(`Invalid input for ${id}`);
 				event.target.style.border = '1px solid #b91c1c';
-
-				validated(prev => ({
-					...prev,
-					[id]: false,
-				}));
+				updateValidationState(id, false);
 				errormsg(prevMsg => prevMsg + `\nInvalid input for ${id}`);
 			} else {
 				event.target.style.border = '1px solid #FF7647';
-
-				validated(prev => ({
-					...prev,
-					[id]: true,
-				}));
+				updateValidationState(id, true);
 				errormsg(prevMsg => prevMsg.replace(new RegExp(`\\nInvalid input for ${id}`, 'g'), ''));
 			}
 
 			if (isEmpty) {
-				checkEmpty(prev => ({
-					...prev,
-					[id]: true,
-				}));
+				updateEmptyState(id, true);
 				errormsg(prevMsg => prevMsg + `\nEmpty input for ${id}`);
 			} else {
-				checkEmpty(prev => ({
-					...prev,
-					[id]: false,
-				}));
+				updateEmptyState(id, false);
 				errormsg(prevMsg => prevMsg.replace(new RegExp(`\\nEmpty input for ${id}`, 'g'), ''));
 			}
 		}
+	};
+
+	const updateValidationState = (id, isValid) => {
+		validated(prev => ({
+			...prev,
+			[id]: isValid,
+		}));
+	};
+	const updateEmptyState = (id, isEmpty) => {
+		checkEmpty(prev => ({
+			...prev,
+			[id]: isEmpty,
+		}));
 	};
 
 	return (
