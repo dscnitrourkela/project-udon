@@ -18,6 +18,8 @@ export const signInWithGoogle = () => {
 
 			logUserRegData = await getUserData(user.uid);
 			console.log('User Registration Data:', logUserRegData);
+
+			return { loggedUser, logUserRegData };
 		})
 		.catch(error => {
 			const errorMessage = error.message;
@@ -33,11 +35,10 @@ export const getUserData = async userId => {
 		if (!querySnapshot.empty) {
 			const userRegData = querySnapshot.docs[0].data();
 
-			//logUserData = userRegData;
 			return userRegData;
 		} else {
 			console.log('No such document!');
-			return null;
+			return {};
 		}
 	} catch (error) {
 		console.error('Error getting user data:', error);

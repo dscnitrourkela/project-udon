@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import AuthContext from '../../context/AuthContext';
 import { Heading, Paragraph } from '../shared';
 import { Inputs, TextAreaInput } from '../shared/partials/FormInputs';
 import formimg from '../../assets/images/form-tickets.png';
 import { donation, feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
 import { storeFormData } from '../../firebase/registration';
-import { loggedUser, logUserRegData } from '../../firebase/login';
+//import { loggedUser, logUserRegData } from '../../firebase/login';
 
 const FormContainer = () => {
-	const userData = logUserRegData;
+	const { currentUser, userData } = useContext(AuthContext);
+	//const userData = logUserRegData;
 
 	const [isValid, setValid] = useState({
 		recRollNumber: false,
@@ -51,7 +53,7 @@ const FormContainer = () => {
 	useEffect(() => {
 		if (userData) {
 			setFormData({
-				uid: userData?.uid?.toString() || '',
+				uid: currentUser?.uid?.toString() || '',
 				recRollNumber: userData?.rollNumber || '',
 				name: userData?.name || '',
 				email: userData?.email || '',
@@ -61,8 +63,8 @@ const FormContainer = () => {
 				prefix: userData?.prefix || '',
 				mobile: userData?.mobile || '',
 				regType: userData?.regType || '',
-				googlName: loggedUser?.name || '',
-				googleMail: loggedUser?.email || '',
+				googlName: currentUser?.name || '',
+				googleMail: currentUser?.email || '',
 			});
 		}
 	}, [userData]);

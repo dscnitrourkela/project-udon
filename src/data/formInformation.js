@@ -23,15 +23,9 @@ export const donation =
 	'Alumni donating/contributing more than ₹50,000 can pay &quot;Individual Only (without family)&quot; registration fee for their family registration and they do not need to pay &quot;With Family (spouse + kids)&quot; registration fee.';
 
 export const STAGES = {
-	TYPE_OF_USER: 'Are you an NITR Student?',
 	STUDENT_FORM: 'Register',
+	PAYMENT_STATUS: 'Paid',
 	REGISTRATION_CLOSED: 'Registration Closed',
-};
-
-export const INIT_STATE = {
-	value: '',
-	errorVisibility: false,
-	errorMessage: '',
 };
 
 export const currentUser = {
