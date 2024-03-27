@@ -9,34 +9,28 @@ export function Inputs({ className, formData, onChange, validated, checkEmpty, e
 			if (!isValid) {
 				console.log(`Invalid input for ${id}`);
 				event.target.style.border = '1px solid #b91c1c';
-				updateValidationState(id, false);
+				updateState(id, validated, false);
 				errormsg(prevMsg => prevMsg + `\nInvalid input for ${id}`);
 			} else {
 				event.target.style.border = '1px solid #FF7647';
-				updateValidationState(id, true);
+				updateState(id, validated, true);
 				errormsg(prevMsg => prevMsg.replace(new RegExp(`\\nInvalid input for ${id}`, 'g'), ''));
 			}
 
 			if (isEmpty) {
-				updateEmptyState(id, true);
+				updateState(id, checkEmpty, true);
 				errormsg(prevMsg => prevMsg + `\nEmpty input for ${id}`);
 			} else {
-				updateEmptyState(id, false);
+				updateState(id, checkEmpty, false);
 				errormsg(prevMsg => prevMsg.replace(new RegExp(`\\nEmpty input for ${id}`, 'g'), ''));
 			}
 		}
 	};
 
-	const updateValidationState = (id, isValid) => {
-		validated(prev => ({
+	const updateState = (id, func, isValid) => {
+		func(prev => ({
 			...prev,
 			[id]: isValid,
-		}));
-	};
-	const updateEmptyState = (id, isEmpty) => {
-		checkEmpty(prev => ({
-			...prev,
-			[id]: isEmpty,
 		}));
 	};
 
