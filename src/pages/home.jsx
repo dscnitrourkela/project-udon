@@ -1,4 +1,6 @@
 import AboutUs from '../components/AboutUs';
+
+import SwipeCarousel from '../components/Carousel/SwipeCarousel';
 import FAQ from '../components/FaqSection/faq';
 import Hero from '../components/Hero';
 import Navbar from '../components/shared/NavBar';
@@ -9,6 +11,7 @@ export default function Home() {
 		<div className=''>
 			<Navbar />
 			<Hero />
+			<SwipeCarousel />
 			<AboutUs />
 			<FAQ />
 			<Footer />
