@@ -174,7 +174,7 @@ const FormContainer = () => {
 							))
 						) : (
 							<Inputs
-								className='block w-[98%]'
+								className={'block w-[98%]' + (item.classes ? item.classes : '')}
 								onChange={e => setInputValue(item.id, e.target.value, e.target.validated)}
 								validated={setValid}
 								checkEmpty={setEmpty}

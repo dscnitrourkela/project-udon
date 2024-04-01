@@ -261,3 +261,14 @@ a {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+input[type='file']::file-selector-button {
+	background: url('../assests/images/file_upload_button.png');
+	cursor: pointer;
+	border: 2px solid #ff7647;
+	color: white;
+	width: 200px;
+	padding: 0.2em 0.4em;
+	margin: 0vw 1vw;
+	border-radius: 0.2em;
+	transition: 1s;
+}

@@ -94,6 +94,16 @@ export const inputContent = [
 		minLength: [1, 10],
 		placeholder: ['Prefix +91', 'Enter your Phone number here'],
 	},
+	{
+		key: 6,
+		id: 'profileImage',
+		label: 'Upload your Image',
+		type: 'file',
+		regex: '',
+		maxLength: 50,
+		minLength: 3,
+		placeholder: 'Upload your Image for Profile',
+	},
 ];
 
 export const registerUser = () => {
