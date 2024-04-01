@@ -24,6 +24,7 @@ const FormContainer = () => {
 		prefix: true,
 		mobile: true,
 		regType: true,
+		profileImage: true,
 	});
 	const [isEmpty, setEmpty] = useState({
 		recRollNumber: true,
@@ -35,6 +36,7 @@ const FormContainer = () => {
 		prefix: false,
 		mobile: false,
 		regType: false,
+		profileImage: false,
 	});
 	var checkValidity = Object.values(isValid).every(value => value);
 	var checkIfEmpty = Object.values(isEmpty).some(value => value);
@@ -45,12 +47,22 @@ const FormContainer = () => {
 
 	const [formData, setFormData] = useState({});
 	console.log('formData:', formData);
-	const setInputValue = (key, value) => {
+
+	const setInputValue = async (key, value, file) => {
 		if (!key) return;
-		setFormData(prev => ({
-			...prev,
-			[key]: value,
-		}));
+
+		if (key === 'profileImage') {
+			var base64 = await imageToBase64(file);
+			setFormData(prev => ({
+				...prev,
+				profileImage: base64,
+			}));
+		} else {
+			setFormData(prev => ({
+				...prev,
+				[key]: value,
+			}));
+		}
 	};
 
 	useEffect(() => {
@@ -66,6 +78,7 @@ const FormContainer = () => {
 				prefix: userData?.prefix || '',
 				mobile: userData?.mobile || '',
 				regType: userData?.regType || '',
+				profileImage: userData?.profileImage || '',
 				googlName: currentUser?.name || '',
 				googleMail: currentUser?.email || '',
 			});
@@ -85,6 +98,15 @@ const FormContainer = () => {
 			console.error('Error:', error);
 		}
 		console.log('Form Data:', formData);
+	};
+
+	const imageToBase64 = file => {
+		return new Promise((resolve, reject) => {
+			const reader = new FileReader();
+			reader.readAsDataURL(file);
+			reader.onload = () => resolve(reader.result);
+			reader.onerror = error => reject(error);
+		});
 	};
 
 	return (
@@ -175,7 +197,9 @@ const FormContainer = () => {
 						) : (
 							<Inputs
 								className={'block w-[98%]' + (item.classes ? item.classes : '')}
-								onChange={e => setInputValue(item.id, e.target.value, e.target.validated)}
+								onChange={e =>
+									setInputValue(item.id, e.target.value, e.target.files ? e.target.files[0] : null, e.target.validated)
+								}
 								validated={setValid}
 								checkEmpty={setEmpty}
 								errormsg={setErrorMessage}

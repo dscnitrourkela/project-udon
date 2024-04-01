@@ -262,13 +262,21 @@ a {
 	-moz-osx-font-smoothing: grayscale;
 }
 input[type='file']::file-selector-button {
-	background: url('../assests/images/file_upload_button.png');
+	background: url('https://raw.githubusercontent.com/dscnitrourkela/project-udon/7316bb1f0e3d5bd21463ebd72c8accaa87fef620/src/assets/images/file_upload_button.png')
+		no-repeat;
 	cursor: pointer;
-	border: 2px solid #ff7647;
-	color: white;
-	width: 200px;
-	padding: 0.2em 0.4em;
+	border: 1px solid #ff7647;
+	color: rgba(0, 0, 0, 0);
+	width: 358px;
+	padding: 0.2em;
 	margin: 0vw 1vw;
 	border-radius: 0.2em;
 	transition: 1s;
+
+	@media only screen and (max-width: 970px) {
+		width: 50px;
+	}
+	@media only screen and (max-width: 768px) {
+		width: 50px;
+	}
 }
