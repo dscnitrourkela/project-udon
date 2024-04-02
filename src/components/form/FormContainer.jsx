@@ -6,6 +6,7 @@ import formimg from '../../assets/images/form-tickets.png';
 import { donation, feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
 import { storeFormData } from '../../firebase/registration';
 import { loggedUser, logUserRegData } from '../../firebase/login';
+import { imageToBase64, toCloudinary } from './uploadingFiles';
 
 const FormContainer = () => {
 	//const { currentUser, userData } = useContext(AuthContext);
@@ -53,9 +54,10 @@ const FormContainer = () => {
 
 		if (key === 'profileImage') {
 			var base64 = await imageToBase64(file);
+			var imgURL = await toCloudinary(file);
 			setFormData(prev => ({
 				...prev,
-				profileImage: base64,
+				profileImage: imgURL,
 			}));
 		} else {
 			setFormData(prev => ({
@@ -98,15 +100,6 @@ const FormContainer = () => {
 			console.error('Error:', error);
 		}
 		console.log('Form Data:', formData);
-	};
-
-	const imageToBase64 = file => {
-		return new Promise((resolve, reject) => {
-			const reader = new FileReader();
-			reader.readAsDataURL(file);
-			reader.onload = () => resolve(reader.result);
-			reader.onerror = error => reject(error);
-		});
 	};
 
 	return (

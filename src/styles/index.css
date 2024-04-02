@@ -254,29 +254,27 @@ a {
 	line-height: 1.5;
 	font-weight: 400;
 
-	/* color-scheme: light dark; */
-
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
 input[type='file']::file-selector-button {
-	background: url('https://raw.githubusercontent.com/dscnitrourkela/project-udon/7316bb1f0e3d5bd21463ebd72c8accaa87fef620/src/assets/images/file_upload_button.png')
-		no-repeat;
+	background-color: #ff7647;
 	cursor: pointer;
-	border: 1px solid #ff7647;
-	color: rgba(0, 0, 0, 0);
-	width: 358px;
+	border: 1px solid #d7d7d7;
+	color: #272727;
+	width: 110px;
 	padding: 0.2em;
-	margin: 0vw 1vw;
+	margin: 0vw 0.24vw;
 	border-radius: 0.2em;
 	transition: 1s;
 
 	@media only screen and (max-width: 970px) {
-		width: 50px;
+		width: 60px;
 	}
 	@media only screen and (max-width: 768px) {
-		width: 50px;
+		width: 110px;
 	}
 }
