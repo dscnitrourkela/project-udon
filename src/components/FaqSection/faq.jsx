@@ -1,9 +1,19 @@
+import { useState } from 'react';
 import faqData from '../../config/content/faqData.js';
 import { PersonalizedText, Heading, Paragraph } from '../shared/index.js';
 
 function FAQ() {
 	const Header1 = faqData.Header1;
 	const Header2 = faqData.Header2;
+	const [openQuestion, setOpenQuestion] = useState(null);
+
+	const toggleQuestion = id => {
+		if (openQuestion === id) {
+			setOpenQuestion(null);
+		} else {
+			setOpenQuestion(id);
+		}
+	};
 
 	return (
 		<div className='md:w-[76%] w-[92%] justify-items-center mt-[10px] mb-[44px] mx-auto'>
@@ -22,24 +32,27 @@ function FAQ() {
 			</div>
 			<div className='flex flex-col items-start gap-[38px]'>
 				{faqData.questions.map(({ id, question, answer }) => (
-					<div className='flex flex-col justify-center gap-[10px]' key={id}>
-						<div className='flex gap-[10px] md:gap-[12px] flex-row'>
-							<img className='h-[32px] aspect-square' src={faqData.img.src} alt={faqData.img.alt} />
+					<div
+						key={id}
+						className='flex flex-col justify-center gap-[10px] pb-[20px] w-full border-b-2 border-solid border-[#252525]'>
+						<div className='flex gap-[10px] md:gap-[12px] flex-row cursor-pointer' onClick={() => toggleQuestion(id)}>
+							{openQuestion === id ? <Heading variant='h3'>-</Heading> : <Heading variant='h3'>+</Heading>}
 							<Heading variant='h3'>{question}</Heading>
 						</div>
-						{answer instanceof Array ? (
-							<ul className='list-[square] px-7'>
-								{answer.map(({ key, content, bulleted }) => (
-									<li key={key} className={bulleted ? '' : 'list-none'}>
-										<Paragraph variant='body3'>{content}</Paragraph>
-									</li>
-								))}
-							</ul>
-						) : (
-							<Paragraph variant='body3' className='ml-[18]'>
-								{answer}
-							</Paragraph>
-						)}
+						{openQuestion === id &&
+							(answer instanceof Array ? (
+								<ul className='list-[square] px-7'>
+									{answer.map(({ key, content, bulleted }) => (
+										<li key={key} className={bulleted ? '' : 'list-none'}>
+											<Paragraph variant='body3'>{content}</Paragraph>
+										</li>
+									))}
+								</ul>
+							) : (
+								<Paragraph variant='body3' className='ml-[18]'>
+									{answer}
+								</Paragraph>
+							))}
 					</div>
 				))}
 			</div>
