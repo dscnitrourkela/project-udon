@@ -69,7 +69,7 @@ export const DropDown = () => {
 			className='outline-none bg-inherit rounded-md my-1 mb-6 text-[#B0B0B0] p-2 w-[98%]'
 			style={{ border: '1px solid #FF7647', boxShadow: '2px 2px 0px 0px #F9F9F9' }}>
 			{registrationOptions.map(option => (
-				<option className='bg-inherit rounded-md my-1 mb-6 text-[#B0B0B0] p-2 w-[98%]' key={option} value={option}>
+				<option className='bg-black rounded-md my-4 mb-6 text-[#fa8c67] p-4 w-[98%]' key={option} value={option}>
 					{option}
 				</option>
 			))}

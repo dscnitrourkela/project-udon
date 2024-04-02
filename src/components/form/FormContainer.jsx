@@ -44,7 +44,6 @@ const FormContainer = () => {
 
 	var notAllowed = !checkValidity || checkIfEmpty;
 	const [errorMessage, setErrorMessage] = useState('');
-	//console.log('checkValidity:', checkValidity, 'checkIfEmpty:', isEmpty);
 
 	const [formData, setFormData] = useState({});
 	console.log('formData:', formData);
