@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useContext } from 'react';
 //import AuthContext from '../../context/AuthContext';
 import { Heading, Paragraph } from '../shared';
-import { Inputs, TextAreaInput } from '../shared/partials/FormInputs';
+import { DropDown, Inputs } from '../shared/partials/FormInputs';
 import formimg from '../../assets/images/form-tickets.png';
 import { donation, feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
 import { storeFormData } from '../../firebase/registration';
 import { loggedUser, logUserRegData } from '../../firebase/login';
-import { imageToBase64, toCloudinary } from './uploadingFiles';
+import { toCloudinary } from './uploadingFiles';
 
 const FormContainer = () => {
 	//const { currentUser, userData } = useContext(AuthContext);
@@ -53,7 +53,6 @@ const FormContainer = () => {
 		if (!key) return;
 
 		if (key === 'profileImage') {
-			var base64 = await imageToBase64(file);
 			var imgURL = await toCloudinary(file);
 			setFormData(prev => ({
 				...prev,
@@ -209,13 +208,20 @@ const FormContainer = () => {
 						)}
 					</React.Fragment>
 				))}
-
-				<TextAreaInput onChange={e => setInputValue(e.target.value)} />
-
+				<Paragraph
+					variant='body2'
+					className=' shadow-white px-2'
+					style={{
+						textShadow: ' 1px 1px 0px #FF7342',
+						WebkitTextStrokeWidth: 0.5,
+						WebkitTextStrokeColor: '#252525',
+					}}>
+					Registration Type
+				</Paragraph>{' '}
+				<DropDown />
 				<Paragraph variant='body3' className='mb-6 mt-10 text-xl'>
 					{lastPartContent}
 				</Paragraph>
-
 				<button
 					{...(notAllowed ? 'disabled' : '')}
 					className={

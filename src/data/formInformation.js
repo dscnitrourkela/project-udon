@@ -92,7 +92,7 @@ export const inputContent = [
 		regex: ['^+?d{1,3}', '^[0-9]{10}$'],
 		maxLength: [4, 10],
 		minLength: [1, 10],
-		placeholder: ['Prefix +91', 'Enter your Phone number here'],
+		placeholder: ['Prefix +91', 'Enter your Phone number '],
 	},
 	{
 		key: 6,
@@ -106,9 +106,7 @@ export const inputContent = [
 	},
 ];
 
-export const registerUser = () => {
-	console.log('User Registered');
-};
+export const registrationOptions = ['With Family', 'Single (without family)'];
 
 export const lastPartContent =
 	'The "Individual Only (without family)" and "With Family (spouse + kids)" registration fee is discounted by about 60% to allow increase in attendance - for example, the cost of Individual Only (without family) is about ₹50,000, while it is being offered at a discounted rate of ₹23,000. Please contribute generously and as per your capabilities so that we can successfully bridge the gap between the registration fee and expense.';

@@ -262,13 +262,14 @@ a {
 
 input[type='file']::file-selector-button {
 	background-color: #ff7647;
+	background: url('https://raw.githubusercontent.com/dscnitrourkela/project-udon/060792975fadc77fa8e10eb2e351e3ca70c66d41/src/assets/images/Upload-button.png')
+		no-repeat;
 	cursor: pointer;
-	border: 1px solid #d7d7d7;
-	color: #272727;
+	color: rgba(0, 0, 0, 0);
+	border: none;
 	width: 110px;
 	padding: 0.2em;
-	margin: 0vw 0.24vw;
-	border-radius: 0.2em;
+	margin: 0vw 0.3vw;
 	transition: 1s;
 
 	@media only screen and (max-width: 970px) {
