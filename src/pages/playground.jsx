@@ -1,9 +1,9 @@
-import GalleryMain from '../components/Gallery/galleryMain.jsx';
+import FAQ from '../components/FaqSection/faq.jsx';
 
 export default function Playground() {
 	return (
 		<>
-			<GalleryMain />
+			<FAQ />
 		</>
 	);
 }

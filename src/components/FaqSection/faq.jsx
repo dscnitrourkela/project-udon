@@ -23,8 +23,8 @@ function FAQ() {
 					style={{
 						color: '#F2DA05',
 						textShadow: '4.608px 4.608px 0px #000',
-						webkitTextStrokeWidth: '2.71052622795105',
-						webkitTextStrokeColor: '#252525',
+						WebkitTextStrokeWidth: '2.71052622795105px',
+						WebkitTextStrokeColor: '#252525',
 					}}>
 					{Header1}
 				</Heading>

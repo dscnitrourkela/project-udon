@@ -2,7 +2,12 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
+<<<<<<< HEAD
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+=======
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+
+> > > > > > > 1ce6253ee6b0a7c46056b97f6c990c10f2f9970b
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
@@ -236,6 +241,7 @@ Your appreciation makes us grow and glow up. ⭐
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/starkjay21"><img src="https://avatars.githubusercontent.com/u/100998898?v=4?s=100" width="100px;" alt="Jayesh Nayak"/><br /><sub><b>Jayesh Nayak</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=starkjay21" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/anmol5936"><img src="https://avatars.githubusercontent.com/u/127973342?v=4?s=100" width="100px;" alt="anmol5936"/><br /><sub><b>anmol5936</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=anmol5936" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Mixel2004"><img src="https://avatars.githubusercontent.com/u/84668201?v=4?s=100" width="100px;" alt="Mixel2004"/><br /><sub><b>Mixel2004</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=Mixel2004" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://ashutoshrath.vercel.app/"><img src="https://avatars.githubusercontent.com/u/85403534?v=4?s=100" width="100px;" alt="Ashutosh Rath"/><br /><sub><b>Ashutosh Rath</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=ashutosh-rath02" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
