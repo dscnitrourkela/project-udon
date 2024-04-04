@@ -2,7 +2,12 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
+<<<<<<< HEAD
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+=======
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+
+> > > > > > > 1ce6253ee6b0a7c46056b97f6c990c10f2f9970b
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
