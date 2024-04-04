@@ -23,7 +23,7 @@ function FAQ() {
 					style={{
 						color: '#F2DA05',
 						textShadow: '4.608px 4.608px 0px #000',
-						WebkitTextStrokeWidth: '2.71052622795105px',
+						WebkitTextStrokeWidth: '0px',
 						WebkitTextStrokeColor: '#252525',
 					}}>
 					{Header1}
@@ -36,7 +36,7 @@ function FAQ() {
 						key={id}
 						className='flex flex-col justify-center gap-[10px] pb-[20px] w-full border-b-2 border-solid border-[#252525]'>
 						<div className='flex gap-[10px] md:gap-[12px] flex-row cursor-pointer' onClick={() => toggleQuestion(id)}>
-							{openQuestion === id ? <Heading variant='h3'>-</Heading> : <Heading variant='h3'>+</Heading>}
+							<img className='h-[18px] md:h-[32px] aspect-square' src={faqData.img.src} alt={faqData.img.alt} />
 							<Heading variant='h3'>{question}</Heading>
 						</div>
 						{openQuestion === id &&
