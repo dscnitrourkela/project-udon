@@ -1,7 +1,7 @@
 import galleryData from '../../config/content/galleryData.js';
 import { Heading, Text } from '../shared/index.js';
 
-function Gallery() {
+function Gallery2() {
 	return (
 		<div className='w-[90%] mx-auto flex flex-col items-center mb-[40px] gap-y-[105px]'>
 			<Heading
@@ -43,4 +43,4 @@ function Gallery() {
 	);
 }
 
-export default Gallery;
+export default Gallery2;
