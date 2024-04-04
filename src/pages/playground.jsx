@@ -1,4 +1,9 @@
-import Hero from '../components/Hero';
+import FAQ from '../components/FaqSection/faq.jsx';
+
 export default function Playground() {
-	return <Hero />;
+	return (
+		<>
+			<FAQ />
+		</>
+	);
 }
