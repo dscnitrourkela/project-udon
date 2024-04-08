@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 //import AuthContext from '../../context/AuthContext';
+import './formInputs.css';
 import { Heading, Paragraph } from '../shared';
 import { DropDown, Inputs } from '../shared/partials/FormInputs';
 import formimg from '../../assets/images/form-tickets.png';
@@ -104,8 +105,7 @@ const FormContainer = () => {
 		<div
 			className='text-white bg-black flex flex-col md:flex-row justify-between py-6'
 			style={{
-				backgroundImage:
-					'url(https://github.com/Srish-ty/project-udon/blob/feat/form/src/assets/images/Ellipse.png?raw=true)',
+				backgroundImage: 'url(https://res.cloudinary.com/djl2ulktr/image/upload/v1712581178/Ellipse_yvfzt2.png)',
 				backgroundRepeat: 'no-repeat',
 				backgroundSize: 'cover',
 			}}>
