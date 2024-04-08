@@ -42,8 +42,10 @@ export function Inputs({ className, formData, onChange, validated, checkEmpty, e
 			minLength={minLength}
 			maxLength={maxLength}
 			id={id}
-			className={'outline-none bg-inherit rounded-md my-1 mb-7 text-[#B0B0B0] p-2 ' + className}
-			style={{ border: '1px solid #FF7647', boxShadow: '2px 2px 0px 0px #F9F9F9' }}
+			className={
+				'border divide-solid border-[#FF7647] outline-none bg-inherit rounded-md my-1 mb-7 text-[#B0B0B0] p-2 ' + className
+			}
+			style={{ boxShadow: '2px 2px 0px 0px #F9F9F9' }}
 			placeholder={placeholder}
 			value={value}
 			onBlur={validateInput}
@@ -56,8 +58,8 @@ export function Inputs({ className, formData, onChange, validated, checkEmpty, e
 export const TextAreaInput = () => {
 	return (
 		<textarea
-			className='outline-none	bg-inherit rounded-md my-3 mb-6 w-[98%] h-[8vw] text-[#B0B0B0] p-2 block'
-			style={{ border: '1px solid #FF7647', boxShadow: '2px 2px 0px 0px #F9F9F9' }}
+			className='border divide-solid border-[#FF7647] outline-none bg-inherit rounded-md my-3 mb-6 w-[98%] h-[8vw] text-[#B0B0B0] p-2 block'
+			style={{ boxShadow: '2px 2px 0px 0px #F9F9F9' }}
 			placeholder='Registration Type'
 		/>
 	);

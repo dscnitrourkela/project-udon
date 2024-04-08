@@ -1,12 +1,3 @@
-export const imageToBase64 = file => {
-	return new Promise((resolve, reject) => {
-		const reader = new FileReader();
-		reader.readAsDataURL(file);
-		reader.onload = () => resolve(reader.result);
-		reader.onerror = error => reject(error);
-	});
-};
-
 export const toCloudinary = async imageFile => {
 	try {
 		const formData = new FormData();

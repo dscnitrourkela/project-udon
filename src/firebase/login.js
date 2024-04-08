@@ -1,7 +1,6 @@
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { query, where, getDocs, collection } from 'firebase/firestore';
-import { db } from './firebaseConfig';
-import { app } from './firebaseConfig';
+import { db, app } from './firebaseConfig';
 
 export var loggedUser = {}; // user data from Google Auth
 export var logUserRegData = {}; // registration data from Firestore
