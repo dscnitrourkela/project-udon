@@ -63,11 +63,12 @@ export const TextAreaInput = () => {
 	);
 };
 
-export const DropDown = ({ options }) => {
+export const DropDown = ({ options, onChange }) => {
 	return (
 		<select
 			className='outline-none bg-inherit rounded-md my-1 mb-5 text-[#B0B0B0] p-2 w-[98%]'
-			style={{ border: '1px solid #FF7647', boxShadow: '2px 2px 0px 0px #F9F9F9' }}>
+			style={{ border: '1px solid #FF7647', boxShadow: '2px 2px 0px 0px #F9F9F9' }}
+			onChange={onChange}>
 			{options.map(option => (
 				<option
 					className='bg-black rounded-md my-4 mb-6 text-[#fa8c67] p-4 w-[98%] hover:bg-[#fa8c67]'

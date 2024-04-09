@@ -17,7 +17,6 @@ export const toCloudinary = async imageFile => {
 		return data.secure_url;
 	} catch (error) {
 		console.error('Error uploading image to Cloudinary:', error);
-		window.alert('Error uploading image to Cloudinary. Please try again later.');
 		throw error;
 	}
 };

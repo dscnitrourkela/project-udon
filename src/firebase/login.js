@@ -15,8 +15,6 @@ export const signInWithGoogle = async () => {
 			loggedUser = { name: user.displayName, email: user.email, uid: user.uid };
 
 			logUserRegData = await getUserData(user.uid);
-
-			console.log('loggedUser:', loggedUser, 'User Registration Data:', logUserRegData);
 			return [loggedUser, logUserRegData];
 		})
 		.catch(error => {

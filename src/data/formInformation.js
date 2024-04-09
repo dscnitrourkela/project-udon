@@ -115,7 +115,7 @@ export const branchOptions = [
 	'MME',
 	'CH',
 	'BT',
-	'ARCH',
+	'Arch',
 	'PHY',
 	'CHEM',
 	'MATH',

@@ -13,8 +13,6 @@ const FormContainer = () => {
 	const { userInfo } = useContext(AuthContext);
 	var [currentUser, userData] = userInfo;
 
-	console.log('userData:', userData);
-
 	const [isValid, setValid] = useState({
 		recRollNumber: false,
 		name: false,
@@ -46,7 +44,6 @@ const FormContainer = () => {
 	const [errorMessage, setErrorMessage] = useState('');
 
 	const [formData, setFormData] = useState({});
-	console.log('formData:', formData);
 
 	const setInputValue = async (key, value, file) => {
 		if (!key) return;
@@ -70,6 +67,7 @@ const FormContainer = () => {
 			setFormData({
 				uid: currentUser?.uid?.toString() || '',
 				recRollNumber: userData?.rollNumber || '',
+				branch: userData?.branch || '',
 				name: userData?.name || '',
 				email: userData?.email || '',
 				county: userData?.county || '',
@@ -97,7 +95,6 @@ const FormContainer = () => {
 		} catch (error) {
 			console.error('Error:', error);
 		}
-		console.log('Form Data:', formData);
 	};
 
 	return (
@@ -162,7 +159,7 @@ const FormContainer = () => {
 					}}>
 					Choose your Branch
 				</Paragraph>{' '}
-				<DropDown options={branchOptions} />
+				<DropDown options={branchOptions} key='branch' onChange={e => setInputValue('branch', e.target.value)} />
 				{inputContent.map(item => (
 					<React.Fragment key={item.key}>
 						<Paragraph
@@ -227,7 +224,7 @@ const FormContainer = () => {
 					}}>
 					Registration Type
 				</Paragraph>{' '}
-				<DropDown options={registrationOptions} />
+				<DropDown options={registrationOptions} key='regType' onChange={e => setInputValue('regType', e.target.value)} />
 				<Paragraph variant='body3' className='mb-6 mt-10 text-xl'>
 					{lastPartContent}
 				</Paragraph>
