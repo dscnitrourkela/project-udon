@@ -7,15 +7,15 @@ import Button from './shared/Button';
 const Hero = () => {
 	return (
 		<div className='  xl:max-w-[1483px] -z-1 relative  mt-[80px] mx-auto max-[767px]: max-w-fit'>
-			<div className='flex flex-col justify-center items-center min-h-screen gap-20 lg:gap-10'>
+			<div className='flex flex-col justify-center items-center min-h-screen gap-20 '>
 				<div className='w-[100%]  h-fit '>
 					<div className='flex justify-center mx-auto text-primary-foreground'>
 						<PersonalizedText>Welcome family...</PersonalizedText>
 					</div>
 
-					<div className='flex flex-col  my-8 '>
-						<HeroText1 className=' flex flex-col items-center '>
-							<span className=' flex justify-center sm:w-[105vw]  '>Lorem Ipsum Dolar sit </span>
+					<div className='flex flex-col  my-8 mx-auto'>
+						<HeroText1 className=' flex flex-col items-center pl-4'>
+							<span className=' flex justify-center w-[75vw]   '>Lorem Ipsum Dolar sit </span>
 							<span className='flex gap-3 justify-center'>
 								<HeroText2> Amet</HeroText2>
 								<span className='flex justify-center'>luyto</span>
@@ -34,7 +34,7 @@ const Hero = () => {
 					</Button>
 					<div
 						className={`w-[100%] xl:w-1/2 md:w-2/3  flex items-center justify-center relative h-[100%] mx-auto my-14
-            max-[380px]:scale-[0.8] max-[420px]:scale-90 sm:scale-125 md:scale-75 lg:scale-[0.8] xl:scale-100 translate-x-10 md:translate-x-0`}>
+            max-[380px]:scale-[0.8] max-[420px]:scale-90  md:scale-75 lg:scale-[0.8] xl:scale-100 translate-x-10 md:translate-x-0`}>
 						<div
 							className={`absolute w-[189px] h-[270px] md:w-[303.075px] md:h-[404.558px] 
               rounded-lg border-solid border-2 border-black shadow-3xl right-[42%] 
