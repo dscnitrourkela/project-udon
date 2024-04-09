@@ -6,18 +6,18 @@ import Button from './shared/Button';
 
 const Hero = () => {
 	return (
-		<div className=' lg:mx-14 xl:max-w-[1483px] -z-1 relative mx-auto mt-[80px]'>
-			<div className='flex flex-col md:flex-row justify-center items-center min-h-screen gap-20 lg:gap-10'>
-				<div className='w-[100%] md:w-1/2 h-fit'>
+		<div className='  xl:max-w-[1483px] -z-1 relative  mt-[80px] mx-auto max-[767px]: max-w-fit'>
+			<div className='flex flex-col justify-center items-center min-h-screen gap-20 lg:gap-10'>
+				<div className='w-[100%]  h-fit '>
 					<div className='flex justify-center mx-auto text-primary-foreground'>
 						<PersonalizedText>Welcome family...</PersonalizedText>
 					</div>
 
-					<div className='flex flex-col text-justify mx-auto '>
-						<HeroText1 className=' flex flex-col mx-auto w-[50vw]'>
-							<span className='mx-auto'>Lorem Ipsum</span>{' '}
-							<span>
-								<HeroText2 className='mx-auto'> Dolar sit Amet</HeroText2>
+					<div className='flex flex-col  my-8 '>
+						<HeroText1 className=' flex flex-col items-center '>
+							<span className=' flex justify-center sm:w-[105vw]  '>Lorem Ipsum Dolar sit </span>
+							<span className='flex gap-3 justify-center'>
+								<HeroText2> Amet</HeroText2>
 								<span className='flex justify-center'>luyto</span>
 							</span>
 						</HeroText1>
