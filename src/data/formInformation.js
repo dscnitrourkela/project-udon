@@ -106,6 +106,27 @@ export const inputContent = [
 	},
 ];
 
+export const branchOptions = [
+	'CSE',
+	'ECE',
+	'ME',
+	'CE',
+	'EE',
+	'MME',
+	'CH',
+	'BT',
+	'ARCH',
+	'PHY',
+	'CHEM',
+	'MATH',
+	'BM',
+	'EC',
+	'MBA',
+	'EI',
+	'CR',
+	'PHD',
+	'OTHERS',
+].sort();
 export const registrationOptions = ['With Family', 'Individual (without family)'];
 
 export const lastPartContent =

@@ -8,6 +8,7 @@ import { donation, feeCoverage, initialContent, inputContent, lastPartContent } 
 import { storeFormData } from '../../firebase/registration';
 import { loggedUser, logUserRegData } from '../../firebase/login';
 import { toCloudinary } from './uploadingFiles';
+import { registrationOptions, branchOptions } from '../../data/formInformation';
 
 const FormContainer = () => {
 	//const { currentUser, userData } = useContext(AuthContext);
@@ -153,6 +154,17 @@ const FormContainer = () => {
 			</div>
 
 			<div id='form' className='w-[90%] md:w-[55%] m-8 p-2'>
+				<Paragraph
+					variant='body2'
+					className=' shadow-white px-2'
+					style={{
+						textShadow: ' 1px 1px 0px #FF7342',
+						WebkitTextStrokeWidth: 0.5,
+						WebkitTextStrokeColor: '#252525',
+					}}>
+					Choose your Branch
+				</Paragraph>{' '}
+				<DropDown options={branchOptions} />
 				{inputContent.map(item => (
 					<React.Fragment key={item.key}>
 						<Paragraph
@@ -217,7 +229,7 @@ const FormContainer = () => {
 					}}>
 					Registration Type
 				</Paragraph>{' '}
-				<DropDown />
+				<DropDown options={registrationOptions} />
 				<Paragraph variant='body3' className='mb-6 mt-10 text-xl'>
 					{lastPartContent}
 				</Paragraph>

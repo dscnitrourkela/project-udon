@@ -43,7 +43,7 @@ export function Inputs({ className, formData, onChange, validated, checkEmpty, e
 			maxLength={maxLength}
 			id={id}
 			className={
-				'border divide-solid border-[#FF7647] outline-none bg-inherit rounded-md my-1 mb-7 text-[#B0B0B0] p-2 ' + className
+				'border divide-solid border-[#FF7647] outline-none bg-inherit rounded-md my-1 mb-5 text-[#B0B0B0] p-2 ' + className
 			}
 			style={{ boxShadow: '2px 2px 0px 0px #F9F9F9' }}
 			placeholder={placeholder}
@@ -58,20 +58,23 @@ export function Inputs({ className, formData, onChange, validated, checkEmpty, e
 export const TextAreaInput = () => {
 	return (
 		<textarea
-			className='border divide-solid border-[#FF7647] outline-none bg-inherit rounded-md my-3 mb-6 w-[98%] h-[8vw] text-[#B0B0B0] p-2 block'
+			className='border divide-solid border-[#FF7647] outline-none bg-inherit rounded-md my-3 mb-5 w-[98%] h-[8vw] text-[#B0B0B0] p-2 block'
 			style={{ boxShadow: '2px 2px 0px 0px #F9F9F9' }}
 			placeholder='Registration Type'
 		/>
 	);
 };
 
-export const DropDown = () => {
+export const DropDown = ({ options }) => {
 	return (
 		<select
-			className='outline-none bg-inherit rounded-md my-1 mb-6 text-[#B0B0B0] p-2 w-[98%]'
+			className='outline-none bg-inherit rounded-md my-1 mb-5 text-[#B0B0B0] p-2 w-[98%]'
 			style={{ border: '1px solid #FF7647', boxShadow: '2px 2px 0px 0px #F9F9F9' }}>
-			{registrationOptions.map(option => (
-				<option className='bg-black rounded-md my-4 mb-6 text-[#fa8c67] p-4 w-[98%]' key={option} value={option}>
+			{options.map(option => (
+				<option
+					className='bg-black rounded-md my-4 mb-6 text-[#fa8c67] p-4 w-[98%] hover:bg-[#fa8c67]'
+					key={option}
+					value={option}>
 					{option}
 				</option>
 			))}
