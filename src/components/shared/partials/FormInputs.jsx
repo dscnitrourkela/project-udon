@@ -1,5 +1,3 @@
-import { registrationOptions } from '../../../data/formInformation';
-
 export function Inputs({ className, formData, onChange, validated, checkEmpty, errormsg, required }) {
 	const { type, minLength, maxLength, regex, id, placeholder, value } = formData;
 	const validateInput = event => {

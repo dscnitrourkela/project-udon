@@ -1,20 +1,18 @@
 import React, { useEffect, useState, useContext } from 'react';
-//import AuthContext from '../../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 import './formInputs.css';
 import { Heading, Paragraph } from '../shared';
 import { DropDown, Inputs } from '../shared/partials/FormInputs';
 import formimg from '../../assets/images/form-tickets.png';
 import { donation, feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
 import { storeFormData } from '../../firebase/registration';
-import { loggedUser, logUserRegData } from '../../firebase/login';
 import { toCloudinary } from './uploadingFiles';
 import { registrationOptions, branchOptions } from '../../data/formInformation';
 
 const FormContainer = () => {
-	//const { currentUser, userData } = useContext(AuthContext);
+	const { userInfo } = useContext(AuthContext);
+	var [currentUser, userData] = userInfo;
 
-	const currentUser = loggedUser,
-		userData = logUserRegData;
 	console.log('userData:', userData);
 
 	const [isValid, setValid] = useState({

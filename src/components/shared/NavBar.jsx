@@ -1,5 +1,5 @@
-import { useState } from 'react';
-//import AuthContext from '../../context/AuthContext';
+import { useState, useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 import Text from './typography/Text';
 import Navigation from '../../data/Navigation';
@@ -10,7 +10,7 @@ import Hamburger from './Hamburger';
 import { signInWithGoogle } from '../../firebase/login';
 
 function NavBar() {
-	//const { setUserData } = useContext(AuthContext);
+	const { setUserData } = useContext(AuthContext);
 
 	const { navItems, logo } = Navigation;
 	const [isNavOpen, setIsNavOpen] = useState(false);
@@ -43,7 +43,9 @@ function NavBar() {
 						style={{
 							boxShadow: '2px 2px 0px 0px #000, 3px 4px 9.2px 0px rgba(222, 222, 222, 0.48) inset',
 						}}
-						onClick={signInWithGoogle}>
+						onClick={async () => {
+							setUserData(await signInWithGoogle());
+						}}>
 						<Text variant='navButton'>Login</Text>
 					</Button>
 				</div>

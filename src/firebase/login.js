@@ -9,7 +9,7 @@ export const signInWithGoogle = async () => {
 	const auth = getAuth(app);
 	const provider = new GoogleAuthProvider();
 
-	await signInWithPopup(auth, provider)
+	return await signInWithPopup(auth, provider)
 		.then(async result => {
 			const user = result.user;
 			loggedUser = { name: user.displayName, email: user.email, uid: user.uid };
