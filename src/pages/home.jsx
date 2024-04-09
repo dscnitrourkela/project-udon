@@ -1,4 +1,5 @@
 import AboutUs from '../components/AboutUs';
+import Carousel from '../components/Carousel/Carousel';
 import FAQ from '../components/FaqSection/faq';
 import Hero from '../components/Hero';
 import Navbar from '../components/shared/NavBar';
@@ -9,6 +10,7 @@ export default function Home() {
 		<div className=''>
 			<Navbar />
 			<Hero />
+			<Carousel />
 			<AboutUs />
 			<FAQ />
 			<Footer />
