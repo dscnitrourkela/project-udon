@@ -11,6 +11,7 @@ export default function App() {
 				<Routes>
 					<Route exact path='/' element={<Pages.Home />} />
 					<Route path='/play' element={<Pages.Playground />} />
+					<Route path='/play/gallery' element={<Pages.Gallery />} />
 				</Routes>
 			</Suspense>
 		</>
