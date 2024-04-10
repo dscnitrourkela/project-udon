@@ -7,7 +7,6 @@ export function Inputs({ className, formData, onChange, validated, checkEmpty, e
 			const isEmpty = !required || value === '';
 
 			if (!isValid) {
-				console.log(`Invalid input for ${id}`);
 				event.target.style.border = '1px solid #b91c1c';
 				updateState(id, validated, false);
 				errormsg(prevMsg => prevMsg + `\nInvalid input for ${id}`);

@@ -10,7 +10,7 @@ import Hamburger from './Hamburger';
 import { signInWithGoogle } from '../../firebase/login';
 
 function NavBar() {
-	const { setUserData } = useContext(AuthContext);
+	const { userInfo, setUserData } = useContext(AuthContext);
 
 	const { navItems, logo } = Navigation;
 	const [isNavOpen, setIsNavOpen] = useState(false);
@@ -46,7 +46,7 @@ function NavBar() {
 						onClick={async () => {
 							setUserData(await signInWithGoogle());
 						}}>
-						<Text variant='navButton'>Login</Text>
+						<Text variant='navButton'>{userInfo ? 'logout' : 'login'}</Text>
 					</Button>
 				</div>
 			</div>

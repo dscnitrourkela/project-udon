@@ -1,9 +1,9 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from 'firebase/auth';
 import { query, where, getDocs, collection } from 'firebase/firestore';
 import { db, app } from './firebaseConfig';
 
-export var loggedUser = {}; // user data from Google Auth
-export var logUserRegData = {}; // registration data from Firestore
+export var loggedUser = {};
+export var logUserRegData = {};
 
 export const signInWithGoogle = async () => {
 	const auth = getAuth(app);
@@ -34,11 +34,24 @@ export const getUserData = async userId => {
 
 			return userRegData;
 		} else {
-			console.log('No such document!');
 			return {};
 		}
 	} catch (error) {
 		console.error('Error getting user data:', error);
 		throw error;
 	}
+};
+
+export const listenForAuthChanges = () => {
+	const auth = getAuth(app);
+
+	onAuthStateChanged(auth, async user => {
+		if (user) {
+			loggedUser = { name: user.displayName, email: user.email, uid: user.uid };
+			logUserRegData = await getUserData(user.uid);
+		} else {
+			loggedUser = {};
+			logUserRegData = {};
+		}
+	});
 };

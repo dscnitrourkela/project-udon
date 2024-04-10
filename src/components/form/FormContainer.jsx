@@ -85,13 +85,12 @@ const FormContainer = () => {
 
 	const registerUser = async e => {
 		if (notAllowed) {
-			console.log('Invalid or empty inputs in form');
 			return;
 		}
 		e.preventDefault();
 		try {
 			const documentId = await storeFormData(formData);
-			console.log('Document ID:', documentId);
+			return documentId;
 		} catch (error) {
 			console.error('Error:', error);
 		}
