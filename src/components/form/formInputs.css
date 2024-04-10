@@ -16,3 +16,12 @@ input[type='file']::file-selector-button {
 		width: 110px;
 	}
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+}
