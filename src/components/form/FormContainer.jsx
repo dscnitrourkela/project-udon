@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import './formInputs.css';
 import { Heading, Paragraph } from '../shared';
-import { DropDown, Inputs } from '../shared/partials/FormInputs';
+import { DropDown, Inputs, TextAreaInput } from '../shared/partials/FormInputs';
 import formimg from '../../assets/images/form-tickets.png';
 import { donation, feeCoverage, initialContent, inputContent, lastPartContent } from '../../data/formInformation';
 import { storeFormData } from '../../firebase/registration';
@@ -77,6 +77,7 @@ const FormContainer = () => {
 				mobile: userData?.mobile || '',
 				regType: userData?.regType || '',
 				profileImage: userData?.profileImage || '',
+				testimonial: userData?.testimonial || '',
 				googlName: currentUser?.name || '',
 				googleMail: currentUser?.email || '',
 			});
@@ -224,6 +225,17 @@ const FormContainer = () => {
 					Registration Type
 				</Paragraph>{' '}
 				<DropDown options={registrationOptions} key='regType' onChange={e => setInputValue('regType', e.target.value)} />
+				<Paragraph
+					variant='body2'
+					className=' shadow-white px-2'
+					style={{
+						textShadow: ' 1px 1px 0px #FF7342',
+						WebkitTextStrokeWidth: 0.5,
+						WebkitTextStrokeColor: '#252525',
+					}}>
+					Testimonial
+				</Paragraph>
+				<TextAreaInput onChange={e => setInputValue('testimonial', e.target.value)} />
 				<Paragraph variant='body3' className='mb-6 mt-10 text-xl'>
 					{lastPartContent}
 				</Paragraph>

@@ -40,7 +40,7 @@ export function Inputs({ className, formData, onChange, validated, checkEmpty, e
 			maxLength={maxLength}
 			id={id}
 			className={
-				'border divide-solid border-[#FF7647] outline-none bg-inherit rounded-md my-1 mb-5 text-[#B0B0B0] p-2 ' + className
+				'border divide-solid border-[#FF7647] outline-none bg-inherit rounded-md my-1 mb-6 text-[#B0B0B0] p-2 ' + className
 			}
 			style={{ boxShadow: '2px 2px 0px 0px #F9F9F9' }}
 			placeholder={placeholder}
@@ -57,7 +57,7 @@ export const TextAreaInput = () => {
 		<textarea
 			className='border divide-solid border-[#FF7647] outline-none bg-inherit rounded-md my-3 mb-5 w-[98%] h-[8vw] text-[#B0B0B0] p-2 block'
 			style={{ boxShadow: '2px 2px 0px 0px #F9F9F9' }}
-			placeholder='Registration Type'
+			placeholder='Share your Experience of coming :-)'
 		/>
 	);
 };
@@ -65,7 +65,7 @@ export const TextAreaInput = () => {
 export const DropDown = ({ options, onChange }) => {
 	return (
 		<select
-			className='outline-none bg-inherit rounded-md my-1 mb-5 text-[#B0B0B0] p-2 w-[98%]'
+			className='outline-none bg-inherit rounded-md my-1 mb-6 text-[#B0B0B0] p-2 w-[98%]'
 			style={{ border: '1px solid #FF7647', boxShadow: '2px 2px 0px 0px #F9F9F9' }}
 			onChange={onChange}>
 			{options.map(option => (
