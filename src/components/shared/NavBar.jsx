@@ -7,7 +7,7 @@ import image from '../../assets/images/image.png';
 import Button from './Button';
 import Logo from './Logo';
 import Hamburger from './Hamburger';
-import { signInWithGoogle } from '../../firebase/login';
+import { signInWithGoogle, signOutUser } from '../../firebase/login';
 
 function NavBar() {
 	const { userInfo, setUserData } = useContext(AuthContext);
@@ -44,9 +44,13 @@ function NavBar() {
 							boxShadow: '2px 2px 0px 0px #000, 3px 4px 9.2px 0px rgba(222, 222, 222, 0.48) inset',
 						}}
 						onClick={async () => {
-							setUserData(await signInWithGoogle());
+							if (userInfo[0].uid) {
+								setUserData(await signOutUser());
+							} else {
+								setUserData(await signInWithGoogle());
+							}
 						}}>
-						<Text variant='navButton'>{userInfo ? 'logout' : 'login'}</Text>
+						<Text variant='navButton'>{userInfo[0].uid ? 'logout' : 'login'}</Text>
 					</Button>
 				</div>
 			</div>
