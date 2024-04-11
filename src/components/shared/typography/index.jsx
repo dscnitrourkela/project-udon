@@ -32,7 +32,7 @@ export const HeroText1 = ({ children, className, ...props }) => {
 
 export const PersonalizedText = ({ children, className, ...props }) => {
 	return (
-		<p className={cn('text-base leading-4 font-semibol font-cassandra text-left', className)} {...props}>
+		<p className={cn('text-base leading-4 font-semibold font-cassandra text-left', className)} {...props}>
 			{children}
 		</p>
 	);

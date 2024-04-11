@@ -2,8 +2,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
-=======
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -87,6 +85,7 @@ To setup the project locally the steps below.
 
 -  [Node.js](https://nodejs.org/en/download/)
 
+
    ```sh
    # homebrew
    brew install nodejs
@@ -109,9 +108,16 @@ To setup the project locally the steps below.
    ```
 
 -  [PNPM](https://pnpm.io/installation)
+   Install pnpm: If pnpm is not installed, you can install it globally using npm. Run one of the following commands:
 
-   > [!NOTE]
-   > Best way to install it is using `corepack`. It is recommended to use pnpm as the package manager for this project. It is faster and more efficient than npm and yarn.
+```bash
+npm install -g pnpm
+```
+
+or
+
+> [!NOTE]
+> Best way to install it is using `corepack`. It is recommended to use pnpm as the package manager for this project. It is faster and more efficient than npm and yarn.
 
 -  [Git](https://git-scm.com/downloads)
 

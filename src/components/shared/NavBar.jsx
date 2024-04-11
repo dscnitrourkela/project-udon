@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 import { Link } from 'react-router-dom';
 import Text from './typography/Text';
 import Navigation from '../../data/Navigation';
@@ -6,8 +7,11 @@ import image from '../../assets/images/image.png';
 import Button from './Button';
 import Logo from './Logo';
 import Hamburger from './Hamburger';
+import { signInWithGoogle, signOutUser } from '../../firebase/login';
 
 function NavBar() {
+	const { userInfo, setUserData } = useContext(AuthContext);
+
 	const { navItems, logo } = Navigation;
 	const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -38,8 +42,15 @@ function NavBar() {
 						className='mr-[56.6px] hidden md:flex'
 						style={{
 							boxShadow: '2px 2px 0px 0px #000, 3px 4px 9.2px 0px rgba(222, 222, 222, 0.48) inset',
+						}}
+						onClick={async () => {
+							if (userInfo[0].uid) {
+								setUserData(await signOutUser());
+							} else {
+								setUserData(await signInWithGoogle());
+							}
 						}}>
-						<Text variant='navButton'>Login</Text>
+						<Text variant='navButton'>{userInfo[0].uid ? 'logout' : 'login'}</Text>
 					</Button>
 				</div>
 			</div>

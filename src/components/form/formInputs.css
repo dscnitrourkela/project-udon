@@ -1,0 +1,27 @@
+input[type='file']::file-selector-button {
+	background-color: #ff7647;
+	background: url('https://res.cloudinary.com/djl2ulktr/image/upload/v1712581206/Upload-button_l3c1ra.png') no-repeat;
+	cursor: pointer;
+	color: rgba(0, 0, 0, 0);
+	border: none;
+	width: 110px;
+	padding: 0.2em;
+	margin: 0vw 0.3vw;
+	transition: 1s;
+
+	@media only screen and (max-width: 970px) {
+		width: 60px;
+	}
+	@media only screen and (max-width: 768px) {
+		width: 110px;
+	}
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+}
