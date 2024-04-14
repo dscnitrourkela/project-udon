@@ -1,10 +1,10 @@
 import { Paragraph } from '../shared';
 import { Paymentdata, UPIdata } from '../../data/paymentData';
 
-export function PaymentCont() {
+export const PaymentCont = () => {
 	return (
 		<>
-			<div className='container mx-auto px-4 lg:px-0 flex justify-center'>
+			<div className='container  px-4 lg:px-0 flex justify-center items-center	'>
 				<div className='p-4 w-full lg:w-3/4'>
 					<Paragraph variant='body3' className='text-center mb-8 lg:mb-4 mt-11'>
 						Preferred method: Transfer funds from your bank to our CURRENT account
@@ -20,9 +20,9 @@ export function PaymentCont() {
 			</div>
 		</>
 	);
-}
+};
 
-export function UPI() {
+export const UPI = () => {
 	return (
 		<>
 			<div className='container mx-auto px-4 lg:px-0 flex justify-center'>
@@ -48,4 +48,4 @@ export function UPI() {
 			</div>
 		</>
 	);
-}
+};
