@@ -1,10 +1,11 @@
 import { Paragraph } from '../shared';
+import './input.styles.css';
 import { Paymentdata, UPIdata } from '../../data/paymentData';
 
 export const PaymentCont = () => {
 	return (
 		<>
-			<div className='container  px-4 lg:px-0 flex justify-center items-center	'>
+			<div className='container px-4 lg:px-0 flex justify-center items-center'>
 				<div className='p-4 w-full lg:w-3/4'>
 					<Paragraph variant='body3' className='text-center mb-8 lg:mb-4 mt-11'>
 						Preferred method: Transfer funds from your bank to our CURRENT account
@@ -47,5 +48,27 @@ export const UPI = () => {
 				</div>
 			</div>
 		</>
+	);
+};
+
+export const SubmissionForm = () => {
+	return (
+		<div className=' py-8 flex flex-col items-center ' style={{ border: '1px solid red' }}>
+			<input
+				type='file'
+				name='receipt'
+				className={
+					'border divide-solid border-[#FF7647] outline-none bg-inherit rounded-md my-1 my-6 text-[#B0B0B0] p-2 w-[470px]'
+				}
+				style={{ boxShadow: '2px 2px 0px 0px black' }}
+			/>
+			<button
+				className='border border-black bg-[#FF7647] text-black px-4 py-2 rounded-2xl m-6 w-[470px]'
+				style={{ boxShadow: '2px 2px 0px 0px black' }}>
+				<Paragraph variant='body3' className='inline mx-auto text-xl'>
+					Submit
+				</Paragraph>
+			</button>
+		</div>
 	);
 };

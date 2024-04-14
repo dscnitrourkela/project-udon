@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { PaymentCont, UPI } from './Payment';
+import { PaymentCont, SubmissionForm, UPI } from './Payment';
 import { Heading, Paragraph } from '../shared';
 import { Contactorg, Emaildata } from '../../data/paymentData';
 
@@ -27,8 +27,8 @@ function Final() {
 					<Heading variant='h3' className='text-center lg:my-3'>
 						Payment method we have
 					</Heading>
-					<div className='bg-white text-black rounded-2xl border-[1.5px] border-solid border-black text-center flex flex-col lg:flex-row justify-center  w-auto'>
-						<div className='flex justify-center space-x-4 relative'>
+					<div className='bg-white text-black rounded-2xl border-[1.5px] border-solid border-black text-center flex flex-col lg:flex-row justify-center w-auto my-2'>
+						<div className='flex justify-center space-x-4 relative '>
 							<button
 								className={`px-6 py-1 rounded-2xl  ${isUPI ? 'border-2 border-black bg-orange-500 text-white' : 'bg-white text-black'}`}
 								onClick={() => {
@@ -50,6 +50,8 @@ function Final() {
 
 					{isUPI ? <PaymentCont /> : <UPI />}
 				</div>
+
+				<SubmissionForm />
 			</div>
 
 			<Heading variant='body3' className='text-primary-foreground flex justify-center'>
