@@ -8,13 +8,12 @@ import { updateDocumentByUid } from '../../firebase/uploadProof';
 
 function Final() {
 	const { userInfo } = useContext(AuthContext);
-	var currentUser = userInfo[0];
+	const currentUser = userInfo[0];
 
 	const [file, setFile] = useState(null);
 
 	const uploadProof = async () => {
 		const proofURL = await uploadReceipt(file);
-		await updateDocumentByUid(currentUser.uid, proofURL);
 		await updateDocumentByUid(currentUser.uid, proofURL);
 	};
 
