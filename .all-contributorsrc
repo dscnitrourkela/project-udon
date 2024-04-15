@@ -23,16 +23,18 @@
         "projectManagement",
         "test",
         "maintenance",
-        "infra"
+        "infra",
+        "review"
       ]
     },
     {
-      "login": "starkjay21",
+      "login": "jayeshxn",
       "name": "Jayesh Nayak",
       "avatar_url": "https://avatars.githubusercontent.com/u/100998898?v=4",
-      "profile": "https://github.com/starkjay21",
+      "profile": "https://github.com/jayeshxn
       "contributions": [
-        "code"
+        "code",
+        "review"
       ]
     },
     {
@@ -87,15 +89,6 @@
       "profile": "https://github.com/praptippradhan",
       "contributions": [
         "code"
-      ]
-    },
-    {
-      "login": "jayeshxn",
-      "name": "Jayesh Nayak",
-      "avatar_url": "https://avatars.githubusercontent.com/u/100998898?v=4",
-      "profile": "https://github.com/jayeshxn",
-      "contributions": [
-        "review"
       ]
     }
   ]
