@@ -51,20 +51,22 @@ export const UPI = () => {
 	);
 };
 
-export const SubmissionForm = () => {
+export const SubmissionForm = ({ onSubmit, onInput }) => {
 	return (
-		<div className=' py-8 flex flex-col items-center ' style={{ border: '1px solid red' }}>
+		<div className=' py-8 flex flex-col items-center '>
 			<input
 				type='file'
 				name='receipt'
 				className={
-					'border divide-solid border-[#FF7647] outline-none bg-inherit rounded-md my-1 my-6 text-[#B0B0B0] p-2 w-[470px]'
+					'border divide-solid border-[#FF7647] outline-none bg-white rounded-md my-1 my-6 text-[#B0B0B0] p-2 w-[470px]'
 				}
-				style={{ boxShadow: '2px 2px 0px 0px black' }}
+				style={{ boxShadow: '3px 3px 0px 0px black' }}
+				onChange={onInput}
 			/>
 			<button
-				className='border border-black bg-[#FF7647] text-black px-4 py-2 rounded-2xl m-6 w-[470px]'
-				style={{ boxShadow: '2px 2px 0px 0px black' }}>
+				className='border border-black bg-[#FF7647] text-black px-4 py-2 rounded-lg m-6 w-[470px]'
+				style={{ boxShadow: '3px 3px 0px 0px black' }}
+				onClick={onSubmit}>
 				<Paragraph variant='body3' className='inline mx-auto text-xl'>
 					Submit
 				</Paragraph>

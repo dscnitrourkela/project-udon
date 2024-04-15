@@ -1,9 +1,23 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 import { PaymentCont, SubmissionForm, UPI } from './Payment';
 import { Heading, Paragraph } from '../shared';
 import { Contactorg, Emaildata } from '../../data/paymentData';
+import { uploadReceipt } from './uploadReceipt';
+import { updateDocumentByUid } from '../../firebase/uploadProof';
 
 function Final() {
+	const { userInfo } = useContext(AuthContext);
+	var currentUser = userInfo[0];
+
+	const [file, setFile] = useState(null);
+
+	const uploadProof = async () => {
+		const proofURL = await uploadReceipt(file);
+		await updateDocumentByUid(currentUser.uid, proofURL);
+		await updateDocumentByUid(currentUser.uid, proofURL);
+	};
+
 	const [isUPI, setisUPI] = useState(true);
 
 	return (
@@ -51,7 +65,12 @@ function Final() {
 					{isUPI ? <PaymentCont /> : <UPI />}
 				</div>
 
-				<SubmissionForm />
+				<SubmissionForm
+					onSubmit={uploadProof}
+					onInput={e => {
+						setFile(e.target.files[0]);
+					}}
+				/>
 			</div>
 
 			<Heading variant='body3' className='text-primary-foreground flex justify-center'>
