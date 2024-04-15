@@ -23,7 +23,8 @@
         "projectManagement",
         "test",
         "maintenance",
-        "infra"
+        "infra",
+        "review"
       ]
     },
     {
