@@ -23,16 +23,18 @@
         "projectManagement",
         "test",
         "maintenance",
-        "infra"
+        "infra",
+        "review"
       ]
     },
     {
-      "login": "starkjay21",
+      "login": "jayeshxn",
       "name": "Jayesh Nayak",
       "avatar_url": "https://avatars.githubusercontent.com/u/100998898?v=4",
-      "profile": "https://github.com/starkjay21",
+      "profile": "https://github.com/jayeshxn
       "contributions": [
-        "code"
+        "code",
+        "review"
       ]
     },
     {
@@ -58,6 +60,33 @@
       "name": "Ashutosh Rath",
       "avatar_url": "https://avatars.githubusercontent.com/u/85403534?v=4",
       "profile": "https://ashutoshrath.vercel.app/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Srish-ty",
+      "name": "Srishty Mangutte",
+      "avatar_url": "https://avatars.githubusercontent.com/u/68679980?v=4",
+      "profile": "https://linktr.ee/m_srishty",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "aryab2003",
+      "name": "Arya Bhattacharyya",
+      "avatar_url": "https://avatars.githubusercontent.com/u/123297319?v=4",
+      "profile": "https://github.com/aryab2003",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "praptippradhan",
+      "name": "Prapti Prachita Pradhan ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/121177114?v=4",
+      "profile": "https://github.com/praptippradhan",
       "contributions": [
         "code"
       ]
