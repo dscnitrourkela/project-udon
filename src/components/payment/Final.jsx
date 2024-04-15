@@ -49,7 +49,10 @@ function Final() {
 									setisUPI(true);
 								}}
 								style={{ zIndex: 9 }}>
-								Bank Transaction
+								{' '}
+								<Paragraph variant='body3' className='text-center m-0 p-0'>
+									Bank Transaction{' '}
+								</Paragraph>
 							</button>
 							<button
 								className={`px-4 py-1 rounded-2xl ${!isUPI ? 'border-2 border-black bg-orange-500 text-white' : 'bg-white text-black'}`}
@@ -57,7 +60,9 @@ function Final() {
 									setisUPI(false);
 								}}
 								style={{ zIndex: 9 }}>
-								Via UPI using QR
+								<Paragraph variant='body3' className='text-center m-0 p-0'>
+									Via UPI using QR{' '}
+								</Paragraph>
 							</button>
 						</div>
 					</div>
@@ -73,7 +78,7 @@ function Final() {
 				/>
 			</div>
 
-			<Heading variant='body3' className='text-primary-foreground flex justify-center'>
+			<Heading variant='body3' className='text-primary-foreground flex justify-center my-8 italic'>
 				{Contactorg}
 			</Heading>
 		</>

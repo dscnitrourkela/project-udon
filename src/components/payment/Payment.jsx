@@ -8,12 +8,13 @@ export const PaymentCont = () => {
 			<div className='container px-4 lg:px-0 flex justify-center items-center'>
 				<div className='p-4 w-full lg:w-3/4'>
 					<Paragraph variant='body3' className='text-center mb-8 lg:mb-4 mt-11'>
-						Preferred method: Transfer funds from your bank to our CURRENT account
+						<b>Preferred method:</b> Transfer funds from your bank to our CURRENT account
 					</Paragraph>
 					<div className='flex flex-col items-center'>
 						{Paymentdata.map((item, index) => (
 							<Paragraph variant='body3' key={index} className='text-center lg:mb-4'>
-								{item}
+								{item[0]}
+								<b>{item[1]}</b>
 							</Paragraph>
 						))}
 					</div>
@@ -30,7 +31,7 @@ export const UPI = () => {
 				<div className='border border-black p-4 w-1/2'>
 					<div className='flex flex-col items-center'>
 						{UPIdata.slice(0, 1).map((item, index) => (
-							<Paragraph variant='body3' key={index} className='text-center lg:mb-4'>
+							<Paragraph variant='body3' key={index} className='text-center font-bold lg:mb-4'>
 								{item}
 							</Paragraph>
 						))}
@@ -40,7 +41,7 @@ export const UPI = () => {
 							className='w-64 h-64 object-cover'
 						/>
 						{UPIdata.slice(1).map((item, index) => (
-							<Paragraph variant='body3' key={index} className='text-center lg:mb-4'>
+							<Paragraph variant='body3' key={index} className='text-center font-bold	lg:mb-4'>
 								{item}
 							</Paragraph>
 						))}
