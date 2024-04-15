@@ -1,7 +1,7 @@
 [![Starware](https://img.shields.io/badge/Starware-⭐-black?labelColor=f9b00d)](https://github.com/zepfietje/starware)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -245,6 +245,9 @@ Your appreciation makes us grow and glow up. ⭐
       <td align="center" valign="top" width="14.28%"><a href="https://ashutoshrath.vercel.app/"><img src="https://avatars.githubusercontent.com/u/85403534?v=4?s=100" width="100px;" alt="Ashutosh Rath"/><br /><sub><b>Ashutosh Rath</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=ashutosh-rath02" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://linktr.ee/m_srishty"><img src="https://avatars.githubusercontent.com/u/68679980?v=4?s=100" width="100px;" alt="Srishty Mangutte"/><br /><sub><b>Srishty Mangutte</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=Srish-ty" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/aryab2003"><img src="https://avatars.githubusercontent.com/u/123297319?v=4?s=100" width="100px;" alt="Arya Bhattacharyya"/><br /><sub><b>Arya Bhattacharyya</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=aryab2003" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/praptippradhan"><img src="https://avatars.githubusercontent.com/u/121177114?v=4?s=100" width="100px;" alt="Prapti Prachita Pradhan "/><br /><sub><b>Prapti Prachita Pradhan </b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=praptippradhan" title="Code">💻</a> <a href="https://github.com/dscnitrourkela/project-udon/pulls?q=is%3Apr+reviewed-by%3Apraptippradhan" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
