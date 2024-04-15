@@ -1,9 +1,7 @@
 [![Starware](https://img.shields.io/badge/Starware-⭐-black?labelColor=f9b00d)](https://github.com/zepfietje/starware)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -245,6 +243,7 @@ Your appreciation makes us grow and glow up. ⭐
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/anmol5936"><img src="https://avatars.githubusercontent.com/u/127973342?v=4?s=100" width="100px;" alt="anmol5936"/><br /><sub><b>anmol5936</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=anmol5936" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Mixel2004"><img src="https://avatars.githubusercontent.com/u/84668201?v=4?s=100" width="100px;" alt="Mixel2004"/><br /><sub><b>Mixel2004</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=Mixel2004" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://ashutoshrath.vercel.app/"><img src="https://avatars.githubusercontent.com/u/85403534?v=4?s=100" width="100px;" alt="Ashutosh Rath"/><br /><sub><b>Ashutosh Rath</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=ashutosh-rath02" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://linktr.ee/m_srishty"><img src="https://avatars.githubusercontent.com/u/68679980?v=4?s=100" width="100px;" alt="Srishty Mangutte"/><br /><sub><b>Srishty Mangutte</b></sub></a><br /><a href="https://github.com/dscnitrourkela/project-udon/commits?author=Srish-ty" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
