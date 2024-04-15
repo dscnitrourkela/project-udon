@@ -5,10 +5,14 @@ import { Heading, Paragraph } from '../shared';
 import { Contactorg, Emaildata } from '../../data/paymentData';
 import { uploadReceipt } from './uploadReceipt';
 import { updateDocumentByUid } from '../../firebase/uploadProof';
+import { redirect } from 'next/navigation';
 
 function Final() {
 	const { userInfo } = useContext(AuthContext);
 	const currentUser = userInfo[0];
+	if (!currentUser) {
+		redirect('/');
+	}
 
 	const [file, setFile] = useState(null);
 
@@ -36,12 +40,12 @@ function Final() {
 			</div>
 
 			<div className='container mx-auto px-4 lg:px-0'>
-				<div className='border border-solid border-black p-4 lg:w-1/2 lg:mx-auto flex flex-col items-center'>
+				<div className='border border-solid border-black p-4 w-[80vw] lg:w-1/2 mx-auto flex flex-col items-center'>
 					<Heading variant='h3' className='text-center lg:my-3'>
 						Payment method we have
 					</Heading>
 					<div className='bg-white text-black rounded-2xl border-[1.5px] border-solid border-black text-center flex flex-col lg:flex-row justify-center w-auto my-2'>
-						<div className='flex justify-center space-x-4 relative '>
+						<div className='flex justify-center space-x-4 relative  sm:w-auto '>
 							<button
 								className={`px-6 py-1 rounded-2xl  ${isUPI ? 'border-2 border-black bg-orange-500 text-white' : 'bg-white text-black'}`}
 								onClick={() => {

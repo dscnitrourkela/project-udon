@@ -4,15 +4,8 @@ input[type='file']::file-selector-button {
 	cursor: pointer;
 	color: rgba(0, 0, 0, 0);
 	border: none;
-	width: 490px;
+	width: 100%;
 	padding: 0.2em;
 	margin: 0vw 0.3vw;
 	transition: 1s;
-
-	@media only screen and (max-width: 970px) {
-		width: 60px;
-	}
-	@media only screen and (max-width: 768px) {
-		width: 110px;
-	}
 }

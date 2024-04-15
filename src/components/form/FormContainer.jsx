@@ -8,6 +8,7 @@ import { donation, feeCoverage, initialContent, inputContent, lastPartContent } 
 import { storeFormData } from '../../firebase/registration';
 import { toCloudinary } from './uploadingFiles';
 import { registrationOptions, branchOptions } from '../../data/formInformation';
+import { redirect } from 'next/navigation';
 
 const FormContainer = () => {
 	const { userInfo } = useContext(AuthContext);
@@ -91,6 +92,8 @@ const FormContainer = () => {
 		e.preventDefault();
 		try {
 			const documentId = await storeFormData(formData);
+			redirect('/payment');
+
 			return documentId;
 		} catch (error) {
 			console.error('Error:', error);
