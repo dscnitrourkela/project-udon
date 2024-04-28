@@ -67,6 +67,7 @@ export default {
 			boxShadow: {
 				'3xl': '2px 3px 0px 0px #000',
 				subheading: '1px 1px 0px 0px #F9F9F9',
+				button: '2px 2px 0px 0px #000, 3px 4px 9.2px 0px rgba(222, 222, 222, 0.48) inset',
 			},
 			colors: {
 				/** Design System Starts */
