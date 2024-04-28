@@ -2,10 +2,12 @@ import { PersonalizedText, Text } from './shared/typography';
 import { HeroText1 } from './shared/typography';
 import { HeroText2 } from './shared/typography';
 import { imgURLs } from '../data/eventsData';
+import Button from './shared/Button';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
 	return (
-		<div className='mx-5 lg:mx-14 xl:max-w-[1483px] -z-1 relative'>
+		<section className='lg:mx-14 xl:max-w-[1483px] -z-1 relative p-5 xl:mx-auto' id='hero'>
 			<div className='flex flex-col md:flex-row justify-center items-center min-h-screen gap-20 lg:gap-10'>
 				<div className='w-[100%] md:w-1/2 h-fit'>
 					<div className='flex flex-col justify-end ml-2 text-primary-foreground'>
@@ -16,13 +18,11 @@ const Hero = () => {
 						Lorem Ipsum Dolar <HeroText2 style={{ display: 'inline-block' }}> sit Amet</HeroText2> luyto
 					</HeroText1>
 
-					<button
-						className='px-4 py-2 rounded-md border border-solid border-black bg-orange-500 shadow-button mt-5'
-						style={{
-							boxShadow: '2px 2px 0px 0px #000, 3px 4px 9.2px 0px rgba(222, 222, 222, 0.48) inset',
-						}}>
-						<Text variant='button'>Register Now</Text>
-					</button>
+					<Link to='/register'>
+						<Button variant='primary' size='medium' className='mt-5'>
+							<Text variant='button'>Register Now</Text>
+						</Button>
+					</Link>
 				</div>
 				<div
 					className={`w-[100%] xl:w-1/2 md:w-2/3  flex items-center justify-center relative h-[100%]
@@ -85,7 +85,7 @@ const Hero = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 export default Hero;

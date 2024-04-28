@@ -12,6 +12,7 @@ export default function App() {
 				<Suspense fallback={<PageLoader />}>
 					<Routes>
 						<Route exact path='/' element={<Pages.Home />} />
+						<Route path='/register' element={<Pages.Register />} />
 						<Route path='/play' element={<Pages.Playground />} />
 					</Routes>
 				</Suspense>

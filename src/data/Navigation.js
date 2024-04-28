@@ -8,29 +8,29 @@ export default {
 
 	navItems: [
 		{
-			id: 'About us',
-			name: 'About',
-			link: '/about',
+			id: 'about',
+			name: 'About us',
+		},
+		// {
+		// 	id: 'events',
+		// 	name: 'Events',
+		// },
+		// {
+		// 	name: 'Sponsors',
+		// 	link: '/sponsors',
+		// },
+		{
+			id: 'footer',
+			name: 'Contact Us',
 		},
 		{
-			id: 'Events',
-			name: 'Events',
-			link: '/events',
-		},
-		{
-			id: 'Sponsors',
-			name: 'Sponsors',
-			link: '/sponsors',
-		},
-		{
-			id: 'Contact us',
-			name: 'Contact',
-			link: '/contact',
-		},
-		{
-			id: 'FAQS',
+			id: 'faq',
 			name: 'FAQs',
-			link: '/faqs',
+		},
+		{
+			id: 'register',
+			name: 'Register',
+			link: '/register',
 		},
 	],
 };

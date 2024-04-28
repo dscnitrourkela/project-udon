@@ -1,7 +1,7 @@
 import { Heading, Paragraph, PersonalizedText, Text } from '../components/shared';
 import Footer from '../components/shared/marginals/footer.jsx';
 import FormContainer from '../components/form/FormContainer.jsx';
-import NavBar from '../components/shared/NavBar';
+import NavBar from '../components/shared/marginals/NavBar.jsx';
 
 export default function Playground() {
 	return (
