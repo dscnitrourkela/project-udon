@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import faqData from '../../config/content/faqData.js';
+import faqData from '../../data/faqData';
 import { PersonalizedText, Heading, Paragraph } from '../shared/index.js';
 
 function FAQ() {

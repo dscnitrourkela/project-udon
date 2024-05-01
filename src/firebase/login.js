@@ -1,24 +1,21 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
+import { getAuth, sendSignInLinkToEmail, signOut } from 'firebase/auth';
 import { query, where, getDocs, collection } from 'firebase/firestore';
 import { db, app } from './firebaseConfig';
 
 export const auth = getAuth(app);
-export const signInWithGoogle = async () => {
-	const provider = new GoogleAuthProvider();
 
-	return await signInWithPopup(auth, provider)
-		.then(async result => {
-			const user = result.user;
-			const loggedUser = { name: user.displayName, email: user.email, uid: user.uid };
-
-			const logUserRegData = await getUserData(user.uid);
-			return [loggedUser, logUserRegData];
-		})
-		.catch(error => {
-			const errorMessage = error.message;
-			console.error(errorMessage);
-			return [{}, {}];
+export const signInWithEmailLink = async email => {
+	try {
+		await sendSignInLinkToEmail(auth, email, {
+			url: window.location.href,
+			handleCodeInApp: true,
 		});
+		window.localStorage.setItem('emailForSignIn', email);
+		return true;
+	} catch (error) {
+		console.error('Error sending email link:', error);
+		return false;
+	}
 };
 
 export const getUserData = async userId => {

@@ -1,13 +1,10 @@
-import { useState, useContext } from 'react';
-import { AuthContext } from '../../../context/AuthContext';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Text from '../typography/Text';
 import Navigation from '../../../data/Navigation';
 import image from '../../../assets/images/image.png';
-import Button from '../Button';
 import Logo from '../Logo';
 import Hamburger from '../Hamburger';
-import { signInWithGoogle, signOutUser } from '../../../firebase/login';
 import SmoothScroll from 'smooth-scroll';
 
 // Function Returning new scroll object
@@ -29,8 +26,6 @@ const handleScroll = id => {
 };
 
 function NavBar() {
-	const { userInfo, setUserData } = useContext(AuthContext);
-
 	const { navItems, logo } = Navigation;
 	const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -49,7 +44,7 @@ function NavBar() {
 				</ul>
 				<div>
 					<Hamburger onClick={toggleNav} isOpen={isNavOpen}></Hamburger>
-					<Button
+					{/* <Button
 						variant='primary'
 						size='medium'
 						className='mr-[56.6px] hidden md:flex'
@@ -63,16 +58,13 @@ function NavBar() {
 								setUserData(await signInWithGoogle());
 							}
 						}}>
-						<Text variant='navButton'>{userInfo[0].uid ? 'logout' : 'login'}</Text>
-					</Button>
+						{ userInfo[0].uid && <Text variant='navButton'>Logout</Text>}
+					</Button> */}
 				</div>
 			</div>
 			<div className='w-full' style={{ height: '1px', backgroundColor: 'black' }}></div>
 			{isNavOpen && (
-				<ul
-					className='navMobile flex flex-col justify-center bg-[#252525] items-center gap-[41px] fixed min-h-full min-w-full top-[74px] bottom-0 text-white md:hidden list-none'
-					// style={{ position: 'absolute', top: '74px', left: '0', right: '0', bottom: '0' }}>
-				>
+				<ul className='navMobile flex flex-col justify-center bg-[#252525] items-center gap-[41px] fixed min-h-full min-w-full top-[74px] bottom-0 text-white md:hidden list-none'>
 					<NavList navItems={navItems} toggleNav={toggleNav} />
 				</ul>
 			)}
