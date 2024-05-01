@@ -8,15 +8,19 @@ import { donation, feeCoverage, initialContent, inputContent, lastPartContent } 
 import { storeFormData } from '../../firebase/registration';
 import { toCloudinary } from './uploadingFiles';
 import { registrationOptions, branchOptions } from '../../data/formInformation';
+import { toast } from 'react-toastify';
+import Button from '../shared/Button';
 
 const FormContainer = () => {
 	const { userInfo } = useContext(AuthContext);
-	var [currentUser, userData] = userInfo;
+	const [currentUser, userData] = userInfo;
 
+	const [errorMessage, setErrorMessage] = useState('');
+	const [formData, setFormData] = useState({});
+	const verifiedEmail = currentUser?.email ? true : false;
 	const [isValid, setValid] = useState({
-		recRollNumber: false,
-		name: false,
-		email: false,
+		recRollNumber: true,
+		name: true,
 		country: true,
 		state: true,
 		city: true,
@@ -25,31 +29,31 @@ const FormContainer = () => {
 		regType: true,
 		profileImage: true,
 	});
-	const [isEmpty, setEmpty] = useState({
-		recRollNumber: true,
-		name: true,
-		email: true,
-		country: false,
-		state: false,
-		city: false,
-		prefix: false,
-		mobile: false,
-		regType: false,
-		profileImage: false,
-	});
-	var checkValidity = Object.values(isValid).every(value => value);
-	var checkIfEmpty = Object.values(isEmpty).some(value => value);
 
-	var notAllowed = !checkValidity || checkIfEmpty;
-	const [errorMessage, setErrorMessage] = useState('');
+	const checkValidity = Object.values(isValid).every(value => value) && verifiedEmail;
+	const checkIfEmpty = Object.entries(formData).some(
+		([key, value]) =>
+			value === '' &&
+			inputContent.find(item => {
+				if (Array.isArray(item.id)) {
+					return item.id.includes(key);
+				} else {
+					return item.id === key;
+				}
+			})?.required
+	);
 
-	const [formData, setFormData] = useState({});
+	const notAllowed = !checkValidity || checkIfEmpty;
 
 	const setInputValue = async (key, value, file) => {
 		if (!key) return;
 
 		if (key === 'profileImage') {
-			var imgURL = await toCloudinary(file);
+			const imgURL = await toast.promise(toCloudinary(file), {
+				loading: 'Uploading image...',
+				success: 'Image uploaded successfully',
+				error: 'Error uploading image',
+			});
 			setFormData(prev => ({
 				...prev,
 				profileImage: imgURL,
@@ -66,31 +70,33 @@ const FormContainer = () => {
 		if (userData) {
 			setFormData({
 				uid: currentUser?.uid?.toString() || '',
-				recRollNumber: userData?.rollNumber || '',
-				branch: userData?.branch || '',
+				recRollNumber: userData?.recRollNumber || '',
+				branch: userData?.branch || branchOptions[0],
 				name: userData?.name || '',
-				email: userData?.email || '',
-				county: userData?.county || '',
+				email: currentUser?.email || '',
+				country: userData?.country || '',
 				state: userData?.state || '',
 				city: userData?.city || '',
 				prefix: userData?.prefix || '',
 				mobile: userData?.mobile || '',
-				regType: userData?.regType || '',
+				regType: userData?.regType || registrationOptions[0],
 				profileImage: userData?.profileImage || '',
 				testimonial: userData?.testimonial || '',
-				googlName: currentUser?.name || '',
-				googleMail: currentUser?.email || '',
 			});
 		}
-	}, [userData]);
+	}, [userData, currentUser]);
 
 	const registerUser = async e => {
 		if (notAllowed) {
-			return;
+			toast.error('Please fill all the required fields');
 		}
 		e.preventDefault();
 		try {
-			const documentId = await storeFormData(formData);
+			const documentId = await toast.promise(storeFormData(formData), {
+				loading: 'Registering...',
+				success: 'Registration successful',
+				error: 'Error registering',
+			});
 			return documentId;
 		} catch (error) {
 			console.error('Error:', error);
@@ -159,7 +165,12 @@ const FormContainer = () => {
 					}}>
 					Choose your Branch
 				</Paragraph>{' '}
-				<DropDown options={branchOptions} key='branch' onChange={e => setInputValue('branch', e.target.value)} />
+				<DropDown
+					options={branchOptions}
+					key='branch'
+					onChange={e => setInputValue('branch', e.target.value)}
+					value={formData.branch}
+				/>
 				{inputContent.map(item => (
 					<React.Fragment key={item.key}>
 						<Paragraph
@@ -180,15 +191,17 @@ const FormContainer = () => {
 									className='inline mr-3 w-[31.3%]'
 									onChange={e => setInputValue(id, e.target.value, e.target.validated)}
 									validated={setValid}
-									checkEmpty={setEmpty}
 									errormsg={setErrorMessage}
 									formData={{
 										type: item.type[idx],
 										minLength: item.minLength[idx],
 										maxLength: item.maxLength[idx],
 										regex: item.regex[idx],
+										value: item.type[idx] === 'number' ? parseInt(formData[id]) : formData[id] || '',
 										id: id,
-										placeholder: formData?.id || item.placeholder[idx],
+										placeholder: item.placeholder[idx],
+										disabled: item.id === 'email' && verifiedEmail ? true : false,
+										verified: verifiedEmail,
 									}}
 								/>
 							))
@@ -199,7 +212,6 @@ const FormContainer = () => {
 									setInputValue(item.id, e.target.value, e.target.files ? e.target.files[0] : null, e.target.validated)
 								}
 								validated={setValid}
-								checkEmpty={setEmpty}
 								errormsg={setErrorMessage}
 								formData={{
 									type: item.type,
@@ -208,6 +220,9 @@ const FormContainer = () => {
 									regex: item.regex,
 									id: item.id,
 									placeholder: item.placeholder,
+									value: formData[item.id],
+									verified: verifiedEmail,
+									disabled: item.id === 'email' && verifiedEmail ? true : false,
 								}}
 								required={item.required}
 							/>
@@ -224,7 +239,12 @@ const FormContainer = () => {
 					}}>
 					Registration Type
 				</Paragraph>{' '}
-				<DropDown options={registrationOptions} key='regType' onChange={e => setInputValue('regType', e.target.value)} />
+				<DropDown
+					options={registrationOptions}
+					key='regType'
+					onChange={e => setInputValue('regType', e.target.value)}
+					value={formData.regType}
+				/>
 				<Paragraph
 					variant='body2'
 					className=' shadow-white px-2'
@@ -239,17 +259,22 @@ const FormContainer = () => {
 				<Paragraph variant='body3' className='mb-6 mt-10 text-xl'>
 					{lastPartContent}
 				</Paragraph>
-				<button
-					{...(notAllowed ? 'disabled' : '')}
+				<Button
+					variant={'primary'}
+					onClick={registerUser}
+					disabled={notAllowed}
 					className={
-						'bg-[#FF7647] text-black rounded-md p-2 mt-6 w-[100%]' + (notAllowed ? ' cursor-not-allowed, bg-[#80584a]' : '')
+						'bg-[#FF7647] text-black rounded-md p-2 mt-6 w-[100%]' + (notAllowed ? ' cursor-not-allowed bg-[#715d56]' : '')
 					}
 					style={{ boxShadow: '2px 2px 0px 0px #FFF6F6' }}>
-					{' '}
-					<Paragraph variant='body3' className='inline mx-auto text-xl' onClick={registerUser}>
-						Register Now
+					<Paragraph variant='body3' className='inline mx-auto text-xl'>
+						{notAllowed
+							? 'Please fill all the required fields'
+							: userInfo[1].recRollNumber
+								? 'Update your details'
+								: 'Register'}
 					</Paragraph>
-				</button>
+				</Button>
 				{notAllowed ? (
 					<Paragraph variant='body3' className='my-2 text-red-600'>
 						{errorMessage}

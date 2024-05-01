@@ -1,10 +1,14 @@
-export function Inputs({ className, formData, onChange, validated, checkEmpty, errormsg, required }) {
-	const { type, minLength, maxLength, regex, id, placeholder, value } = formData;
+import { toast } from 'react-toastify';
+import { signInWithEmailLink, signOutUser } from '../../../firebase/login';
+import Button from '../Button';
+
+export function Inputs({ className, formData, onChange, validated, errormsg, required }) {
+	const { type, minLength, maxLength, regex, id, placeholder, value, verified, disabled } = formData;
 	const validateInput = event => {
 		const value = event.target.value;
 		if (regex && value) {
 			const isValid = value.match(regex);
-			const isEmpty = !required || value === '';
+			const isEmpty = required && value === '';
 
 			if (!isValid) {
 				event.target.style.border = '1px solid #b91c1c';
@@ -17,10 +21,8 @@ export function Inputs({ className, formData, onChange, validated, checkEmpty, e
 			}
 
 			if (isEmpty) {
-				updateState(id, checkEmpty, true);
 				errormsg(prevMsg => prevMsg + `\nEmpty input for ${id}`);
 			} else {
-				updateState(id, checkEmpty, false);
 				errormsg(prevMsg => prevMsg.replace(new RegExp(`\\nEmpty input for ${id}`, 'g'), ''));
 			}
 		}
@@ -33,22 +35,50 @@ export function Inputs({ className, formData, onChange, validated, checkEmpty, e
 		}));
 	};
 
+	const handleEmailVerification = async () => {
+		if (verified) {
+			toast.promise(signOutUser(), {
+				loading: 'Logging out...',
+				success: 'Logged out successfully',
+				error: 'Error logging out',
+			});
+		} else {
+			toast.promise(signInWithEmailLink(value), {
+				loading: 'Sending verification email...',
+				success: 'Verification email sent',
+				error: 'Error sending verification email',
+			});
+		}
+	};
+
 	return (
-		<input
-			type={type}
-			minLength={minLength}
-			maxLength={maxLength}
-			id={id}
-			className={
-				'border divide-solid border-[#FF7647] outline-none bg-inherit rounded-md my-1 mb-6 text-[#B0B0B0] p-2 ' + className
-			}
-			style={{ boxShadow: '2px 2px 0px 0px #F9F9F9' }}
-			placeholder={placeholder}
-			value={value}
-			onBlur={validateInput}
-			onChange={onChange}
-			required={required ? true : false}
-		/>
+		<span className={`${type === 'email' ? 'flex items-start gap-10 justify-between' : ''}`}>
+			<input
+				type={type}
+				minLength={minLength}
+				maxLength={maxLength}
+				id={id}
+				className={
+					'border divide-solid border-[#FF7647] outline-none bg-inherit rounded-md my-1 mb-6 text-[#B0B0B0] p-2 ' + className
+				}
+				style={{ boxShadow: '2px 2px 0px 0px #F9F9F9' }}
+				placeholder={placeholder}
+				value={value}
+				onBlur={validateInput}
+				disabled={type !== 'email' && !verified ? true : disabled}
+				onChange={onChange}
+				required={required ? true : false}
+			/>
+			{type === 'email' && (
+				<Button
+					variant='primary'
+					size='small'
+					className={`mt-1 w-fit whitespace-nowrap ${verified ? 'bg-green-400' : ''}`}
+					onClick={handleEmailVerification}>
+					{verified ? 'Use another email' : 'Verify Email'}
+				</Button>
+			)}
+		</span>
 	);
 }
 
