@@ -5,14 +5,10 @@ import { Heading, Paragraph } from '../shared';
 import { Contactorg, Emaildata } from '../../data/paymentData';
 import { uploadReceipt } from './uploadReceipt';
 import { updateDocumentByUid } from '../../firebase/uploadProof';
-import { redirect } from 'next/navigation';
 
 function Final() {
 	const { userInfo } = useContext(AuthContext);
 	const currentUser = userInfo[0];
-	if (!currentUser) {
-		redirect('/');
-	}
 
 	const [file, setFile] = useState(null);
 
