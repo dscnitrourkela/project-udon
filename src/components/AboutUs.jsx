@@ -3,8 +3,8 @@ import aboutUsData from '../data/aboutUsData.js';
 
 export default function AboutUs() {
 	return (
-		<section>
-			<div className='container py-6 flex flex-col items-center md:pb-[30px] sm:pb-[51px]'>
+		<>
+			<section className='container py-6 flex flex-col items-center md:pb-[30px] sm:pb-[51px]' id='about'>
 				<Paragraph variant='body2' className='text-center font-semibold'>
 					{aboutUsData.tag1}
 					<br />
@@ -17,7 +17,7 @@ export default function AboutUs() {
 						{aboutUsData.tag3}
 					</Paragraph>
 				</Paragraph>
-			</div>
+			</section>
 
 			<div className='justify-between px-[0px] sm:px-[77px] md:px-[115px] lg:px-[175px] grid grid-cols-1 sm:grid-cols-3 gap-3 pb-[40px] sm:pb-[130px] md:pb-[135px]'>
 				{aboutUsData.lists.map((list, index) => (
@@ -43,6 +43,6 @@ export default function AboutUs() {
 				<span className='font-syne text-left text-base sm:text-3.5xl font-bold mr-[15px]'> {aboutUsData.content2}</span>
 				<img src={aboutUsData.star_img_url} alt='star' className='sm:h-[76px] sm:w-[76px] h-[45px] inline-block align-top' />
 			</Paragraph>
-		</section>
+		</>
 	);
 }

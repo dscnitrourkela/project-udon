@@ -15,6 +15,7 @@ const buttonVariants = cva(['flex', 'items-center', 'justify-center', 'rounded']
 				'gap-[10px]',
 				'text-black',
 				'font-semibold',
+				'shadow-button',
 			],
 		},
 		size: {

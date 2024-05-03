@@ -3,7 +3,7 @@ import { Heading, Paragraph } from '../typography/index.jsx';
 
 export default function Footer() {
 	return (
-		<div className='w-full bg-[#1E1E1E] pb-[24px]'>
+		<section className='w-full bg-[#1E1E1E] pb-[24px]' id='footer'>
 			<div className='w-[95%] mx-auto pt-[16px] pb-[24px] md:pb-[52px]' style={{ borderBottom: '1px solid white' }}>
 				<div className='w-full flex justify-end'>
 					<div className='h-[50px] md:h-[76px] w-[50px] md:w-[76px]'>
@@ -78,6 +78,6 @@ export default function Footer() {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }

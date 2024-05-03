@@ -36,13 +36,24 @@ export const currentUser = {
 	state: '',
 	city: '',
 	prefix: '',
-	phoneNumber: '',
+	mobile: '',
 	regType: '',
 };
 
 export const inputContent = [
 	{
 		key: 1,
+		id: 'email',
+		label: 'Email Address',
+		type: 'email',
+		regex: '^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$',
+		maxLength: 50,
+		minLength: 3,
+		placeholder: 'Enter your Email here',
+		required: true,
+	},
+	{
+		key: 2,
 		id: 'recRollNumber',
 		label: 'REC Roll Number',
 		type: 'text',
@@ -53,7 +64,7 @@ export const inputContent = [
 		required: true,
 	},
 	{
-		key: 2,
+		key: 3,
 		id: 'name',
 		label: 'Name',
 		type: 'text',
@@ -61,17 +72,6 @@ export const inputContent = [
 		maxLength: 50,
 		minLength: 3,
 		placeholder: 'Enter Your Name here',
-		required: true,
-	},
-	{
-		key: 3,
-		id: 'email',
-		label: 'Email Address',
-		type: 'email',
-		regex: '^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$',
-		maxLength: 50,
-		minLength: 3,
-		placeholder: 'Enter your Email here',
 		required: true,
 	},
 	{
@@ -83,16 +83,18 @@ export const inputContent = [
 		minLength: [3, 3, 3],
 		maxLength: [50, 50, 50],
 		placeholder: ['Country', 'State', 'City'],
+		required: true,
 	},
 	{
 		key: 5,
-		id: ['prefix', 'phoneNumber'],
+		id: ['prefix', 'mobile'],
 		label: 'Contact Number',
-		type: ['number', 'number'],
-		regex: ['^+?d{1,3}', '^[0-9]{10}$'],
+		type: ['string', 'number'],
+		regex: ['^\\+?[0-9]*$', '^[0-9]{10}$'],
 		maxLength: [4, 10],
 		minLength: [1, 10],
 		placeholder: ['Prefix +91', 'Enter your Phone number '],
+		required: true,
 	},
 	{
 		key: 6,
@@ -103,6 +105,7 @@ export const inputContent = [
 		maxLength: 50,
 		minLength: 3,
 		placeholder: 'Upload your Image for Profile',
+		required: false,
 	},
 ];
 

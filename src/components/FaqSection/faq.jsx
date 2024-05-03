@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import faqData from '../../config/content/faqData.js';
+import faqData from '../../data/faqData';
 import { PersonalizedText, Heading, Paragraph } from '../shared/index.js';
 
 function FAQ() {
@@ -16,7 +16,7 @@ function FAQ() {
 	};
 
 	return (
-		<div className='md:w-[76%] w-[92%] justify-items-center mt-[10px] mb-[44px] mx-auto'>
+		<section className='md:w-[76%] w-[92%] justify-items-center mt-[10px] mb-[44px] mx-auto' id='faq'>
 			<div className='flex flex-col items-center justify-center mb-[40px]'>
 				<Heading
 					variant='h1'
@@ -56,7 +56,7 @@ function FAQ() {
 					</div>
 				))}
 			</div>
-		</div>
+		</section>
 	);
 }
 
