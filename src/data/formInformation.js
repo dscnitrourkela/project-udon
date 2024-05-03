@@ -132,5 +132,8 @@ export const branchOptions = [
 ].sort();
 export const registrationOptions = ['With Family', 'Individual (without family)'];
 
-export const lastPartContent =
-	'The "Individual Only (without family)" and "With Family (spouse + kids)" registration fee is discounted by about 60% to allow increase in attendance - for example, the cost of Individual Only (without family) is about ₹50,000, while it is being offered at a discounted rate of ₹23,000. Please contribute generously and as per your capabilities so that we can successfully bridge the gap between the registration fee and expense.';
+export const lastPartContent = [
+	'The "Individual Only (without family)" and "With Family (spouse + kids)" registration fee is discounted by about 60% to allow increase in attendance - for example, the cost of Individual Only (without family) is about ₹50,000, while it is being offered at a discounted rate of ₹23,000. ',
+	'Please contribute generously',
+	'and as per your capabilities so that we can successfully bridge the gap between the registration fee and expense.',
+];

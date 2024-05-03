@@ -259,7 +259,8 @@ const FormContainer = () => {
 				</Paragraph>
 				<TextAreaInput onChange={e => setInputValue('testimonial', e.target.value)} />
 				<Paragraph variant='body3' className='mb-6 mt-10 text-xl'>
-					{lastPartContent}
+					{lastPartContent[0]}
+					<span className='underline'>{lastPartContent[1]}</span> {lastPartContent[2]}
 				</Paragraph>
 				<Button
 					variant={'primary'}
