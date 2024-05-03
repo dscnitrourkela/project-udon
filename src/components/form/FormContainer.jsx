@@ -9,11 +9,8 @@ import { storeFormData } from '../../firebase/registration';
 import { toCloudinary } from './uploadingFiles';
 import { registrationOptions, branchOptions } from '../../data/formInformation';
 
-
-
 import { toast } from 'react-toastify';
 import Button from '../shared/Button';
-
 
 const FormContainer = () => {
 	const { userInfo } = useContext(AuthContext);
@@ -96,11 +93,6 @@ const FormContainer = () => {
 		}
 		e.preventDefault();
 		try {
-
-	
-
-
-
 			const documentId = await toast.promise(storeFormData(formData), {
 				loading: 'Registering...',
 				success: 'Registration successful',

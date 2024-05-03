@@ -4,8 +4,5 @@ export default {
 	Home: lazy(() => import('./home')),
 	Playground: lazy(() => import('./playground')),
 
-	
-
 	Register: lazy(() => import('./register')),
-
 };
