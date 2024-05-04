@@ -1,0 +1,11 @@
+input[type='file']::file-selector-button {
+	background-color: #ff7647;
+	background: url('https://res.cloudinary.com/djl2ulktr/image/upload/v1713122470/receiptSubmit_fhbpjx.png') no-repeat;
+	cursor: pointer;
+	color: rgba(0, 0, 0, 0);
+	border: none;
+	width: 100%;
+	padding: 0.2em;
+	margin: 0vw 0.3vw;
+	transition: 1s;
+}

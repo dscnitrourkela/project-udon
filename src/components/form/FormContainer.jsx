@@ -8,6 +8,7 @@ import { donation, feeCoverage, initialContent, inputContent, lastPartContent } 
 import { storeFormData } from '../../firebase/registration';
 import { toCloudinary } from './uploadingFiles';
 import { registrationOptions, branchOptions } from '../../data/formInformation';
+
 import { toast } from 'react-toastify';
 import Button from '../shared/Button';
 
@@ -97,6 +98,7 @@ const FormContainer = () => {
 				success: 'Registration successful',
 				error: 'Error registering',
 			});
+
 			return documentId;
 		} catch (error) {
 			console.error('Error:', error);
@@ -257,7 +259,8 @@ const FormContainer = () => {
 				</Paragraph>
 				<TextAreaInput onChange={e => setInputValue('testimonial', e.target.value)} />
 				<Paragraph variant='body3' className='mb-6 mt-10 text-xl'>
-					{lastPartContent}
+					{lastPartContent[0]}
+					<span className='underline'>{lastPartContent[1]}</span> {lastPartContent[2]}
 				</Paragraph>
 				<Button
 					variant={'primary'}
