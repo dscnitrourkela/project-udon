@@ -13,8 +13,10 @@ export const Contactorg = [
 ];
 export const Emaildata = ['Send an email to recrourkela1998@gmail.com with a screenshot of your payment.'];
 
-export const Stepstoregister = [
+export const StepsToRegister = [
 	'Register using the form below.',
+	'For registration, you need to input your email address and click the verify button.',
+	'You will receive an email with a link to the registration form.',
 	[
 		'Make payment using our bank account information.While making the payment, please include the following information in the memo / remarks field. ',
 		'Your roll number (1 letter followed by 4 digits), then your firstname, then your lastname.',

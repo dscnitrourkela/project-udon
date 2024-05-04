@@ -26,8 +26,6 @@ export default function App() {
 					<Routes>
 						<Route exact path='/' element={<Pages.Home />} />
 						<Route path='/register' element={<Pages.Register />} />
-						<Route path='/play' element={<Pages.Playground />} />
-						<Route path='/payment' element={<Pages.Payment />} />
 					</Routes>
 				</Suspense>
 			</AuthProvider>

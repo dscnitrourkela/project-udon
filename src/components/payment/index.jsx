@@ -1,26 +1,13 @@
-import { useState, useContext } from 'react';
-import { AuthContext } from '../../context/AuthContext';
-import { PaymentCont, SubmissionForm, UPI } from './Payment';
+import { useState } from 'react';
+import { PaymentCont, UPI } from './Payment';
 import { Heading, Paragraph } from '../shared';
 import { Contactorg, Emaildata } from '../../data/paymentData';
-import { uploadReceipt } from './uploadReceipt';
-import { updateDocumentByUid } from '../../firebase/uploadProof';
 
-function Final() {
-	const { userInfo } = useContext(AuthContext);
-	const currentUser = userInfo[0];
-
-	const [file, setFile] = useState(null);
-
-	const uploadProof = async () => {
-		const proofURL = await uploadReceipt(file);
-		await updateDocumentByUid(currentUser.uid, proofURL);
-	};
-
+function Payment() {
 	const [isUPI, setisUPI] = useState(true);
 
 	return (
-		<>
+		<section id='payment' className='container mx-auto px-4 py-8 lg:px-0 mb-8'>
 			<div className='container mx-auto px-4 py-8 lg:px-0 mb-8'>
 				<Heading
 					variant='h2'
@@ -68,20 +55,13 @@ function Final() {
 
 					{isUPI ? <PaymentCont /> : <UPI />}
 				</div>
-
-				<SubmissionForm
-					onSubmit={uploadProof}
-					onInput={e => {
-						setFile(e.target.files[0]);
-					}}
-				/>
 			</div>
 
-			<Heading variant='body3' className='text-primary-foreground flex justify-center my-8 italic'>
+			<Heading variant='body3' className='text-primary-foreground flex justify-center my-8 px-4 italic'>
 				{Contactorg}
 			</Heading>
-		</>
+		</section>
 	);
 }
 
-export default Final;
+export default Payment;

@@ -275,7 +275,7 @@ const FormContainer = () => {
 							? 'Please fill all the required fields'
 							: userInfo[1].recRollNumber
 								? 'Update your details'
-								: 'Next'}
+								: 'Register'}
 					</Paragraph>
 				</Button>
 				{notAllowed ? (

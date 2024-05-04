@@ -1,9 +1,9 @@
 import { Heading, Paragraph } from '../shared';
-import { Stepstoregister } from '../../data/paymentData';
+import { StepsToRegister } from '../../data/paymentData';
 
 export const Steps = () => {
 	return (
-		<section className=' mb-24'>
+		<section className='container mx-auto px-4 py-8 lg:px-0 mb-8'>
 			<div className='flex flex-col justify-center items-center'>
 				<Heading
 					variant='h1'
@@ -16,10 +16,13 @@ export const Steps = () => {
 					Registration
 				</Heading>
 				<Paragraph variant='body3' className='my-3 font-bold m-0'>
-					Already registered? <span className='text-primary'>Sign In</span>
+					Already registered?{' '}
+					<a href='#payment' className='text-primary'>
+						Proceed to payment
+					</a>
 				</Paragraph>
 			</div>
-			<div className='m-8'>
+			<div className='m-4'>
 				<Heading
 					variant='h2'
 					className='text-primary-yellow'
@@ -32,16 +35,17 @@ export const Steps = () => {
 				</Heading>
 				{
 					<ol className='list-disc my-3 mx-8 w-[80%]'>
-						{Stepstoregister.map((item, index) => (
+						{StepsToRegister.map((item, index) => (
 							<li key={index}>
 								<Paragraph variant='body3'>
-									{index === 1 ? (
+									{Array.isArray(item) ? (
 										<>
-											{item[0]}
-											<br />
-											{item[1]}
-											<br />
-											{item[2]}
+											{item.map((subItem, idx) => (
+												<span key={idx}>
+													{subItem}
+													<br />
+												</span>
+											))}
 										</>
 									) : (
 										item

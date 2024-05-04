@@ -20,7 +20,7 @@ export const feeCoverage = [
 ];
 
 export const donation =
-	'Alumni donating/contributing more than ₹50,000 can pay &quot;Individual Only (without family)&quot; registration fee for their family registration and they do not need to pay &quot;With Family (spouse + kids)&quot; registration fee.';
+	'Alumni donating/contributing more than ₹50,000 can pay "Individual Only (without family)" registration fee for their family registration and they do not need to pay "With Family (spouse + kids)" registration fee.';
 
 export const STAGES = {
 	STUDENT_FORM: 'Register',
